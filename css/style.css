@@ -22,3 +22,159 @@ nav a {
     color: black;
     text-decoration: none;
 }
+
+.dot {
+    height: 3rem;
+    width: 3rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+#moodquestion {
+    height: 17rem;
+}
+
+.enraged {
+    background-color: #F04E48;
+}
+
+.dot:hover, .dot:focus {
+    box-shadow: rgba(63, 197, 186, 0.4) 5px 5px, rgba(36, 211, 220, 0.3) 10px 10px, rgba(46, 240, 240, 0.2) 15px 15px, rgba(46, 240, 233, 0.1) 20px 20px, rgba(46, 240, 221, 0.05) 25px 25px;
+}
+
+.vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.fuming {
+    background-color: #EB8075;
+}
+
+.repulse {
+    background-color: #E8988E;
+}
+
+.stressed {
+    background-color: #E55A90;
+}
+
+.angry {
+    background-color: #E874A3;
+}
+
+.worried {
+    background-color: #E8B0C2;
+}
+
+.shocked {
+    background-color: #EAACC1;
+}
+
+.restless {
+    background-color: #EBADC4;
+}
+
+.peeved {
+    background-color: #E5C4CE;
+}
+
+.surprised {
+    background-color: #E89C5D;
+}
+
+.energized {
+    background-color: #E99C5C;
+}
+
+.joyful {
+    background-color: #EAC192;
+}
+
+.motivated {
+    background-color: #e7b64b;
+}
+
+.optimistic {
+    background-color: #E4B063;
+}
+
+.hopeful {
+    background-color: #e5d58e;
+}
+
+.ecstatic {
+    background-color: #E9D05A;
+}
+
+.excited {
+    background-color: #e4e47d;
+}
+
+.blissful {
+    background-color: #e1dc84;
+}
+
+.optimistic {
+    background-color: #E9D05A;
+}
+
+.despair {
+    background-color: #74618D;
+}
+.miserable {
+    background-color: #8973a6;
+}
+.disgusted {
+    background-color: #9c8db0;
+}
+.bored {
+    background-color: #5B6B83;
+}
+.lonely {
+    background-color: #788aa5;
+}
+.excluded {
+    background-color: #8d9eb7;
+}
+.drained {
+    background-color: #7499AD;
+}
+.tired {
+    background-color: #83a0b0;
+}
+.shamed {
+    background-color: #9caeb8;
+}
+.calm {
+    background-color: #85C663;
+}
+.satisfied {
+    background-color: #95C982;
+}
+
+.at-ease {
+    background-color: #BBD4A3;
+}
+.tranquil {
+    background-color: #4EA48A;
+}
+.secured {
+    background-color: #649f8d;
+}
+.content {
+    background-color: #87a49c;
+}
+.serene {
+    background-color: #3A7492;
+}
+.balanced {
+    background-color: #5f8699;
+}
+.fullfilled {
+    background-color: #758c97;
+}
+
