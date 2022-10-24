@@ -245,3 +245,7 @@ td img {
     height: 200px;
     width: 200px ;
 }
+
+input:checked {
+    box-shadow: black 5px 5px;
+}
