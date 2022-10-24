@@ -204,12 +204,26 @@ padding-left: 4rem;
 
 /* mood log page*/
 .dot {
-    height: 3rem;
-    width: 3rem;
+    height: 3.2rem;
+    width: 3.2rem;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-  }
+    color: white;
+    text-align: center;
+    padding: 0.1rem;
+    font-size: 0.6rem;
+    line-height: 3rem;
+    margin: 0.1rem;
+}
+
+.six-dots {
+    min-width: 24rem;
+}
+
+.six-dots-container {
+    min-width: 27rem;
+}
 
 #moodquestion {
     height: 17rem;
@@ -219,7 +233,7 @@ padding-left: 4rem;
     background-color: #F04E48;
 }
 
-.dot:hover, .dot:focus {
+.dot:hover, .dot:active {
     box-shadow: rgba(63, 197, 186, 0.4) 5px 5px, rgba(36, 211, 220, 0.3) 10px 10px, rgba(46, 240, 240, 0.2) 15px 15px, rgba(46, 240, 233, 0.1) 20px 20px, rgba(46, 240, 221, 0.05) 25px 25px;
 }
 
