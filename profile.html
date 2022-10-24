@@ -10,19 +10,48 @@
         rel="stylesheet">
     <!-- This stylesheet will somewhat "normalize" the styling across browsers -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   
-    <nav>
-        <ul>
-            <li><a href="#"><span class="material-icons md-24" aria-label="Home">mood</span></a></li>
-            <li><a href="#mood">Mood</a></li>
-            <li><a href="#music">Music</a></li>
-            <li><a href="#profile">Profile</a></li>
-        </ul>
-    </nav>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid p-3">
+          <a class="navbar-brand" id="brand-name">Moody</a>
+
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <div class="nav-bar-items">
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                      <a class="nav-link"  href="index.html">HOME</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a class="nav-link" href="mood-log.html">MOOD LOG</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a class="nav-link" href="music.html">MUSIC</a>
+                    </li>
+      
+                    <li class="nav-item">
+                      <a class="nav-link" href="profile.html" aria-current="page" id="current-page">PROFILE</a>
+                    </li>
+                  </ul>
+            </div>
+          </div>
+
+          <div class="sign-register">
+            <a href="#" class="login">Login</a>
+            <button class="btn btn-dark px-4" id="primary-bt">Register</button>
+          </div>
+        </div>
+      </nav>
 
     <header>
         <div class="profile-header">

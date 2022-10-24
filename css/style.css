@@ -7,6 +7,10 @@ body {
     background-color: #eefffe;
 }
 
+h1, h2, p{
+    font-family: "PT Sans Caption";
+}
+
 /* nav bar */
 
 
@@ -38,7 +42,7 @@ nav li {
 
 .sign-register{
     right: 0;
-    font-family: PT Serif Caption;
+    font-family: "PT Serif Caption";
     font-size: 14px;
 }
 
@@ -88,7 +92,6 @@ header {
 
 /* main */
 #home-mood-fill {
-    font-family: "PT Sans Caption";
     text-align: right;
     margin: 3rem 0;
     color: #247B82;
@@ -288,10 +291,7 @@ body {
     margin-right: auto;
 }
 
-.profile-header {
-    color: #7FFFD4;
-    padding: 1rem;
-}
+
 
 p, li {
     margin-top: 0;
