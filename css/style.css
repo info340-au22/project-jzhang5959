@@ -13,6 +13,13 @@ h1, h2, p{
 
 h1 {
     text-align: center;
+    margin: 4rem;
+}
+
+h2 {
+    margin: 1rem 0;
+    color:#247B82;
+    font-weight: bold;
 }
 
 /* nav bar */
@@ -57,7 +64,6 @@ nav button {
 
 #current-page {
     color:#3DACB4;
-    
     text-decoration:underline;
     text-decoration-thickness: 0.1em;
 }
@@ -67,9 +73,17 @@ nav button {
     color: black;
 }
 
+.login:hover {
+    color: gray;
+}
+
 #primary-bt {
     background-color: #3DACB4;
     border: none;
+}
+
+#primary-bt:hover {
+    color: #ececec;;
 }
 
 #register-bt:hover {
@@ -98,7 +112,7 @@ header {
     color:#247B82;
 }
 
-#home-welcome-container {
+#dash-border-light-bg {
     border-color: #3DACB4;
     border-style: dashed;
     border-width: 2px;
@@ -124,11 +138,67 @@ padding-left: 4rem;
 }
 
 /* recommand music */
-#music-block {
-    background-color: white;
-    width: 100px;
-    height: 100px;
+
+#music-block-md1 {
+    background-color: #FFCDCD;
 }
+
+#music-block-md2 {
+    background-color: #FF9999;
+}
+
+#music-block-md3 {
+    background-color: #D94F4F;
+    
+}
+
+
+#recommand-music h3 {
+    text-align: left;
+    margin-left: 3rem;
+}
+
+#recommand-music a{
+    color:#3DACB4;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#recommand-music a:hover {
+    color:#247B82
+}
+
+#recommand-music p {
+    color: white; 
+}
+
+/* style music blocks */
+#style-music {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#style-music button{
+    border:none;
+    color:rgb(63, 63, 63)
+}
+
+/* style button color */
+#sad {
+    background-color:rgb(175, 230, 227)
+}
+
+#slow {
+    background-color:rgb(193, 228, 172)
+}
+
+#acoustic {
+    background-color: #d5c7e8;
+}
+
+#quick {
+    background-color: #eeafaf;
+}
+
 
 
 
