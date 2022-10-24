@@ -1,32 +1,138 @@
+/* general styliing */
 * {
     box-sizing: border-box;
 }
 
-nav {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    color: rgb(255, 190, 190);
-    background-color: #7FFFD4;
-    padding: .5rem;
-    padding-bottom: 1rem;
+body {
+    background-color: #F4FFFE;
 }
 
+h1, h2, p{
+    font-family: "PT Sans Caption";
+}
+
+h1 {
+    text-align: center;
+}
+
+/* nav bar */
+nav {
+    width: 100%;
+    background-image: url(../img/nav-bg.png);
+    background-repeat: no-repeat;
+    position: fixed; 
+    top: 0;
+    font-family: "PT Mono";
+}
+
+#brand-name {
+    font-size: 20px;
+    color: white;
+}
+
+nav button {
+    color: white;
+}
+
+
 nav ul {
-    margin: 0;
-    padding: 0; 
+    padding: 0 14rem;
+    font-size: 16px;
+    margin-left: 6rem;;
 }
 
 nav li {
-    display: inline;
     margin: 0 1rem;
 }
 
-nav a {
-    color: black;
-    text-decoration: none;
+.sign-register{
+    right: 2rem;
+    font-family: "PT Serif Caption";
+    font-size: 14px;
 }
 
+nav button {
+    margin-left: 1rem;
+}
+
+#current-page {
+    color:#3DACB4;
+    
+    text-decoration:underline;
+    text-decoration-thickness: 0.1em;
+}
+
+.login {
+    text-decoration: none;
+    color: black;
+}
+
+#primary-bt {
+    background-color: #3DACB4;
+    border: none;
+}
+
+#register-bt:hover {
+    color:rgb(226, 226, 226)
+}
+
+
+/* footer */
+
+footer a {
+    font-size: 2rem;
+    color:#3DACB4
+}
+
+footer a:hover {
+    color:black;
+}
+
+
+/* home page*/
+
+/* header */
+header {
+    text-align: center;
+    margin: 2rem;
+    color:#247B82;
+}
+
+#home-welcome-container {
+    border-color: #3DACB4;
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+
+/* main */
+#home-mood-fill {
+    text-align: right;
+    margin: 3rem 0;
+    color: #247B82;
+}
+
+#home-mood-fill button {
+    margin: 1.5rem 0 1rem 0;
+}
+
+#home-mood-fill p {
+padding-left: 4rem;
+}
+
+/* recommand music */
+#music-block {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* mood log page*/
 .dot {
     height: 3.2rem;
     width: 3.2rem;
@@ -196,30 +302,28 @@ nav a {
     background-color: #758c97;
 }
 
-.container {
+
+
+/* profile */
+#profile.container {
     max-width: 960px;
     margin-left: auto;
     margin-right: 0;
-    padding: 3rem;
-}
-
-body {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-header {
-    color: #7FFFD4;
     padding: 1rem;
+    text-align: left;
 }
 
-p, li {
-    margin-top: 0;
-    margin-bottom: 1rem;
+
+#profile {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
+
+#basic-info h2 {
     margin-top: 0;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -236,9 +340,14 @@ td img {
     margin-bottom: 1rem;
 }
 
+#profile h2 {
+    text-align: center;
+}
+
 #basic-info img {
     height: 300px;
     width: 300px ;
+    margin: 2rem;
 }
 
 #recent-music img {
@@ -246,6 +355,49 @@ td img {
     width: 200px ;
 }
 
-input:checked {
-    box-shadow: black 5px 5px;
+#survey {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#create-profile .container label {
+    display: block;
+    margin:20px 0 5px 0;
+}
+
+
+#create-profile select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+#create-profile button,
+#profile button {
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#create-profile .create-intro {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+}
+
+#front {
+    text-align:center;
 }
