@@ -1,32 +1,122 @@
+/* general styliing */
 * {
     box-sizing: border-box;
 }
 
-nav {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    color: rgb(255, 190, 190);
-    background-color: #7FFFD4;
-    padding: .5rem;
-    padding-bottom: 1rem;
+body {
+    background-color: #eefffe;
 }
 
-nav ul {
-    margin: 0;
-    padding: 0; 
+/* nav bar */
+
+
+
+nav {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-image: url(../img/nav-bg.png);
+    background-repeat: no-repeat;
+}
+
+#brand-name {
+    background-repeat: no-repeat;
+    font-family: "PT Mono";
+    font-size: 20px;
+    color: white;
+}
+
+.nav-bar-items {
+    padding: 0 14rem;
+    position: relative;
+    font-size: 16px;
+    font-family: "PT Mono";
 }
 
 nav li {
-    display: inline;
     margin: 0 1rem;
 }
 
-nav a {
-    color: black;
-    text-decoration: none;
+.sign-register{
+    right: 0;
+    font-family: PT Serif Caption;
+    font-size: 14px;
 }
 
+nav button {
+    margin-left: 1rem;
+}
+
+#current-page {
+    color:#3DACB4;
+    
+    text-decoration:underline;
+    text-decoration-thickness: 0.1em;
+}
+
+.login {
+    text-decoration: none;
+    color: black;
+}
+
+#primary-bt {
+    background-color: #3DACB4;
+    border: none;
+}
+
+#register-bt:hover {
+    color:rgb(226, 226, 226)
+}
+
+/* home page*/
+
+/* header */
+header {
+    text-align: center;
+    margin: 2rem;
+    color:#247B82;
+}
+
+#home-welcome-container {
+    border-color: #3DACB4;
+    border-style: dashed;
+    border-width: 2px;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+
+/* main */
+#home-mood-fill {
+    font-family: "PT Sans Caption";
+    text-align: right;
+    margin: 3rem 0;
+    color: #247B82;
+}
+
+#home-mood-fill button {
+    margin: 1.5rem 0 1rem 0;
+}
+
+#home-mood-fill p {
+padding-left: 4rem;
+}
+
+
+#music-block {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+
+/* footer */
+
+
+
+/* mood log page*/
 .dot {
     height: 3rem;
     width: 3rem;
@@ -182,7 +272,10 @@ nav a {
     background-color: #758c97;
 }
 
-.container {
+
+
+/* profile */
+.profile-container {
     max-width: 960px;
     margin-left: auto;
     margin-right: 0;
@@ -203,7 +296,7 @@ body {
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-header {
+.profile-header {
     color: #7FFFD4;
     padding: 1rem;
 }
@@ -213,7 +306,7 @@ p, li {
     margin-bottom: 1rem;
 }
 
-h2 {
+#basic-info h2 {
     margin-top: 0;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -284,4 +377,3 @@ button {
 #front {
     text-align:center;
 }
-
