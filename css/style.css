@@ -289,7 +289,7 @@ body {
 }
 
 #profile {
-    background-color: #7FFFD4;
+    background-color: #eefffe;
     max-width: 500px;
     margin: 50px auto;
     padding: 30px 20px;
@@ -297,7 +297,7 @@ body {
 }
 
 .profile-header {
-    color: #7FFFD4;
+    color: #eefffe;
     padding: 1rem;
 }
 
@@ -334,7 +334,7 @@ td img {
 }
 
 #survey {
-    background-color: #7FFFD4;
+    background-color: #eefffe;
     max-width: 500px;
     margin: 50px auto;
     padding: 30px 20px;
