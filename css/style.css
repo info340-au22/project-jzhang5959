@@ -4,36 +4,41 @@
 }
 
 body {
-    background-color: #eefffe;
+    background-color: #F4FFFE;
 }
 
 h1, h2, p{
     font-family: "PT Sans Caption";
 }
 
+h1 {
+    text-align: center;
+}
+
 /* nav bar */
-
-
-
 nav {
     width: 100%;
-    color: rgb(0, 0, 0);
     background-image: url(../img/nav-bg.png);
     background-repeat: no-repeat;
+    position: fixed; 
+    top: 0;
+    font-family: "PT Mono";
 }
 
 #brand-name {
-    background-repeat: no-repeat;
-    font-family: "PT Mono";
     font-size: 20px;
     color: white;
 }
 
-.nav-bar-items {
+nav button {
+    color: white;
+}
+
+
+nav ul {
     padding: 0 14rem;
-    position: relative;
     font-size: 16px;
-    font-family: "PT Mono";
+    margin-left: 6rem;;
 }
 
 nav li {
@@ -41,7 +46,7 @@ nav li {
 }
 
 .sign-register{
-    right: 0;
+    right: 2rem;
     font-family: "PT Serif Caption";
     font-size: 14px;
 }
@@ -70,6 +75,19 @@ nav button {
 #register-bt:hover {
     color:rgb(226, 226, 226)
 }
+
+
+/* footer */
+
+footer a {
+    font-size: 2rem;
+    color:#3DACB4
+}
+
+footer a:hover {
+    color:black;
+}
+
 
 /* home page*/
 
@@ -105,17 +123,12 @@ header {
 padding-left: 4rem;
 }
 
-
+/* recommand music */
 #music-block {
     background-color: white;
     width: 100px;
     height: 100px;
 }
-
-
-
-
-/* footer */
 
 
 
@@ -278,25 +291,23 @@ padding-left: 4rem;
 
 
 /* profile */
-.profile-container {
+#profile.container {
     max-width: 960px;
     margin-left: auto;
     margin-right: 0;
-    padding: 3rem;
-}
-
-body {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 1rem;
+    text-align: left;
 }
 
 
-
-p, li {
-    margin-top: 0;
-    margin-bottom: 1rem;
+#profile {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
+
 
 #basic-info h2 {
     margin-top: 0;
@@ -315,12 +326,64 @@ td img {
     margin-bottom: 1rem;
 }
 
+#profile h2 {
+    text-align: center;
+}
+
 #basic-info img {
     height: 300px;
     width: 300px ;
+    margin: 2rem;
 }
 
 #recent-music img {
     height: 200px;
     width: 200px ;
+}
+
+#survey {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#create-profile .container label {
+    display: block;
+    margin:20px 0 5px 0;
+}
+
+
+#create-profile select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+#create-profile button,
+#profile button {
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#create-profile .create-intro {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+}
+
+#front {
+    text-align:center;
 }
