@@ -28,14 +28,15 @@
         <div class="container">
           <h1>Profile</h1>
         </div>
-      </header> 
+    </header> 
 
-    <main>
+    <main id="profile">
         <section id="basic-info">
             <h2>Bellage2003</h2>
 
-            <div class="container">
+            <div class="container" id="front">
                 <img src="img/profile-photo.jpeg" alt="profile photo">
+                <button type="edit" value="edit-photo">Edit your photo</button>
                 <p> Gender: 
                 <span class="material-icons md-48" aria-label="gender">girl</span>
                 Status: 
@@ -48,7 +49,7 @@
         <section id="mood-daily">
             <h2>Past Mood Diary</h2>
 
-            <div class="container">
+            <div class="container" id="front">
                 <dl>
                     <dt>2022-07-04</dt>
                     <dd>
@@ -73,14 +74,17 @@
                     </dd>
                 </dl>
             </div>
+
+            <button type="view" value="view-all">View All</button>
         </section>
 
         <section id="recent-music">
             <h2>Most Recent Listened Music</h2>
 
-            <div class="container">
+            <div class="container" id="front">
                 <img src="img/recent-music.png" alt="album's photo">
                 <p>BLACKPINK-STAY</p>
+                <button type="music" value="play-music">Play Now ~</button>
             </div>
         </section>
     </main>

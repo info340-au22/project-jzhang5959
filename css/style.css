@@ -186,13 +186,21 @@ nav a {
     max-width: 960px;
     margin-left: auto;
     margin-right: 0;
-    padding: 3rem;
+    padding: 2rem;
+    text-align: left;
 }
 
 body {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 98%;
+    margin-left: 0;
+}
+
+#profile {
+    background-color: #7FFFD4;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -231,3 +239,49 @@ td img {
     height: 200px;
     width: 200px ;
 }
+
+#survey {
+    background-color: #7FFFD4;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+button {
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#bottom {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+}
+
+#front {
+    text-align:center;
+}
+

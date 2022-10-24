@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Raleway:wght@300&display=swap"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    <!-- This stylesheet will somewhat "normalize" the styling across browsers -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#"><span class="material-icons md-24" aria-label="Home">mood</span></a></li>
+            <li><a href="#mood">Mood</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="container">
+          <h1>Create Your Account</h1>
+        </div>
+    </header> 
+
+    <main>
+        <section id="survey">
+            <div class="container">
+                <label for="name" id="label-name">Name</label>
+                <input type="text"
+                       id="name"
+                       placeholder="What is your name?" />
+            </div>
+
+            <div class="container">
+                <label for="email" id="label-email">Email</label>
+                <input type="email"
+                       id="email"
+                       placeholder="What is your email?" />
+            </div>
+
+            <div class="container">
+                <label for="password" id="label-password">Password</label>
+                <input type="password"
+                       id="password"
+                       placeholder="Enter your password?" />
+            </div>
+
+            <div class="container">
+                <label for="age" id="label-age">Age</label>
+                <input type="text"
+                       id="age"
+                       placeholder="What is your age?" />
+            </div>
+
+            <div class="container">
+                <label for="gender" id="label-gender">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="no-binary">Non-binary</option>
+                    <option value="transgender">Transgender</option>
+                    <option value="intersex">Intersex</option>
+                    <option value="not-to-say">Perfer not to say</option>
+                </select>
+            </div>
+
+            <div class="container">
+                <label for="mood" id="label-mood">Do you remember your mood yesterday?</label>
+                <input type="text"
+                       id="mood"
+                       placeholder="Any feelings or mood?" />
+            </div>
+
+            <div class="container">
+                <label for="often-mood" id="label-often">How often do you have a bad mood?</label>
+                <select name="often-mood" id="often-mood">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="once">Once/Twice a month</option>
+                    <option value="2-3months">Every 2-3 months</option>
+                    <option value="2-3year">2-3 times per year</option>
+                    <option value="dont-know">I don't know</option>
+                </select>
+            </div>
+
+            <div class="container">
+            <button type="join" value="join">Join now</button>
+            </div>
+
+            <div id="bottom">
+                <h3>This Is Your Own World~</h3>
+                <img src="img/create-profile.jpeg" alt="Smile face for new users">
+            </div>
+        </section>
+
+    </main>
+
+</body>
