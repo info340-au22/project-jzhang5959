@@ -28,7 +28,7 @@
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="mood-log.html">MOOD LOG</a>
+                <a class="nav-link" href="mood-log.html"  aria-current="page" id="current-page">MOOD LOG</a>
                 </li>
 
                 <li class="nav-item">
@@ -36,7 +36,7 @@
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="profile.html" aria-current="page" id="current-page">PROFILE</a>
+                <a class="nav-link" href="profile.html">PROFILE</a>
                 </li>
             </ul>
 
@@ -60,126 +60,95 @@
         <div class="log">
           <p class="lead">How is your day? </p>
       
-        <div class="mood-card-container row">
-          <div class="m-2 col-lg-5 col">
-            <div class="card row p-2 mb-3">
-            <div class="card-body">
-              <p> How long did you sleep last night? </p>
-              <div class="slidecontainer">
-                <input type="range" min="0" max="15" value="8" class="slider" oninput="this.nextElementSibling.value = this.value">
-                <output>8</output>
-            </div>
-            </div>
-          </div>
-          <div class="card row p-4">
-            <label for="moodquestion" class="mb-2">Daily Note</label>
-            <input type="text" id="moodquestion" name="moodquestion">
-          </div>
-          </div>
+            <div class="mood-card-container row">
+                <div class="m-2 col-lg-5 col-xl-6 col">
+                    <div class="card row p-2 mb-3">
+                        <div class="card-body">
+                            <p> How long did you sleep last night? </p>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="15" value="8" class="slider" oninput="this.nextElementSibling.value = this.value">
+                                <output>8</output>
+                            </div>
+                        </div>
+                    </div>
 
-        
+                    <div class="card row p-4">
+                        <label for="moodquestion" class="mb-2">Daily Note</label>
+                        <input type="text" id="moodquestion" name="moodquestion">
+                    </div>
+                </div>
 
-        <div class="card m-2 p-2 col-md-6 six-dots-container">
-          <div class="card-body">
-            <p> How is your mood today? </p>
-            <div class="row">
-          <div class="col-1">
-            <p class="vertical">&larr; Energy</p>
-          </div>
-            <div class="col-11">
-            <div class="six-dots">
-              <a class="dot enraged">enraged</a>
-              <input type="radio" class="dot stressed">stressed</span>
-              <span>stressed</span>
-              <span class="dot shocked">shocked</span>
-              <span class="dot surprised">surprised</span>
-              <span class="dot motivated">motivated</span>
-              <span class="dot ecstatic">ecstatic</span>
+                <div class="card m-2 p-2 col-lg-6 col-xl-5 six-dots-container">
+                    <div class="card-body">
+                        <p> How is your mood today? </p>
+                            <div class="row">
+                                <div class="col-1">
+                                    <p class="vertical">&larr; Energy</p>
+                                </div>
+                                <div class="col-11 six-dots">
+                                    <div>
+                                        <span class="dot enraged">enraged</span>
+                                        <span class="dot stressed">stressed</span>
+                                        <span class="dot shocked">shocked</span>
+                                        <span class="dot surprised">surprised</span>
+                                        <span class="dot motivated">motivated</span>
+                                        <span class="dot ecstatic">ecstatic</span>
+                                    </div>
+                                    <div>
+                                        <span class="dot fuming">fuming</span>
+                                        <span class="dot angry">angry</span>
+                                        <span class="dot restless">restless</span>
+                                        <span class="dot energized">energized</span>
+                                        <span class="dot optimistic">optimistic</span>
+                                        <span class="dot excited">excited</span>
+                                    </div>
+                                    <div>
+                                        <span class="dot repulse">repulse</span>
+                                        <span class="dot worried">worried</span>
+                                        <span class="dot peeved">peeved</span>
+                                        <span class="dot joyful">joyful</span>
+                                        <span class="dot hopeful">hopeful</span>
+                                        <span class="dot blissful">blissful</span>
+                                    </div>
+                                    <div>
+                                        <span class="dot disgusted">disgusted</span>
+                                        <span class="dot excluded">excluded</span>
+                                        <span class="dot shamed">shamed</span>
+                                        <span class="dot at-ease">at ease</span>
+                                        <span class="dot content">content</span>
+                                        <span class="dot fullfilled">fullfilled</span>
+                                    </div>
+                                    <div>
+                                        <span class="dot miserable">miserable</span>
+                                        <span class="dot lonely">lonely</span>
+                                        <span class="dot tired">tired</span>
+                                        <span class="dot satisfied">satisfied</span>
+                                        <span class="dot secured">secured</span>
+                                        <span class="dot balanced">balanced</span>
+                                    </div>
+                                    <div>
+                                        <span class="dot despair">despair</span>
+                                        <span class="dot bored">bored</span>
+                                        <span class="dot drained">drained</span>
+                                        <span class="dot calm">calm</span>
+                                        <span class="dot tranquil">tranquil</span>
+                                        <span class="dot serene">serene</span>
+                                    </div>
+                                    <div>
+                                        <p>Positive&rarr; </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <span class="dot fuming">fuming</span>
-              <span class="dot angry">angry</span>
-              <span class="dot restless">restless</span>
-              <span class="dot energized">energized</span>
-              <span class="dot optimistic">optimistic</span>
-              <span class="dot excited">excited</span>
+            <div class="graph">
+                <div class="card">
+                    <img >
+                </div>
             </div>
-            <div>
-              <span class="dot repulse">repulse</span>
-              <span class="dot worried">worried</span>
-              <span class="dot peeved">peeved</span>
-              <span class="dot joyful">joyful</span>
-              <span class="dot hopeful">hopeful</span>
-              <span class="dot blissful">blissful</span>
-            </div>
-            <div>
-              <span class="dot disgusted">disgusted</span>
-              <span class="dot excluded">excluded</span>
-              <span class="dot shamed">shamed</span>
-              <span class="dot at-ease">at ease</span>
-              <span class="dot content">content</span>
-              <span class="dot fullfilled">fullfilled</span>
-            </div>
-            <div>
-              <span class="dot miserable">miserable</span>
-              <span class="dot lonely">lonely</span>
-              <span class="dot tired">tired</span>
-              <span class="dot satisfied">satisfied</span>
-              <span class="dot secured">secured</span>
-              <span class="dot balanced">balanced</span>
-            </div>
-            <div>
-              <span class="dot despair">despair</span>
-              <span class="dot bored">bored</span>
-              <span class="dot drained">drained</span>
-              <span class="dot calm">calm</span>
-              <span class="dot tranquil">tranquil</span>
-              <span class="dot serene">serene</span>
-            </div>
-            <div>
-               <p>Positive&rarr; </p>
-            </div>
-          </div>
-              
-          </div>
-          </div>
-          
         </div>
-       
-        
-
-          <div class="card m-2 p-2 col-lg-3">
-            <div class="card-body">
-              <p> How long did you sleep last night? </p>
-              <div class="slidecontainer">
-                <input type="range" min="1" max="15" value="8" class="slider" oninput="this.nextElementSibling.value = this.value">
-                <output>8</output>
-            </div>
-            </div>
-          </div>
-
-          <div class="card m-2 p-2 col-lg-3">
-            <div class="card-body">
-              <p> How long did you sleep last night? </p>
-              <div class="slidecontainer">
-                <input type="range" min="1" max="15" value="8" class="slider" oninput="this.nextElementSibling.value = this.value">
-                <output>8</output>
-            </div>
-            </div>
-          </div>
-
-          <div class="card m-2 p-2 col-lg-3">
-            <div class="card-body">
-              <p> How long did you sleep last night? </p>
-              <div class="slidecontainer">
-                <input type="range" min="1" max="15" value="8" class="slider" oninput="this.nextElementSibling.value = this.value">
-                <output>8</output>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     </main>
 
     <footer class="py-2">

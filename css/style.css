@@ -134,17 +134,18 @@ padding-left: 4rem;
 
 /* mood log page*/
 .dot {
-    height: 3.2rem;
-    width: 3.2rem;
+    height: 3.5rem;
+    width: 3.5rem;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     color: white;
     text-align: center;
     padding: 0.1rem;
-    font-size: 0.6rem;
+    font-size: 0.68rem;
     line-height: 3rem;
     margin: 0.1rem;
+    cursor: pointer;
 }
 
 .six-dots {
@@ -249,33 +250,43 @@ padding-left: 4rem;
 .despair {
     background-color: #74618D;
 }
+
 .miserable {
     background-color: #8973a6;
 }
+
 .disgusted {
     background-color: #9c8db0;
 }
+
 .bored {
     background-color: #5B6B83;
 }
+
 .lonely {
     background-color: #788aa5;
 }
+
 .excluded {
     background-color: #8d9eb7;
 }
+
 .drained {
     background-color: #7499AD;
 }
+
 .tired {
     background-color: #83a0b0;
 }
+
 .shamed {
     background-color: #9caeb8;
 }
+
 .calm {
     background-color: #85C663;
 }
+
 .satisfied {
     background-color: #95C982;
 }
@@ -283,24 +294,32 @@ padding-left: 4rem;
 .at-ease {
     background-color: #BBD4A3;
 }
+
 .tranquil {
     background-color: #4EA48A;
 }
+
 .secured {
     background-color: #649f8d;
 }
+
 .content {
     background-color: #87a49c;
 }
+
 .serene {
     background-color: #3A7492;
 }
+
 .balanced {
     background-color: #5f8699;
 }
+
 .fullfilled {
     background-color: #758c97;
 }
+
+
 
 
 
