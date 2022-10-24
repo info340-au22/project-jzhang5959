@@ -1,9 +1,16 @@
 /* general styliing */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #eefffe;
 }
 
 /* nav bar */
+
+
+
 nav {
     width: 100%;
     color: rgb(0, 0, 0);
@@ -266,3 +273,54 @@ padding-left: 4rem;
 }
 
 
+
+/* profile */
+.profile-container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 3rem;
+}
+
+body {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-header {
+    color: #7FFFD4;
+    padding: 1rem;
+}
+
+p, li {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#basic-info h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    padding: 2rem;
+}
+
+td img {
+    height: 100px;
+    width: 100px ;
+}
+
+#basic-info {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#basic-info img {
+    height: 300px;
+    width: 300px ;
+}
+
+#recent-music img {
+    height: 200px;
+    width: 200px ;
+}
