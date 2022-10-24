@@ -237,6 +237,7 @@ padding-left: 4rem;
 
 #moodquestion {
     height: 17rem;
+    resize: none;
 }
 
 .enraged {
@@ -397,6 +398,23 @@ padding-left: 4rem;
 .fullfilled {
     background-color: #758c97;
 }
+
+.save {
+    border-color: #247B82;
+    color: #247B82;
+    text-align: center;
+    width: 20%;
+}
+  
+.save:hover {
+    background-color: #247B82;
+    color: white;
+}
+
+.mood-log-space {
+    margin-bottom: 4rem;
+}
+  
 
 
 
