@@ -60,7 +60,7 @@
         <div>
           <h2>How is your day? </h2>
       
-            <div class="card-container row d-flex justify-content-evenly">
+            <div class="card-container row d-flex justify-content-evenly mood-log-space">
                 <div class="m-2 col-lg-5 col-xl-6 col">
                     <div class="card row p-2 mb-3">
                         <div class="card-body">
@@ -74,90 +74,97 @@
 
                     <div class="card row p-4">
                         <label for="moodquestion" class="mb-2">Daily Note</label>
-                        <input type="text" id="moodquestion" name="moodquestion">
+                        <textarea id="moodquestion" name="moodquestion" placeholder="Write something.."></textarea>
                     </div>
                 </div>
 
                 <div class="card m-2 p-2 col-lg-6 col-xl-5 six-dots-container">
                     <div class="card-body">
                         <p> How is your mood today? </p>
-                            <div class="row">
-                                <div class="col-1">
-                                    <p class="vertical">&larr; Energy</p>
+                        <div class="row">
+                            <div class="col-1">
+                                <p class="vertical">&larr; Energy</p>
+                            </div>
+                            <div class="col-11 six-dots">
+                                <div>
+                                    <span class="dot enraged">enraged</span>
+                                    <span class="dot stressed">stressed</span>
+                                    <span class="dot shocked">shocked</span>
+                                    <span class="dot surprised">surprised</span>
+                                    <span class="dot motivated">motivated</span>
+                                    <span class="dot ecstatic">ecstatic</span>
                                 </div>
-                                <div class="col-11 six-dots">
-                                    <div>
-                                        <span class="dot enraged">enraged</span>
-                                        <span class="dot stressed">stressed</span>
-                                        <span class="dot shocked">shocked</span>
-                                        <span class="dot surprised">surprised</span>
-                                        <span class="dot motivated">motivated</span>
-                                        <span class="dot ecstatic">ecstatic</span>
-                                    </div>
-                                    <div>
-                                        <span class="dot fuming">fuming</span>
-                                        <span class="dot angry">angry</span>
-                                        <span class="dot restless">restless</span>
-                                        <span class="dot energized">energized</span>
-                                        <span class="dot optimistic">optimistic</span>
-                                        <span class="dot excited">excited</span>
-                                    </div>
-                                    <div>
-                                        <span class="dot repulse">repulse</span>
-                                        <span class="dot worried">worried</span>
-                                        <span class="dot peeved">peeved</span>
-                                        <span class="dot joyful">joyful</span>
-                                        <span class="dot hopeful">hopeful</span>
-                                        <span class="dot blissful">blissful</span>
-                                    </div>
-                                    <div>
-                                        <span class="dot disgusted">disgusted</span>
-                                        <span class="dot excluded">excluded</span>
-                                        <span class="dot shamed">shamed</span>
-                                        <span class="dot at-ease">at ease</span>
-                                        <span class="dot content">content</span>
-                                        <span class="dot fullfilled">fullfilled</span>
-                                    </div>
-                                    <div>
-                                        <span class="dot miserable">miserable</span>
-                                        <span class="dot lonely">lonely</span>
-                                        <span class="dot tired">tired</span>
-                                        <span class="dot satisfied">satisfied</span>
-                                        <span class="dot secured">secured</span>
-                                        <span class="dot balanced">balanced</span>
-                                    </div>
-                                    <div>
-                                        <span class="dot despair">despair</span>
-                                        <span class="dot bored">bored</span>
-                                        <span class="dot drained">drained</span>
-                                        <span class="dot calm">calm</span>
-                                        <span class="dot tranquil">tranquil</span>
-                                        <span class="dot serene">serene</span>
-                                    </div>
-                                    <div>
-                                        <p>Positive&rarr; </p>
-                                    </div>
+                                <div>
+                                    <span class="dot fuming">fuming</span>
+                                    <span class="dot angry">angry</span>
+                                    <span class="dot restless">restless</span>
+                                    <span class="dot energized">energized</span>
+                                    <span class="dot optimistic">optimistic</span>
+                                    <span class="dot excited">excited</span>
+                                </div>
+                                <div>
+                                    <span class="dot repulse">repulse</span>
+                                    <span class="dot worried">worried</span>
+                                    <span class="dot peeved">peeved</span>
+                                    <span class="dot joyful">joyful</span>
+                                    <span class="dot hopeful">hopeful</span>
+                                    <span class="dot blissful">blissful</span>
+                                </div>
+                                <div>
+                                    <span class="dot disgusted">disgusted</span>
+                                    <span class="dot excluded">excluded</span>
+                                    <span class="dot shamed">shamed</span>
+                                    <span class="dot at-ease">at ease</span>
+                                    <span class="dot content">content</span>
+                                    <span class="dot fullfilled">fullfilled</span>
+                                </div>
+                                <div>
+                                    <span class="dot miserable">miserable</span>
+                                    <span class="dot lonely">lonely</span>
+                                    <span class="dot tired">tired</span>
+                                    <span class="dot satisfied">satisfied</span>
+                                    <span class="dot secured">secured</span>
+                                    <span class="dot balanced">balanced</span>
+                                </div>
+                                <div>
+                                    <span class="dot despair">despair</span>
+                                    <span class="dot bored">bored</span>
+                                    <span class="dot drained">drained</span>
+                                    <span class="dot calm">calm</span>
+                                    <span class="dot tranquil">tranquil</span>
+                                    <span class="dot serene">serene</span>
+                                </div>
+                                <div>
+                                    <p class="text-right">Positive &rarr; </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                <button class="btn save p-2 m-4" type="submit">Save</button>
             </div>
-
-            <h2>Weekly View</h2>
-            <div class="card-container d-flex justify-content-evenly">
-                <div class="card m-1">
-                    <div class="card-body">
-                        <img src="img/sleep-graph.png" class="img-fluid" alt="graph of sleep per day">
+            
+            <section class="mood-log-space">
+                <h2>Weekly View</h2>
+                <div class="card-container d-flex flex-lg-row flex-md-column">
+                    <div class="card m-1">
+                        <div class="card-body">
+                            <img src="img/sleep-graph.png" class="img-fluid" alt="graph of sleep per day">
+                        </div>
+                    </div>
+                    <div class="card m-1">
+                        <div class="card-body">
+                            <img src="img/mood-graph.png" class="img-fluid" alt="graph of mood distribution per week">
+                        </div>
+                    </div>
+                    <div class="card m-1">
+                        <div class="card-body">
+                            <img src="img/distribution.png" class="img-fluid" alt="graph of positive and negative mood distribution per week">
+                        </div>
                     </div>
                 </div>
-                <div class="card m-1">
-                    <img src="img/mood-graph.png" class="img-fluid" alt="graph of mood distribution per week">
-                </div>
-                <div class="card m-1">
-                    <img src="img/distribution.png" class="img-fluid" alt="graph of positive and negative mood distribution per week">
-                </div>
-            </div>
+            </section>
         </div>
     </main>
 
