@@ -143,19 +143,43 @@ padding-left: 4rem;
 
 /* recommand music */
 
-.card-md1 {
-    background-color: #FFCDCD;
+/* sqaure card styling */
+.recommand-music {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.card-md2 {
-    background-color: #FF9999;
+.recommand-music .style-bt{
+    color:white;
+    font-size: 2em;
 }
 
-.card-md3 {
-    background-color: #D94F4F;
-    
+.square-md {
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+    line-height: 150px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 1rem;
 }
 
+.square-sm {
+    width: 250px;
+    height:250px;
+    border-radius: 1rem;
+}
+
+.square-lg {
+    width: 500px;
+    height:500px;
+    border-radius: 1rem;
+}
 
 .recommand-music h3 {
     text-align: left;
@@ -172,9 +196,6 @@ padding-left: 4rem;
     color:#247B82
 }
 
-.recommand-music p {
-    color: rgb(140, 140, 140); 
-}
 
 /* style music blocks */
 .style-music {
@@ -184,6 +205,10 @@ padding-left: 4rem;
 .style-music button{
     border:none;
     color:rgb(63, 63, 63)
+}
+
+.style-buttons {
+    width: 250px;
 }
 
 /* style button color */
@@ -206,12 +231,8 @@ padding-left: 4rem;
 /* play music */
 .play-music {
     width: 60%;
-
 }
 
-.music-demo {
-    width:50%;
-}
 
 .play-music .music-name {
     display: flex;
@@ -219,35 +240,24 @@ padding-left: 4rem;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+    padding:0;
 }
+
 
 .play-music h2 {
     color:white;
-    font-size: 96px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* sqaure card styling */
-.square-sm {
-    display:block;
-    width: 400px;
-    height:400px;
-    border-radius: 2rem;
+.play-music p {
+    font-weight: bold;
+    color:#247B82;
 }
-
-.square-lg {
-    display:none;
-}
-
-
 
 
 /* mood log page*/
 .mood-card {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    border:none;
+    border: none;
 }
 
 .input-radio {
@@ -255,8 +265,8 @@ padding-left: 4rem;
     -moz-appearance: none;
     appearance: none;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     box-shadow: 0px 0px 5px #247B82;
     border: 0.2vw solid #247B82;
     background-color: white;
@@ -270,7 +280,6 @@ padding-left: 4rem;
     border: 0.7vw solid white;
     background-color: #247B82;
 }
-
   
 .ggtool .tooltiptext {
     visibility: hidden;
@@ -338,9 +347,25 @@ padding-left: 4rem;
     margin-bottom: 0;
 }
 
+.axis {
+    color: #247B82;
+}
+
+.positive {
+    text-align: center;
+}
+
+.negative {
+    text-align: left;
+}
+
 .fuming {
     box-shadow: 0px 0px 5px #EB8075;
     border: 0.2vw solid #EB8075;
+}
+
+.fuming-bg {
+    background-color: #EB8075;
 }
 
 .fuming:checked {
@@ -352,6 +377,10 @@ padding-left: 4rem;
     border: 0.2vw solid #E8988E;
 }
 
+.repulse-bg {
+    background-color: #E8988E;
+}
+
 .repulse:checked {
     background-color: #E8988E;
 }
@@ -360,6 +389,10 @@ padding-left: 4rem;
 .stressed {
     box-shadow: 0px 0px 5px #E55A90;
     border: 0.2vw solid #E55A90;
+}
+
+.stressed-bg {
+    background-color: #E55A90;
 }
 
 .stressed:checked {
@@ -679,6 +712,135 @@ padding-left: 4rem;
 .mood-log-space {
     margin-bottom: 4rem;
 }
+
+.dot.fuming {
+    background-color: #EB8075;
+}
+
+.dot.repulse {
+    background-color: #E8988E;
+}
+
+.dot.stressed {
+    background-color: #E55A90;
+}
+
+.dot.angry {
+    background-color: #E874A3;
+}
+
+.dot.worried {
+    background-color: #E8B0C2;
+}
+
+.dot.shocked {
+    background-color: #EAACC1;
+}
+
+.dot.restless {
+    background-color: #EBADC4;
+}
+
+.dot.peeved {
+    background-color: #E5C4CE;
+}
+
+.dot.surprised {
+    background-color: #E89C5D;
+}
+
+.dot.energized {
+    background-color: #E99C5C;
+}
+
+.dot.joyful {
+    background-color: #EAC192;
+}
+
+.dot.motivated {
+    background-color: #e7b64b;
+}
+
+.dot.optimistic {
+    background-color: #E4B063;
+}
+
+.dot.hopeful {
+    background-color: #e5d58e;
+}
+
+.dot.ecstatic {
+    background-color: #E9D05A;
+}
+
+.dot.excited {
+    background-color: #e4e47d;
+}
+
+.dot.blissful {
+    background-color: #e1dc84;
+}
+
+.dot.optimistic {
+    background-color: #E9D05A;
+}
+
+.dot.despair {
+    background-color: #74618D;
+}
+.dot.miserable {
+    background-color: #8973a6;
+}
+.dot.disgusted {
+    background-color: #9c8db0;
+}
+.dot.bored {
+    background-color: #5B6B83;
+}
+.dot.lonely {
+    background-color: #788aa5;
+}
+.dot.excluded {
+    background-color: #8d9eb7;
+}
+.dot.drained {
+    background-color: #7499AD;
+}
+.dot.tired {
+    background-color: #83a0b0;
+}
+.dot.shamed {
+    background-color: #9caeb8;
+}
+.dot.calm {
+    background-color: #85C663;
+}
+.dot.satisfied {
+    background-color: #95C982;
+}
+
+.dot.at-ease {
+    background-color: #BBD4A3;
+}
+.dot.tranquil {
+    background-color: #4EA48A;
+}
+.dot.secured {
+    background-color: #649f8d;
+}
+.dot.content {
+    background-color: #87a49c;
+}
+.dot.serene {
+    background-color: #3A7492;
+}
+.dot.balanced {
+    background-color: #5f8699;
+}
+.dot.fullfilled {
+    background-color: #758c97;
+}
+
   
 
 

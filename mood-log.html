@@ -84,7 +84,7 @@
                         <p> How is your mood today? </p>
                         <div class="row">
                             <div class="col-1">
-                                <p class="vertical">&larr; Energy</p>
+                                <p class="vertical axis">&larr; Energy</p>
                             </div>
                             <div class="col-11 six-dots" aria-label="mood meter selections">
                                 <div class="d-flex flex-row">
@@ -192,35 +192,20 @@
                                     </div>
 
                                 <div>
-                                    <p class="text-right">Positive &rarr; </p>
+                                    <p class="axis d-flex justify-content-evenly">
+                                        <span class="negative"></span>
+                                        <span class="positive">Positive &rarr; </span>
+                                    </p>
                                 </div>
                         </div>
                     </div>
-                    
                 </div>
-                <button class="btn save p-2 m-4" type="submit" aria-label="save your change">Save</button>
+                <div class="d-flex justify-content-center">
+                    <button class="btn save p-3 m-4" type="submit" aria-label="save your change">Save</button>
+                    <a class="btn save p-3 m-4" href="mood-vis.html">View the Graphs</a>
+                </div>
             </div>
-            
-            <section class="mood-log-space">
-                <h2>Weekly View</h2>
-                <div class="card-container d-flex flex-lg-row flex-md-column">
-                    <div class="card m-1 mood-card">
-                        <div class="card-body">
-                            <img src="img/sleep-graph.png" class="img-fluid" alt="graph of sleep per day">
-                        </div>
-                    </div>
-                    <div class="card m-1 mood-card">
-                        <div class="card-body">
-                            <img src="img/mood-graph.png" class="img-fluid" alt="graph of mood distribution per week">
-                        </div>
-                    </div>
-                    <div class="card m-1 mood-card">
-                        <div class="card-body">
-                            <img src="img/distribution.png" class="img-fluid" alt="graph of positive and negative mood distribution per week">
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         </div>
     </main>
 
