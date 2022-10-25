@@ -160,26 +160,15 @@ padding-left: 4rem;
 }
 
 .square-md {
-    width: 250px;
-    height: 250px;
-    margin-top: 10px;
-    line-height: 150px;
+    width: 15rem;
+    height: 15rem;
+    margin-top: 2rem;
+    line-height: 10rem;
     font-weight: bold;
     text-align: center;
     border-radius: 1rem;
 }
 
-.square-sm {
-    width: 250px;
-    height:250px;
-    border-radius: 1rem;
-}
-
-.square-lg {
-    width: 500px;
-    height:500px;
-    border-radius: 1rem;
-}
 
 .recommand-music h3 {
     text-align: left;
