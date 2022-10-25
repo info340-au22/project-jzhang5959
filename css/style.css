@@ -261,8 +261,6 @@ padding-left: 4rem;
 }
 
 .input-radio {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 50%;
     width: 3.5rem;
