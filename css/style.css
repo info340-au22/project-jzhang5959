@@ -13,13 +13,20 @@ h1, h2, p{
 
 h1 {
     text-align: center;
-    margin: 4rem;
+    margin: 2rem;
 }
 
 h2 {
-    margin: 1rem 0;
+    margin: 1rem;
     color:#247B82;
     font-weight: bold;
+}
+
+
+header {
+    text-align: center;
+    margin: 2rem;
+    color:#247B82;
 }
 
 /* nav bar */
@@ -99,13 +106,6 @@ footer a:hover {
 
 
 /* home page*/
-
-/* header */
-header {
-    text-align: center;
-    margin: 2rem;
-    color:#247B82;
-}
 
 .dash-border-light-bg {
     border-color: #3DACB4;
@@ -206,18 +206,90 @@ padding-left: 4rem;
 /* play music */
 .play-music {
     width: 60%;
-    border:#247B82;
-    border-width: 3rem;
+
 }
 
-.play-music .music-demo {
-    width: 100%;
-    height: 500px;
+.music-demo {
+    width:50%;
 }
+
+.play-music .music-name {
+    display: flex;
+    background-color: rgb(255, 181, 181);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.play-music h2 {
+    color:white;
+    font-size: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* sqaure card styling */
+.square-sm {
+    display:block;
+    width: 400px;
+    height:400px;
+    border-radius: 2rem;
+}
+
+.square-lg {
+    display:none;
+}
+
 
 
 
 /* mood log page*/
+.mood-card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border:none;
+}
+
+.input-radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0px 0px 5px #247B82;
+    border: 0.2vw solid #247B82;
+    background-color: white;
+    transition:0.2s all linear;
+    transition: all 0.2s ease-in-out;
+    cursor:pointer;
+    margin: 0.1rem;
+}
+
+.input-radio:checked {
+    border: 0.7vw solid white;
+    background-color: #247B82;
+}
+
+  
+.ggtool .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #95d6db;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+  
+.ggtool:hover .tooltiptext {
+    visibility: visible;
+}
+
 .dot {
     height: 3.5rem;
     width: 3.5rem;
@@ -243,9 +315,15 @@ padding-left: 4rem;
 
 #moodquestion {
     height: 17rem;
+    resize: none;
 }
 
 .enraged {
+    box-shadow: 0px 0px 5px #F04E48;
+    border: 0.2vw solid #F04E48;
+}
+
+.enraged:checked {
     background-color: #F04E48;
 }
 
@@ -261,148 +339,347 @@ padding-left: 4rem;
 }
 
 .fuming {
+    box-shadow: 0px 0px 5px #EB8075;
+    border: 0.2vw solid #EB8075;
+}
+
+.fuming:checked {
     background-color: #EB8075;
 }
 
 .repulse {
+    box-shadow: 0px 0px 5px #E8988E;
+    border: 0.2vw solid #E8988E;
+}
+
+.repulse:checked {
     background-color: #E8988E;
 }
 
+
 .stressed {
+    box-shadow: 0px 0px 5px #E55A90;
+    border: 0.2vw solid #E55A90;
+}
+
+.stressed:checked {
     background-color: #E55A90;
 }
 
 .angry {
+    box-shadow: 0px 0px 5px #E874A3;
+    border: 0.2vw solid #E874A3;
+}
+
+.angry:checked {
     background-color: #E874A3;
 }
 
 .worried {
+    box-shadow: 0px 0px 5px #E8B0C2;
+    border: 0.2vw solid #E8B0C2;
+}
+
+.worried:checked {
     background-color: #E8B0C2;
 }
 
 .shocked {
+    box-shadow: 0px 0px 5px #EAACC1;
+    border: 0.2vw solid #EAACC1;
+}
+
+.shocked:checked {
     background-color: #EAACC1;
 }
 
 .restless {
+    box-shadow: 0px 0px 5px #EBADC4;
+    border: 0.2vw solid #EBADC4;
+}
+
+.restless:checked {
     background-color: #EBADC4;
 }
 
 .peeved {
+    box-shadow: 0px 0px 5px #E5C4CE;
+    border: 0.2vw solid #E5C4CE;
+}
+
+.peeved:checked {
     background-color: #E5C4CE;
 }
 
 .surprised {
+    box-shadow: 0px 0px 5px #E89C5D;
+    border: 0.2vw solid #E89C5D;
+}
+
+.surprised:checked {
     background-color: #E89C5D;
 }
 
 .energized {
+    box-shadow: 0px 0px 5px #E99C5C;
+    border: 0.2vw solid #E99C5C;
+}
+
+.energized:checked {
     background-color: #E99C5C;
 }
 
 .joyful {
+    box-shadow: 0px 0px 5px #EAC192;
+    border: 0.2vw solid #EAC192;
+}
+
+.joyful:checked {
     background-color: #EAC192;
 }
 
 .motivated {
-    background-color: #e7b64b;
+    box-shadow: 0px 0px 5px #e7b64b;
+    border: 0.2vw solid #e7b64b;
 }
 
+.motivated:checked {
+    background-color: #e7b64b;
+}
+   
 .optimistic {
+    box-shadow: 0px 0px 5px #E4B063;
+    border: 0.2vw solid #E4B063;
+}
+
+.optimistic:checked {
     background-color: #E4B063;
 }
 
 .hopeful {
+    box-shadow: 0px 0px 5px #e5d58e;
+    border: 0.2vw solid #e5d58e;
+}
+
+.hopeful:checked {
     background-color: #e5d58e;
 }
 
+
 .ecstatic {
+    box-shadow: 0px 0px 5px #E9D05A;
+    border: 0.2vw solid #E9D05A;
+}
+
+.ecstatic:checked {
     background-color: #E9D05A;
 }
 
 .excited {
+    box-shadow: 0px 0px 5px #e4e47d;
+    border: 0.2vw solid #e4e47d;
+}
+
+.excited:checked {
     background-color: #e4e47d;
 }
 
 .blissful {
+    box-shadow: 0px 0px 5px #e1dc84;
+    border: 0.2vw solid #e1dc84;
+}
+
+.blissful:checked {
     background-color: #e1dc84;
 }
 
 .optimistic {
+    box-shadow: 0px 0px 5px #E9D05A;
+    border: 0.2vw solid #E9D05A;
+}
+
+.optimistic:checked {
     background-color: #E9D05A;
 }
 
 .despair {
+    box-shadow: 0px 0px 5px #74618D;
+    border: 0.2vw solid #74618D;
+}
+
+.despair:checked {
     background-color: #74618D;
 }
 
 .miserable {
+    box-shadow: 0px 0px 5px #8973a6;
+    border: 0.2vw solid #8973a6;
+}
+
+.miserable:checked {
     background-color: #8973a6;
 }
 
 .disgusted {
+    box-shadow: 0px 0px 5px #9c8db0;
+    border: 0.2vw solid #9c8db0;
+}
+
+.disgusted:checked {
     background-color: #9c8db0;
 }
 
 .bored {
+    box-shadow: 0px 0px 5px #5B6B83;
+    border: 0.2vw solid #5B6B83;
+}
+
+.bored:checked {
     background-color: #5B6B83;
 }
 
 .lonely {
+    box-shadow: 0px 0px 5px #788aa5;
+    border: 0.2vw solid #788aa5;
+}
+
+.lonely:checked {
     background-color: #788aa5;
 }
 
 .excluded {
+    box-shadow: 0px 0px 5px #8d9eb7;
+    border: 0.2vw solid #8d9eb7;
+}
+
+.excluded:checked {
     background-color: #8d9eb7;
 }
 
 .drained {
+    box-shadow: 0px 0px 5px #7499AD;
+    border: 0.2vw solid #7499AD;
+}
+
+.drained:checked {
     background-color: #7499AD;
 }
 
 .tired {
+    box-shadow: 0px 0px 5px #83a0b0;
+    border: 0.2vw solid #83a0b0;
+}
+
+.tired:checked {
     background-color: #83a0b0;
 }
 
 .shamed {
+    box-shadow: 0px 0px 5px #9caeb8;
+    border: 0.2vw solid #9caeb8;
+}
+
+.shamed:checked {
     background-color: #9caeb8;
 }
 
 .calm {
+    box-shadow: 0px 0px 5px #85C663;
+    border: 0.2vw solid #85C663;
+}
+
+.calm:checked {
     background-color: #85C663;
 }
 
 .satisfied {
+    box-shadow: 0px 0px 5px #95C982;
+    border: 0.2vw solid #95C982;
+}
+
+.satisfied:checked {
     background-color: #95C982;
 }
 
-.at-ease {
+.at-ease  {
+    box-shadow: 0px 0px 5px #BBD4A3;
+    border: 0.2vw solid #BBD4A3;
+}
+
+.at-ease :checked {
     background-color: #BBD4A3;
 }
 
 .tranquil {
+    box-shadow: 0px 0px 5px #4EA48A;
+    border: 0.2vw solid #4EA48A;
+}
+
+.tranquil:checked {
     background-color: #4EA48A;
 }
 
 .secured {
+    box-shadow: 0px 0px 5px #649f8d;
+    border: 0.2vw solid #649f8d;
+}
+
+.secured:checked {
     background-color: #649f8d;
 }
 
 .content {
+    box-shadow: 0px 0px 5px #87a49c;
+    border: 0.2vw solid #87a49c;
+}
+
+.content:checked {
     background-color: #87a49c;
 }
 
 .serene {
+    box-shadow: 0px 0px 5px #3A7492;
+    border: 0.2vw solid #3A7492;
+}
+
+.serene:checked {
     background-color: #3A7492;
 }
 
 .balanced {
+    box-shadow: 0px 0px 5px #5f8699;
+    border: 0.2vw solid #5f8699;
+}
+
+.balanced:checked {
     background-color: #5f8699;
 }
 
 .fullfilled {
+    box-shadow: 0px 0px 5px #758c97;
+    border: 0.2vw solid #758c97;
+}
+
+.fullfilled:checked {
     background-color: #758c97;
 }
+
+.save {
+    border-color: #247B82;
+    color: #247B82;
+    text-align: center;
+    width: 20%;
+}
+  
+.save:hover {
+    background-color: #247B82;
+    color: white;
+}
+
+.mood-log-space {
+    margin-bottom: 4rem;
+}
+  
 
 
 
@@ -482,7 +759,8 @@ td img {
 }
 
 #create-profile button,
-#profile button {
+#profile button,
+#login-profile button {
     background-color: white;
     border: 1px solid #777;
     border-radius: 2px;
@@ -505,3 +783,25 @@ td img {
 #front {
     text-align:center;
 }
+
+#login {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#login-profile .container label {
+    display: block;
+    margin:20px 0 5px 0;
+}
+
+#login-profile select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
