@@ -32,7 +32,7 @@ nav {
     font-family: "PT Mono";
 }
 
-#brand-name {
+.navbar-brand {
     font-size: 20px;
     color: white;
 }
@@ -62,7 +62,7 @@ nav button {
     margin-left: 1rem;
 }
 
-#current-page {
+.current {
     color:#3DACB4;
     text-decoration:underline;
     text-decoration-thickness: 0.1em;
@@ -86,11 +86,6 @@ nav button {
     color: #ececec;;
 }
 
-#register-bt:hover {
-    color:rgb(226, 226, 226)
-}
-
-
 /* footer */
 
 footer a {
@@ -112,7 +107,7 @@ header {
     color:#247B82;
 }
 
-#dash-border-light-bg {
+.dash-border-light-bg {
     border-color: #3DACB4;
     border-style: dashed;
     border-width: 2px;
@@ -148,45 +143,45 @@ padding-left: 4rem;
 
 /* recommand music */
 
-#music-block-md1 {
+.card-md1 {
     background-color: #FFCDCD;
 }
 
-#music-block-md2 {
+.card-md2 {
     background-color: #FF9999;
 }
 
-#music-block-md3 {
+.card-md3 {
     background-color: #D94F4F;
     
 }
 
 
-#recommand-music h3 {
+.recommand-music h3 {
     text-align: left;
     margin-left: 3rem;
 }
 
-#recommand-music a{
+.recommand-music a{
     color:#3DACB4;
     text-decoration: none;
     font-size: 20px;
 }
 
-#recommand-music a:hover {
+.recommand-music a:hover {
     color:#247B82
 }
 
-#recommand-music p {
-    color: white; 
+.recommand-music p {
+    color: rgb(140, 140, 140); 
 }
 
 /* style music blocks */
-#style-music {
+.style-music {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#style-music button{
+.style-music button{
     border:none;
     color:rgb(63, 63, 63)
 }
@@ -208,6 +203,17 @@ padding-left: 4rem;
     background-color: #eeafaf;
 }
 
+/* play music */
+.play-music {
+    width: 60%;
+    border:#247B82;
+    border-width: 3rem;
+}
+
+.play-music .music-demo {
+    width: 100%;
+    height: 500px;
+}
 
 
 
