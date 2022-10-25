@@ -726,7 +726,8 @@ td img {
 }
 
 #create-profile button,
-#profile button {
+#profile button,
+#login-profile button {
     background-color: white;
     border: 1px solid #777;
     border-radius: 2px;
@@ -749,3 +750,25 @@ td img {
 #front {
     text-align:center;
 }
+
+#login {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#login-profile .container label {
+    display: block;
+    margin:20px 0 5px 0;
+}
+
+#login-profile select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
