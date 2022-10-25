@@ -230,7 +230,7 @@ padding-left: 4rem;
     transition:0.2s all linear;
     transition: all 0.2s ease-in-out;
     cursor:pointer;
-    margin-right: 0.2rem;
+    margin: 0.1rem;
 }
 
 .input-radio:checked {
