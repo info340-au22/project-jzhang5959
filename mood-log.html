@@ -13,6 +13,7 @@
 </head>
 
 <body>
+   
 
    <nav class="navbar navbar-expand-lg">
     <div class="container-fluid p-3">
@@ -62,7 +63,7 @@
       
             <div class="card-container row d-flex justify-content-evenly mood-log-space">
                 <div class="m-2 col-lg-5 col-xl-6 col">
-                    <div class="card row p-2 mb-3">
+                    <div class="card row p-2 mb-3 mood-card">
                         <div class="card-body">
                             <p> How long did you sleep last night? </p>
                             <div class="slidecontainer">
@@ -72,68 +73,177 @@
                         </div>
                     </div>
 
-                    <div class="card row p-4">
+                    <div class="card row p-4 mood-card">
                         <label for="moodquestion" class="mb-2">Daily Note</label>
-                        <textarea id="moodquestion" name="moodquestion" placeholder="Write something.."></textarea>
+                        <textarea id="moodquestion" name="moodquestion" placeholder="Write something.." aria-label="mood log text input"></textarea>
                     </div>
                 </div>
 
-                <div class="card m-2 p-2 col-lg-6 col-xl-5 six-dots-container">
+                <div class="card m-2 p-2 col-lg-6 col-xl-5 six-dots-container mood-card">
                     <div class="card-body">
                         <p> How is your mood today? </p>
                         <div class="row">
                             <div class="col-1">
                                 <p class="vertical">&larr; Energy</p>
                             </div>
-                            <div class="col-11 six-dots">
-                                <div>
-                                    <span class="dot enraged">enraged</span>
-                                    <span class="dot stressed">stressed</span>
-                                    <span class="dot shocked">shocked</span>
-                                    <span class="dot surprised">surprised</span>
-                                    <span class="dot motivated">motivated</span>
-                                    <span class="dot ecstatic">ecstatic</span>
+                            <div class="col-11 six-dots" aria-label="mood meter selections">
+                                <div class="d-flex flex-row">
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="enraged" class="input-radio enraged">
+                                        <span class="tooltiptext">enraged</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="stressed" class="input-radio stressed">
+                                        <span class="tooltiptext">stressed</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="shocked" class="input-radio shocked">
+                                        <span class="tooltiptext">shocked</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="surprised" class="input-radio surprised">
+                                        <span class="tooltiptext">surprised</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="motivated" class="input-radio motivated">
+                                        <span class="tooltiptext">motivated</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="ecstatic" class="input-radio ecstatic">
+                                        <span class="tooltiptext">ecstatic</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="dot fuming">fuming</span>
-                                    <span class="dot angry">angry</span>
-                                    <span class="dot restless">restless</span>
-                                    <span class="dot energized">energized</span>
-                                    <span class="dot optimistic">optimistic</span>
-                                    <span class="dot excited">excited</span>
+                                <div class="d-flex flex-row">
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="fuming" class="input-radio fuming">
+                                        <span class="tooltiptext">fuming</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="angry" class="input-radio angry">
+                                        <span class="tooltiptext">angry</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="restless" class="input-radio restless">
+                                        <span class="tooltiptext">restless</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="energized" class="input-radio energized">
+                                        <span class="tooltiptext">energized</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="optimistic" class="input-radio optimistic">
+                                        <span class="tooltiptext">optimistic</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="excited" class="input-radio excited">
+                                        <span class="tooltiptext">excited</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="dot repulse">repulse</span>
-                                    <span class="dot worried">worried</span>
-                                    <span class="dot peeved">peeved</span>
-                                    <span class="dot joyful">joyful</span>
-                                    <span class="dot hopeful">hopeful</span>
-                                    <span class="dot blissful">blissful</span>
+                                <div class="d-flex flex-row">
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="repulse" class="input-radio repulse">
+                                        <span class="tooltiptext">repulse</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="worried" class="input-radio worried">
+                                        <span class="tooltiptext">worried</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="peeved" class="input-radio peeved">
+                                        <span class="tooltiptext">peeved</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="joyful" class="input-radio joyful">
+                                        <span class="tooltiptext">joyful</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="hopeful" class="input-radio hopeful">
+                                        <span class="tooltiptext">hopeful</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="blissful" class="input-radio blissful">
+                                        <span class="tooltiptext">blissful</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="dot disgusted">disgusted</span>
-                                    <span class="dot excluded">excluded</span>
-                                    <span class="dot shamed">shamed</span>
-                                    <span class="dot at-ease">at ease</span>
-                                    <span class="dot content">content</span>
-                                    <span class="dot fullfilled">fullfilled</span>
+                                <div class="d-flex flex-row">
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="disgusted" class="input-radio disgusted">
+                                        <span class="tooltiptext">disgusted</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="excluded" class="input-radio excluded">
+                                        <span class="tooltiptext">excluded</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="shamed" class="input-radio shamed">
+                                        <span class="tooltiptext">shamed</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="at ease" class="input-radio at-ease">
+                                        <span class="tooltiptext">at ease</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="content" class="input-radio content">
+                                        <span class="tooltiptext">content</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="fullfilled" class="input-radio fullfilled">
+                                        <span class="tooltiptext">fullfilled</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="dot miserable">miserable</span>
-                                    <span class="dot lonely">lonely</span>
-                                    <span class="dot tired">tired</span>
-                                    <span class="dot satisfied">satisfied</span>
-                                    <span class="dot secured">secured</span>
-                                    <span class="dot balanced">balanced</span>
+                                <div class="d-flex flex-row">
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="miserable" class="input-radio miserable">
+                                        <span class="tooltiptext">miserable</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="lonely" class="input-radio lonely">
+                                        <span class="tooltiptext">lonely</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="tired" class="input-radio tired">
+                                        <span class="tooltiptext">tired</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="satisfied" class="input-radio satisfied">
+                                        <span class="tooltiptext">satisfied</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="secured" class="input-radio secured">
+                                        <span class="tooltiptext">secured</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="balanced" class="input-radio balanced">
+                                        <span class="tooltiptext">balanced</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="dot despair">despair</span>
-                                    <span class="dot bored">bored</span>
-                                    <span class="dot drained">drained</span>
-                                    <span class="dot calm">calm</span>
-                                    <span class="dot tranquil">tranquil</span>
-                                    <span class="dot serene">serene</span>
+                                <div class="d-flex flex-row">
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="despair" class="input-radio despair">
+                                        <span class="tooltiptext">despair</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="bored" class="input-radio bored">
+                                        <span class="tooltiptext">bored</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="drained" class="input-radio drained">
+                                        <span class="tooltiptext">drained</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="calm" class="input-radio calm">
+                                        <span class="tooltiptext">calm</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="tranquil" class="input-radio tranquil">
+                                        <span class="tooltiptext">tranquil</span>
+                                    </div>
+                                    <div class="ggtool">
+                                        <input type="radio" name="mood" value="serene" class="input-radio serene">
+                                        <span class="tooltiptext">serene</span>
+                                    </div>
                                 </div>
+
                                 <div>
                                     <p class="text-right">Positive &rarr; </p>
                                 </div>
@@ -142,23 +252,23 @@
                     </div>
                     
                 </div>
-                <button class="btn save p-2 m-4" type="submit">Save</button>
+                <button class="btn save p-2 m-4" type="submit" aria-label="save your change">Save</button>
             </div>
             
             <section class="mood-log-space">
                 <h2>Weekly View</h2>
                 <div class="card-container d-flex flex-lg-row flex-md-column">
-                    <div class="card m-1">
+                    <div class="card m-1 mood-card">
                         <div class="card-body">
                             <img src="img/sleep-graph.png" class="img-fluid" alt="graph of sleep per day">
                         </div>
                     </div>
-                    <div class="card m-1">
+                    <div class="card m-1 mood-card">
                         <div class="card-body">
                             <img src="img/mood-graph.png" class="img-fluid" alt="graph of mood distribution per week">
                         </div>
                     </div>
-                    <div class="card m-1">
+                    <div class="card m-1 mood-card">
                         <div class="card-body">
                             <img src="img/distribution.png" class="img-fluid" alt="graph of positive and negative mood distribution per week">
                         </div>
