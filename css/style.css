@@ -228,7 +228,13 @@ padding-left: 4rem;
     background-color: #eeafaf;
 }
 
+
 /* play music */
+.music-play-bg {
+    background-image: url("../img/white-bg.jpg");
+    background-size:cover;
+}
+
 .play-music {
     width: 60%;
 }
@@ -236,21 +242,26 @@ padding-left: 4rem;
 
 .play-music .music-name {
     display: flex;
-    background-color: rgb(255, 181, 181);
+    background-color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
     padding:0;
 }
 
+.music-play-bg h1 {
+    color:rgb(0, 0, 0);
+    padding-top: 30px;
+}
 
 .play-music h2 {
-    color:white;
+    color:rgb(0, 0, 0);
 }
+
 
 .play-music p {
     font-weight: bold;
-    color:#247B82;
+    color: rgb(0, 0, 0);
 }
 
 
