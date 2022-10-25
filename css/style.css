@@ -211,6 +211,16 @@ padding-left: 4rem;
     width: 250px;
 }
 
+.heading-style {
+    color:#247B82;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.heading-style:hover {
+    color:#3A7492;
+}
+
 /* style button color */
 #sad {
     background-color:rgb(175, 230, 227)
