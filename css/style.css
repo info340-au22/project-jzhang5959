@@ -9,6 +9,7 @@ body {
 
 h1, h2, p{
     font-family: "PT Sans Caption";
+    color: #247B82;
 }
 
 h1 {
@@ -18,7 +19,7 @@ h1 {
 
 h2 {
     margin: 1rem;
-    color:#247B82;
+    margin-right: 0;
     font-weight: bold;
 }
 
@@ -26,8 +27,9 @@ h2 {
 header {
     text-align: center;
     margin: 2rem;
-    color:#247B82;
 }
+
+
 
 /* nav bar */
 nav {
@@ -84,12 +86,16 @@ nav button {
     color: gray;
 }
 
-#primary-bt {
+.primary-bt {
     background-color: #3DACB4;
     border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 16px;
 }
 
-#primary-bt:hover {
+.primary-bt:hover {
     color: #ececec;;
 }
 
@@ -97,7 +103,7 @@ nav button {
 
 footer a {
     font-size: 2rem;
-    color:#3DACB4
+    color:#3dabb3
 }
 
 footer a:hover {
@@ -116,47 +122,74 @@ footer a:hover {
     background-color: white;
 }
 
+header .dash-border-light-bg {
+    width: 80%;
+}
+
+
 
 /* main */
-#home-mood-fill {
+#home img {
+    width:50%;
+}
+
+.illustration-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.illustration-cite a{
+    color:#1d6c70;
+    text-decoration: none;
+}
+
+.illustration-cite a:hover {
+    text-decoration: underline;
+}
+
+#home illustration {
+    color:#1d6c70;
+    font-size: 11px;
+}
+
+.home-mood-fill {
     text-align: right;
     margin: 3rem 0;
     color: #247B82;
 }
 
-#home-mood-fill button {
-    margin: 1.5rem 0 1rem 0;
-}
-
-#home-mood-fill p {
-padding-left: 4rem;
-}
-
-#home-mood-fill a {
+.home-mood-fill a {
     color:white;
     text-decoration: none;
 }
 
-#home-mood-fill a
+.home-mood-fill a:hover {
+    text-decoration: underline;
+}
 
 
 
 /* recommand music */
 
 /* sqaure card styling */
+
 .recommand-music {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    width: 85%;
+    margin: auto;
 }
 
-.recommand-music .style-bt{
+.recommand-music .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommand-music a.style-bt{
     color:white;
-    font-size: 2em;
+    font-size: 32px;
 }
 
 .square-md {
@@ -171,18 +204,18 @@ padding-left: 4rem;
 
 
 .recommand-music h3 {
-    text-align: left;
-    margin-left: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
 }
 
 .recommand-music a{
-    color:#3DACB4;
+    color:white;
     text-decoration: none;
     font-size: 20px;
 }
 
 .recommand-music a:hover {
-    color:#247B82
+    text-decoration: underline;
 }
 
 

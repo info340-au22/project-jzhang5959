@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Jasmine Zhang, Bella Ge, Gege Jiang">
-  <link rel="icon" type="image/png" href="img/noun-love-66430.png">
+  <link rel="icon" type="image/png" href="img/brand.jpg">
   <title>Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" 
@@ -44,7 +44,7 @@
 
                 <div class="sign-register">
                     <a href="login.html" class="login">Login</a>
-                    <button class="btn btn-dark px-4" id="primary-bt" onclick="document.location='create-profile.html'">Register</button>
+                    <button class="primary-bt" onclick="document.location='create-profile.html'">Register</button>
                 </div>
             </div>
         </div>
@@ -59,45 +59,61 @@
         </header>
 
         <main id="home">
-            <div class="container" id="home-mood-fill">
-                <h2>How do you feel today?</h2>
-                <button class="btn btn-dark px-4" id="primary-bt"><a href="mood-log.html">Place My Mood</a></button>
+            <div> 
+                <div class="illustration-container">
+                    <img src="img/think.svg" alt="a woman thinking illustration">
+                </div>
+                <div class="text-end me-4 illustration-cite">
+                    <a href="https://storyset.com/people">-- People illustrations by Storyset</a>
+                </div>
             </div>
 
-            <div class="container recommand-music">
+            <div class="container home-mood-fill">
+                <h2>How do you feel today?</h2>
+                <button class="primary-bt"><a href="mood-log.html">Place My Mood</a></button>
+            </div>
+
+            <div class="recommand-music inline-block">
                 <h2 >Get Your Mood Music</h2>
-                <div div class="container text-center dash-border-light-bg">
-                    <h3>Today's Mood ~ <a href="mood-log.html">( place or edit Mood )</a></h3>
-                    <div class="d-flex justify-content-evenly row">
+                <div class="container text-center dash-border-light-bg">
+                    <div class="row my-3 px-2"> 
+                        <div class="col-lg-3 col-md-5 col-sm-5 my-1"><h3>Today's Mood</h3></div>
+                        <div class="col"></div>
+                        <div class="col-lg-3 col-md-5 col-sm-5 my-1"><button class="primary-bt"><a href="mood-log.html">Place Your Mood</a></button></div>
+                    </div>
+                    
+                    
+                    <div class="container  items-center">
+                        <div class="d-flex justify-content-evenly row">
 
-                        <div class="col">
-                                <div class="square-md repulse-bg m-4">
-                                    <div class="p-5" >
-                                        <a href="music-play.html" class="style-bt">Repulse</a>
+                            <div class="col">
+                                    <div class="square-md repulse-bg m-4">
+                                        <div class="p-5" >
+                                            <a href="music-play.html" class="style-bt">Repulse</a>
+                                        </div>
                                     </div>
-                                </div>
-                        </div>
+                            </div>
 
-                        <div class="col">
-                                <div class="square-md fuming-bg m-4">
-                                    <div class="p-5" >
-                                        <a href="music-play.html" class="style-bt">Fuming</a>
+                            <div class="col">
+                                    <div class="square-md fuming-bg m-4">
+                                        <div class="p-5" >
+                                            <a href="music-play.html" class="style-bt">Fuming</a>
+                                        </div>
                                     </div>
-                                </div>
-                        </div>
+                            </div>
 
-                        <div class="col">
-                                <div class="square-md stressed-bg m-4">
-                                    <div class="p-5" >
-                                        <a href="music-play.html" class="style-bt">Stressed</a>
+                            <div class="col">
+                                    <div class="square-md stressed-bg m-4">
+                                        <div class="p-5" >
+                                            <a href="music-play.html" class="style-bt">Stressed</a>
+                                        </div>
                                     </div>
-                                </div>
-                        </div>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-            
             
         </main>
 
