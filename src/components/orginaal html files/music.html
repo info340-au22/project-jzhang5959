@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Jasmine Zhang">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid p-3">
+            <p class="navbar-brand" id="brand-name">Moody</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                    <a class="nav-link"  href="index.html">HOME</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="mood-log.html">MOOD LOG</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link current" href="music.html">MUSIC</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="profile.html">PROFILE</a>
+                    </li>
+                </ul>
+
+                <div class="sign-register">
+                    <a href="#" class="login">Login</a>
+                    <button class="btn btn-dark px-4" id="primary-bt">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <header>
+            <div class="container">
+                <h1>Music With Your Mood</h1>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="recommand-music inline-block">
+                <h2 >Get Your Mood Music</h2>
+                <div class="container text-center dash-border-light-bg">
+                    <div class="row my-3 px-2"> 
+                        <div class="col-lg-3 col-md-5 col-sm-5 my-1"><h3>Today's Mood</h3></div>
+                        <div class="col"></div>
+                        <div class="col-lg-3 col-md-5 col-sm-5 my-1"><button class="primary-bt"><a href="mood-log.html">Place Your Mood</a></button></div>
+                    </div>
+                    
+                    
+                    <div class="container  items-center">
+                        <div class="d-flex justify-content-evenly row">
+
+                            <div class="col">
+                                    <div class="square-md repulse-bg m-4">
+                                        <div class="p-5" >
+                                            <a href="music-play.html" class="style-bt">Repulse</a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="col">
+                                    <div class="square-md fuming-bg m-4">
+                                        <div class="p-5" >
+                                            <a href="music-play.html" class="style-bt">Fuming</a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="col">
+                                    <div class="square-md stressed-bg m-4">
+                                        <div class="p-5" >
+                                            <a href="music-play.html" class="style-bt">Stressed</a>
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container style-music">
+                
+                <div class="container mt-5 mb-3">
+                    <h2>Choose Style</h2>
+
+                    <div class="row text-center">
+                        <div class="col-md-3 m-4">
+                            <div class="row">
+                                <div class="card p-3 mb-2 square-sm">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                                        </div>
+                                        <div class="badge"> <span>Design</span> </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a class="heading-style" href="music-play.html">Anger Music</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row style-buttons">
+                                <ul class="list-unstyled list-inline d-flex justify-content-between">
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="sad">sad</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="slow">slow</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="acoustic">acoustic</button></div>
+                                    </li>
+                                  </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 m-4">
+                            <div class="row">
+                                <div class="card p-3 mb-2 square-sm">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                                        </div>
+                                        <div class="badge"> <span>Design</span> </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a class="heading-style" href="music-play.html">Anger Music</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row style-buttons">
+                                <ul class="list-unstyled list-inline d-flex justify-content-between">
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="sad">sad</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="slow">slow</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="acoustic">acoustic</button></div>
+                                    </li>
+                                  </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 m-4">
+                            <div class="row">
+                                <div class="card p-3 mb-2 square-sm">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                                        </div>
+                                        <div class="badge"> <span>Design</span> </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a class="heading-style" href="music-play.html">Anger Music</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row style-buttons">
+                                <ul class="list-unstyled list-inline d-flex justify-content-between">
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="sad">sad</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="slow">slow</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="acoustic">acoustic</button></div>
+                                    </li>
+                                  </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-md-3 m-4">
+                            <div class="row">
+                                <div class="card p-3 mb-2 square-sm">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                                        </div>
+                                        <div class="badge"> <span>Design</span> </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a class="heading-style" href="music-play.html">Anger Music</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row style-buttons">
+                                <ul class="list-unstyled list-inline d-flex justify-content-between">
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="sad">sad</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="slow">slow</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="acoustic">acoustic</button></div>
+                                    </li>
+                                  </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 m-4">
+                            <div class="row">
+                                <div class="card p-3 mb-2 square-sm">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                                        </div>
+                                        <div class="badge"> <span>Design</span> </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a class="heading-style" href="music-play.html">Anger Music</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row style-buttons">
+                                <ul class="list-unstyled list-inline d-flex justify-content-between">
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="sad">sad</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="slow">slow</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="acoustic">acoustic</button></div>
+                                    </li>
+                                  </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 m-4">
+                            <div class="row">
+                                <div class="card p-3 mb-2 square-sm">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                                        </div>
+                                        <div class="badge"> <span>Design</span> </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <a class="heading-style" href="music-play.html">Anger Music</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row style-buttons">
+                                <ul class="list-unstyled list-inline d-flex justify-content-between">
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="sad">sad</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="slow">slow</button></div>
+                                    </li>
+                                    <li class="list-inline-item me-0">
+                                        <div class="col"><button class="btn btn-dark" id="acoustic">acoustic</button></div>
+                                    </li>
+                                  </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+
+            
+
+
+        </main>
+
+        <footer class="py-2">
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2022 TeamBA with love and passion.</p>
+                <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a href="#"><i class="fa fa-instagram" aria-label="instagram"></i></a></li>
+                <li class="ms-3"><a href="#"><i class="fa fa-facebook-square" aria-label="facebook"></i></a></li>
+                <li class="ms-3"><a href="#"><i class="fa fa-github" aria-label="github"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

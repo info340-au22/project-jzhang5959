@@ -1,0 +1,1046 @@
+/* general styliing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F4FFFE;
+}
+
+h1, h2, p{
+    font-family: "PT Sans Caption";
+    color: #247B82;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+
+header {
+    text-align: center;
+    margin: 2rem;
+}
+
+
+
+/* nav bar */
+nav {
+    width: 100%;
+    background-image: url(../img/nav-bg.png);
+    background-repeat: no-repeat;
+    position: fixed; 
+    top: 0;
+    font-family: "PT Mono";
+}
+
+.navbar-brand {
+    font-size: 20px;
+    color: white;
+}
+
+nav button {
+    color: white;
+}
+
+
+nav ul {
+    padding: 0 14rem;
+    font-size: 16px;
+    margin-left: 6rem;;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+.sign-register{
+    right: 2rem;
+    font-family: "PT Serif Caption";
+    font-size: 14px;
+}
+
+nav button {
+    margin-left: 1rem;
+}
+
+.current {
+    color:#3DACB4;
+    text-decoration:underline;
+    text-decoration-thickness: 0.1em;
+}
+
+.login {
+    text-decoration: none;
+    color: black;
+}
+
+.login:hover {
+    color: gray;
+}
+
+.primary-bt {
+    background-color: #3DACB4;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 16px;
+}
+
+.primary-bt:hover {
+    color: #ececec;;
+}
+
+
+/* footer */
+
+footer a {
+    font-size: 2rem;
+    color:#3dabb3
+}
+
+footer a:hover {
+    color:black;
+}
+
+
+/* home page*/
+
+.dash-border-light-bg {
+    border-color: #3DACB4;
+    border-style: dashed;
+    border-width: 0.2rem;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+header .dash-border-light-bg {
+    width: 80%;
+}
+
+
+
+/* main */
+#home img {
+    width:50%;
+}
+
+.illustration-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.illustration-cite a{
+    color:#1d6c70;
+    text-decoration: none;
+}
+
+.illustration-cite a:hover {
+    text-decoration: underline;
+}
+
+#home illustration {
+    color:#1d6c70;
+    font-size: 11px;
+}
+
+.home-mood-fill {
+    text-align: right;
+    margin: 3rem 0;
+    color: #247B82;
+}
+
+.home-mood-fill a {
+    color:white;
+    text-decoration: none;
+}
+
+.home-mood-fill a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* recommand music */
+
+/* sqaure card styling */
+
+.recommand-music {
+    width: 85%;
+    margin: auto;
+}
+
+.recommand-music .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommand-music a.style-bt{
+    color:white;
+    font-size: 32px;
+}
+
+.square-md {
+    width: 15rem;
+    height: 15rem;
+    margin-top: 2rem;
+    line-height: 10rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+
+.recommand-music h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+}
+
+.recommand-music a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.recommand-music a:hover {
+    text-decoration: underline;
+}
+
+
+/* style music blocks */
+.style-music {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.style-music button{
+    border:none;
+    color:rgb(63, 63, 63)
+}
+
+.style-buttons {
+    width: 250px;
+}
+
+.heading-style {
+    color:#247B82;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.heading-style:hover {
+    color:#3A7492;
+}
+
+/* style button color */
+#sad {
+    background-color:rgb(175, 230, 227)
+}
+
+#slow {
+    background-color:rgb(193, 228, 172)
+}
+
+#acoustic {
+    background-color: #d5c7e8;
+}
+
+#quick {
+    background-color: #eeafaf;
+}
+
+
+/* play music */
+.music-play-bg {
+    background-image: url("../img/white-bg.jpg");
+    background-size:cover;
+}
+
+.play-music {
+    width: 60%;
+}
+
+
+.play-music .music-name {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding:0;
+}
+
+.music-play-bg h1 {
+    color:rgb(0, 0, 0);
+    padding-top: 30px;
+}
+
+.play-music h2 {
+    color:rgb(0, 0, 0);
+}
+
+
+.play-music p {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+
+/* mood log page*/
+.mood-card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: none;
+}
+
+.input-radio {
+    appearance: none;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0px 0px 5px #247B82;
+    border: 0.2vw solid #247B82;
+    background-color: white;
+    transition:0.2s all linear;
+    transition: all 0.2s ease-in-out;
+    cursor:pointer;
+    margin: 0.1rem;
+}
+
+.input-radio:checked {
+    border: 0.7vw solid white;
+    background-color: #247B82;
+}
+  
+.ggtool .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #95d6db;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+  
+.ggtool:hover .tooltiptext {
+    visibility: visible;
+}
+
+.dot {
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 0.1rem;
+    font-size: 0.68rem;
+    line-height: 3rem;
+    margin: 0.1rem;
+    cursor: pointer;
+}
+
+.six-dots {
+    min-width: 24rem;
+}
+
+.six-dots-container {
+    min-width: 27rem;
+}
+
+#moodquestion {
+    height: 17rem;
+    resize: none;
+}
+
+.enraged {
+    box-shadow: 0px 0px 5px #F04E48;
+    border: 0.2vw solid #F04E48;
+}
+
+.enraged:checked {
+    background-color: #F04E48;
+}
+
+.dot:hover, .dot:active {
+    box-shadow: rgba(63, 197, 186, 0.4) 5px 5px, rgba(36, 211, 220, 0.3) 10px 10px, rgba(46, 240, 240, 0.2) 15px 15px, rgba(46, 240, 233, 0.1) 20px 20px, rgba(46, 240, 221, 0.05) 25px 25px;
+}
+
+.vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.axis {
+    color: #247B82;
+}
+
+.positive {
+    text-align: center;
+}
+
+.negative {
+    text-align: left;
+}
+
+.fuming {
+    box-shadow: 0px 0px 5px #EB8075;
+    border: 0.2vw solid #EB8075;
+}
+
+.fuming-bg {
+    background-color: #EB8075;
+}
+
+.fuming:checked {
+    background-color: #EB8075;
+}
+
+.repulse {
+    box-shadow: 0px 0px 5px #E8988E;
+    border: 0.2vw solid #E8988E;
+}
+
+.repulse-bg {
+    background-color: #E8988E;
+}
+
+.repulse:checked {
+    background-color: #E8988E;
+}
+
+
+.stressed {
+    box-shadow: 0px 0px 5px #E55A90;
+    border: 0.2vw solid #E55A90;
+}
+
+.stressed-bg {
+    background-color: #E55A90;
+}
+
+.stressed:checked {
+    background-color: #E55A90;
+}
+
+.angry {
+    box-shadow: 0px 0px 5px #E874A3;
+    border: 0.2vw solid #E874A3;
+}
+
+.angry:checked {
+    background-color: #E874A3;
+}
+
+.worried {
+    box-shadow: 0px 0px 5px #E8B0C2;
+    border: 0.2vw solid #E8B0C2;
+}
+
+.worried:checked {
+    background-color: #E8B0C2;
+}
+
+.shocked {
+    box-shadow: 0px 0px 5px #EAACC1;
+    border: 0.2vw solid #EAACC1;
+}
+
+.shocked:checked {
+    background-color: #EAACC1;
+}
+
+.restless {
+    box-shadow: 0px 0px 5px #EBADC4;
+    border: 0.2vw solid #EBADC4;
+}
+
+.restless:checked {
+    background-color: #EBADC4;
+}
+
+.peeved {
+    box-shadow: 0px 0px 5px #E5C4CE;
+    border: 0.2vw solid #E5C4CE;
+}
+
+.peeved:checked {
+    background-color: #E5C4CE;
+}
+
+.surprised {
+    box-shadow: 0px 0px 5px #E89C5D;
+    border: 0.2vw solid #E89C5D;
+}
+
+.surprised:checked {
+    background-color: #E89C5D;
+}
+
+.energized {
+    box-shadow: 0px 0px 5px #E99C5C;
+    border: 0.2vw solid #E99C5C;
+}
+
+.energized:checked {
+    background-color: #E99C5C;
+}
+
+.joyful {
+    box-shadow: 0px 0px 5px #EAC192;
+    border: 0.2vw solid #EAC192;
+}
+
+.joyful:checked {
+    background-color: #EAC192;
+}
+
+.motivated {
+    box-shadow: 0px 0px 5px #e7b64b;
+    border: 0.2vw solid #e7b64b;
+}
+
+.motivated:checked {
+    background-color: #e7b64b;
+}
+   
+.optimistic {
+    box-shadow: 0px 0px 5px #E4B063;
+    border: 0.2vw solid #E4B063;
+}
+
+.optimistic:checked {
+    background-color: #E4B063;
+}
+
+.hopeful {
+    box-shadow: 0px 0px 5px #e5d58e;
+    border: 0.2vw solid #e5d58e;
+}
+
+.hopeful:checked {
+    background-color: #e5d58e;
+}
+
+
+.ecstatic {
+    box-shadow: 0px 0px 5px #E9D05A;
+    border: 0.2vw solid #E9D05A;
+}
+
+.ecstatic:checked {
+    background-color: #E9D05A;
+}
+
+.excited {
+    box-shadow: 0px 0px 5px #e4e47d;
+    border: 0.2vw solid #e4e47d;
+}
+
+.excited:checked {
+    background-color: #e4e47d;
+}
+
+.blissful {
+    box-shadow: 0px 0px 5px #e1dc84;
+    border: 0.2vw solid #e1dc84;
+}
+
+.blissful:checked {
+    background-color: #e1dc84;
+}
+
+.optimistic {
+    box-shadow: 0px 0px 5px #E9D05A;
+    border: 0.2vw solid #E9D05A;
+}
+
+.optimistic:checked {
+    background-color: #E9D05A;
+}
+
+.despair {
+    box-shadow: 0px 0px 5px #74618D;
+    border: 0.2vw solid #74618D;
+}
+
+.despair:checked {
+    background-color: #74618D;
+}
+
+.miserable {
+    box-shadow: 0px 0px 5px #8973a6;
+    border: 0.2vw solid #8973a6;
+}
+
+.miserable:checked {
+    background-color: #8973a6;
+}
+
+.disgusted {
+    box-shadow: 0px 0px 5px #9c8db0;
+    border: 0.2vw solid #9c8db0;
+}
+
+.disgusted:checked {
+    background-color: #9c8db0;
+}
+
+.bored {
+    box-shadow: 0px 0px 5px #5B6B83;
+    border: 0.2vw solid #5B6B83;
+}
+
+.bored:checked {
+    background-color: #5B6B83;
+}
+
+.lonely {
+    box-shadow: 0px 0px 5px #788aa5;
+    border: 0.2vw solid #788aa5;
+}
+
+.lonely:checked {
+    background-color: #788aa5;
+}
+
+.excluded {
+    box-shadow: 0px 0px 5px #8d9eb7;
+    border: 0.2vw solid #8d9eb7;
+}
+
+.excluded:checked {
+    background-color: #8d9eb7;
+}
+
+.drained {
+    box-shadow: 0px 0px 5px #7499AD;
+    border: 0.2vw solid #7499AD;
+}
+
+.drained:checked {
+    background-color: #7499AD;
+}
+
+.tired {
+    box-shadow: 0px 0px 5px #83a0b0;
+    border: 0.2vw solid #83a0b0;
+}
+
+.tired:checked {
+    background-color: #83a0b0;
+}
+
+.shamed {
+    box-shadow: 0px 0px 5px #9caeb8;
+    border: 0.2vw solid #9caeb8;
+}
+
+.shamed:checked {
+    background-color: #9caeb8;
+}
+
+.calm {
+    box-shadow: 0px 0px 5px #85C663;
+    border: 0.2vw solid #85C663;
+}
+
+.calm:checked {
+    background-color: #85C663;
+}
+
+.satisfied {
+    box-shadow: 0px 0px 5px #95C982;
+    border: 0.2vw solid #95C982;
+}
+
+.satisfied:checked {
+    background-color: #95C982;
+}
+
+.at-ease  {
+    box-shadow: 0px 0px 5px #BBD4A3;
+    border: 0.2vw solid #BBD4A3;
+}
+
+.at-ease :checked {
+    background-color: #BBD4A3;
+}
+
+.tranquil {
+    box-shadow: 0px 0px 5px #4EA48A;
+    border: 0.2vw solid #4EA48A;
+}
+
+.tranquil:checked {
+    background-color: #4EA48A;
+}
+
+.secured {
+    box-shadow: 0px 0px 5px #649f8d;
+    border: 0.2vw solid #649f8d;
+}
+
+.secured:checked {
+    background-color: #649f8d;
+}
+
+.content {
+    box-shadow: 0px 0px 5px #87a49c;
+    border: 0.2vw solid #87a49c;
+}
+
+.content:checked {
+    background-color: #87a49c;
+}
+
+.serene {
+    box-shadow: 0px 0px 5px #3A7492;
+    border: 0.2vw solid #3A7492;
+}
+
+.serene:checked {
+    background-color: #3A7492;
+}
+
+.balanced {
+    box-shadow: 0px 0px 5px #5f8699;
+    border: 0.2vw solid #5f8699;
+}
+
+.balanced:checked {
+    background-color: #5f8699;
+}
+
+.fullfilled {
+    box-shadow: 0px 0px 5px #758c97;
+    border: 0.2vw solid #758c97;
+}
+
+.fullfilled:checked {
+    background-color: #758c97;
+}
+
+.save {
+    border-color: #247B82;
+    color: #247B82;
+    text-align: center;
+    width: 20%;
+}
+  
+.save:hover {
+    background-color: #247B82;
+    color: white;
+}
+
+.mood-log-space {
+    margin-bottom: 4rem;
+}
+
+.dot.fuming {
+    background-color: #EB8075;
+}
+
+.dot.repulse {
+    background-color: #E8988E;
+}
+
+.dot.stressed {
+    background-color: #E55A90;
+}
+
+.dot.angry {
+    background-color: #E874A3;
+}
+
+.dot.worried {
+    background-color: #E8B0C2;
+}
+
+.dot.shocked {
+    background-color: #EAACC1;
+}
+
+.dot.restless {
+    background-color: #EBADC4;
+}
+
+.dot.peeved {
+    background-color: #E5C4CE;
+}
+
+.dot.surprised {
+    background-color: #E89C5D;
+}
+
+.dot.energized {
+    background-color: #E99C5C;
+}
+
+.dot.joyful {
+    background-color: #EAC192;
+}
+
+.dot.motivated {
+    background-color: #e7b64b;
+}
+
+.dot.optimistic {
+    background-color: #E4B063;
+}
+
+.dot.hopeful {
+    background-color: #e5d58e;
+}
+
+.dot.ecstatic {
+    background-color: #E9D05A;
+}
+
+.dot.excited {
+    background-color: #e4e47d;
+}
+
+.dot.blissful {
+    background-color: #e1dc84;
+}
+
+.dot.optimistic {
+    background-color: #E9D05A;
+}
+
+.dot.despair {
+    background-color: #74618D;
+}
+.dot.miserable {
+    background-color: #8973a6;
+}
+.dot.disgusted {
+    background-color: #9c8db0;
+}
+.dot.bored {
+    background-color: #5B6B83;
+}
+.dot.lonely {
+    background-color: #788aa5;
+}
+.dot.excluded {
+    background-color: #8d9eb7;
+}
+.dot.drained {
+    background-color: #7499AD;
+}
+.dot.tired {
+    background-color: #83a0b0;
+}
+.dot.shamed {
+    background-color: #9caeb8;
+}
+.dot.calm {
+    background-color: #85C663;
+}
+.dot.satisfied {
+    background-color: #95C982;
+}
+
+.dot.at-ease {
+    background-color: #BBD4A3;
+}
+.dot.tranquil {
+    background-color: #4EA48A;
+}
+.dot.secured {
+    background-color: #649f8d;
+}
+.dot.content {
+    background-color: #87a49c;
+}
+.dot.serene {
+    background-color: #3A7492;
+}
+.dot.balanced {
+    background-color: #5f8699;
+}
+.dot.fullfilled {
+    background-color: #758c97;
+}
+
+  
+
+
+
+
+/* profile */
+#profile.container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 1rem;
+    text-align: left;
+}
+
+
+#profile {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+#basic-info h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    padding: 2rem;
+}
+
+td img {
+    height: 100px;
+    width: 100px ;
+}
+
+#basic-info {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#profile h2 {
+    text-align: center;
+}
+
+#basic-info img {
+    height: 300px;
+    width: 300px ;
+    margin: 2rem;
+}
+
+#recent-music img {
+    height: 200px;
+    width: 200px ;
+}
+
+#survey {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#create-profile .container label {
+    display: block;
+    margin:20px 0 5px 0;
+}
+
+
+#create-profile select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+#create-profile button,
+#profile button,
+#login-profile button {
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#create-profile .create-intro {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+}
+
+#front {
+    text-align:center;
+}
+
+#login {
+    background-color: #eefffe;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#login-profile .container label {
+    display: block;
+    margin:20px 0 5px 0;
+}
+
+#login-profile select, input {
+    border: 1px solid #777;
+    border-radius: 2px;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+
+/*  styling of the screen width of 992px or greater */
+@media (min-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    a {
+        font-size: 1.5rem;
+    }
+
+    footer a {
+        font-size: 3rem;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+    }
+
+    .dash-border-light-bg {
+        border-width: .3rem;
+    }
+
+}
