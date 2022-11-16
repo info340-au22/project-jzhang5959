@@ -42,7 +42,7 @@ header {
 /* nav bar */
 nav {
     width: 100%;
-    background-image: url(../img/nav-bg.png);
+    /*background-image: url(../img/nav-bg.png);*/
     background-repeat: no-repeat;
     position: fixed; 
     top: 0;
@@ -272,7 +272,7 @@ header .dash-border-light-bg {
 
 /* play music */
 .music-play-bg {
-    background-image: url("../img/white-bg.jpg");
+    /*background-image: url("./img/white-bg.jpg"); */
     background-size:cover;
 }
 
