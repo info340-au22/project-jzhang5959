@@ -1,8 +1,11 @@
 import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
+
 
 export function mainProfile() {
 
     return (
+    <>
     <div className="container-fluid">
         <header>
             <div className="profile-header">
@@ -15,7 +18,7 @@ export function mainProfile() {
                 <h2>Bellage2003</h2>
 
                 <div className="container" id="front">
-                    <img src="img/profile-photo.jpg" alt="profile photo">
+                    <img src="img/profile-photo.jpg" alt="profile photo"/>
                     <a style="background-color:#153C43;color:white;text-decoration:none;padding:4px 6px;
                         font-family:-apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, sans-serif;
                         font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" 
@@ -32,8 +35,8 @@ export function mainProfile() {
                     <span className="material-icons md-48" aria-label="gender">girl</span>
                     Status: 
                     <span className="material-icons md-48" aria-label="gender">bed</span>
-                    <p>
-                    <p>Enjoy my life. :)</p>
+                    </p>
+                    <p>Enjoy my life. </p>
                 </div>
             </section>
 
@@ -73,12 +76,19 @@ export function mainProfile() {
                 <h2>Most Recent Listened Music</h2>
 
                 <div className="container" id="front">
-                    <img src="img/recent-music.png" alt="album's photo">
+                    <img src="img/recent-music.png" alt="album's photo"/>
                     <p>BLACKPINK-STAY</p>
                     <button type="music" value="play-music">Play Now ~</button>
                 </div>
             </section>
+
         </div>
+
+
     </div>
-    )
+     <nav>
+     <Link to="/profile">Profile</Link>
+    </nav>
+    </>
+    );
 }

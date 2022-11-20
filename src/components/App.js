@@ -1,25 +1,30 @@
 import React from 'react';
-import {Nav} from './Nav';
-import {Footer} from './Footer';
+import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import {Nav} from './Nav.js';
+import {Footer} from './Footer.js';
+import {Home} from './home.js';
+import {mainProfile} from './Profile.js';
+
 
 export default function App() {
     return (
-        <div>
-            <Nav/>
+        <div className="container-fluid">
 
-            <div class="container-fluid">
-                <header>
-                    <div class="container dash-border-light-bg">
-                        <h1>Welcome to Your Moody Space</h1>
-                    </div>
-                </header>
-            </div>
+            <div>
 
             <main className="container">
             
             </main>
         
             <Footer/>
+            </div>
+
+        <Routes> {/* the collection of routes to match */}
+            {/* if currentUrlPath === "home" */}
+            <Route exact path="/" element={<Home />} /> |{" "}
+
+            <Route path="profile" element={<mainProfile />} />
+        </Routes>
         </div>
       );
 }

@@ -1,5 +1,20 @@
-'use strict';
+import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 
-const h1 = document.querySelector('h1');
+export function Home() {
 
-h1.textContent = 'Welcome to Your Moody Space'
+    return (
+        <>
+            <header>
+            <div className="container dash-border-light-bg">
+                <h1>Welcome to Your Moody Space</h1>
+            </div>
+            </header>
+            <nav>
+            <Link to="/">Home</Link>
+            |{" "}
+            <Link to="/profile">Profile</Link>
+            </nav>
+        </>
+    );
+}
