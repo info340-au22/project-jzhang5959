@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import { Routes, Route, Link} from 'react-router-dom';
 import {Nav} from './Nav.js';
 import {Footer} from './Footer.js';
 import {Home} from './home.js';
@@ -13,18 +13,19 @@ export default function App() {
             <div>
 
             <main className="container">
-            
+
             </main>
         
-            <Footer/>
-            </div>
+            
 
         <Routes> {/* the collection of routes to match */}
             {/* if currentUrlPath === "home" */}
-            <Route exact path="/" element={<Home />} /> |{" "}
-
+            <Route exact path="/" element={<Home />} /> 
             <Route path="profile" element={<mainProfile />} />
         </Routes>
+
+            <Footer/>
+            </div>
         </div>
       );
 }
