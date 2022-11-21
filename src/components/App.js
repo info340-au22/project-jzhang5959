@@ -6,26 +6,22 @@ import {Home} from './home.js';
 import {mainProfile} from './Profile.js';
 
 
+
 export default function App() {
     return (
-        <div className="container-fluid">
-
-            <div>
-
-            <main className="container">
-
-            </main>
-        
+        <div>
             
+            <NavHead />
 
-        <Routes> {/* the collection of routes to match */}
-            {/* if currentUrlPath === "home" */}
-            <Route exact path="/" element={<Home />} /> 
-            <Route path="profile" element={<mainProfile />} />
-        </Routes>
+            <BrowserRouter>
+                <Routes path="/" element={<NavHead />}> {/* the collection of routes to match */}
+                    {/* if currentUrlPath === "home" */}
+                    <Route index element={<Home />} />
+                    <Route path="profile" element={<mainProfile />} />
+                </Routes>
+            </BrowserRouter>
 
-            <Footer/>
-            </div>
+            <Footer />
         </div>
-      );
+    );
 }
