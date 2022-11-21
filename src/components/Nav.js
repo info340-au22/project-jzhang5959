@@ -1,11 +1,16 @@
 import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 
-const navArray = ['HOME', 'MOOD LOG', 'MUSIC', 'PROFILE'];
-export function Nav(props) {
+const navArray = [{name:'HOME', url:'/'}, 
+{name:'MOOD LOG', url:'/mood-log'}, 
+{name:'MUSIC', url:'/music'}, 
+{name:'PROFILE', url:'/profile'}];
+
+export function NavHead(props) {
     const navbar = navArray.map((elem) => {
         return (
             <li className="nav-item"> 
-                <a className="nav-link"  href="#/">{elem}</a> 
+                <a className="nav-link"  href={elem.url}>{elem.name}</a> 
             </li>
         ); // no current effect
     })
@@ -18,7 +23,7 @@ export function Nav(props) {
             </button>
 
             <div className="collapse navbar-collapse" id="navbarToggler">
-                <ul className="navbar-nav me-auto">
+                <ul className="navbar-nav">
                     {navbar}
                 </ul>
 
