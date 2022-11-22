@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 
-export default function mainProfile() {
+export default function Profile() {
 
     return (
-    <>
     <div className="container-fluid">
+    
         <header>
             <div className="profile-header">
             <h1>Profile</h1>
@@ -83,12 +82,7 @@ export default function mainProfile() {
             </section>
 
         </div>
-
-
     </div>
-     <nav>
-     <Link to="/profile">Profile</Link>
-    </nav>
-    </>
+    
     );
 }

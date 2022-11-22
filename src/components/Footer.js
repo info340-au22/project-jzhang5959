@@ -6,7 +6,7 @@ const socialMediaArray = [{media:"instagram" , icon:"fa fa-instagram"},
 export function Footer(props) {
     const socialMediaBar = socialMediaArray.map((elem) => {
         return (
-            <li className="ps-3">
+            <li className="ps-3" key={elem.media}>
                 <a href="#"><i className={elem.icon} aria-label={elem.media}></i></a>
             </li>
         )

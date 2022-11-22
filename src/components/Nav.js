@@ -1,19 +1,22 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
-
-const navArray = [{name:'HOME', url:'/'}, 
-{name:'MOOD LOG', url:'/mood-log'}, 
-{name:'MUSIC', url:'/music'}, 
-{name:'PROFILE', url:'/profile'}];
+import Home from './home.js';
+import Profile from './Profile.js';
 
 export function NavHead(props) {
-    const navbar = navArray.map((elem) => {
-        return (
-            <li className="nav-item"> 
-                <a className="nav-link"  href={elem.url}>{elem.name}</a> 
-            </li>
-        ); // no current effect
-    })
+    const navArray = [{name:'HOME', url:'/'}, 
+    {name:'MOOD LOG', url:'/mood-log'}, 
+    {name:'MUSIC', url:'/music'}, 
+    {name:'PROFILE', url:'/profile'}];
+
+const navbar = navArray.map((elem) => {
+    return (
+        <li className="nav-item" key={elem.name}> 
+            <a className="nav-link"  href={elem.url}>{elem.name}</a> 
+        </li>
+    ); // no current effect
+})
+
     return(
         <nav className="navbar navbar-expand-lg">
         <div className="container-fluid p-3">
@@ -24,12 +27,12 @@ export function NavHead(props) {
 
             <div className="collapse navbar-collapse" id="navbarToggler">
                 <ul className="navbar-nav">
-                    {navbar}
+                {navbar}
                 </ul>
 
                 <div className="sign-register">
                     <a href="login.html" className="login">Login</a>
-                    <button className="primary-bt" onclick="document.location='create-profile.html'">Register</button>
+                    <button className="primary-bt" > Register</button>
                 </div>
             </div>
         </div>
