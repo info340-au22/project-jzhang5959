@@ -45,6 +45,7 @@ nav {
     background-image: url(../public/img/nav-bg.png);
     background-repeat: no-repeat;
     position: fixed; 
+    left: 0;
     top: 0;
     font-family: "PT Mono";
 }
@@ -76,6 +77,12 @@ nav li {
     font-size: 14px;
     position: fixed;
     right: 1rem;
+    background-color: #F4FFFE;
+    padding: 1rem;
+    border: #247B82;
+    border-radius: 1rem;
+    border-style:solid;
+    border-width: 0.2rem;
 }
 
 nav button {
@@ -141,7 +148,7 @@ header .dash-border-light-bg {
 
 
 /* main */
-#home img {
+.think-img {
     width:50%;
 }
 
@@ -160,11 +167,6 @@ header .dash-border-light-bg {
 
 .illustration-cite a:hover {
     text-decoration: underline;
-}
-
-#home illustration {
-    color:#1d6c70;
-    font-size: 11px;
 }
 
 .home-mood-fill {
@@ -211,6 +213,14 @@ header .dash-border-light-bg {
     line-height: 10rem;
     font-weight: bold;
     text-align: center;
+    border-radius: 1rem;
+}
+
+.square-sm {
+    width: 15rem;
+    height: 15rem;
+    margin-top: 3rem;
+    line-height: 10rem;
     border-radius: 1rem;
 }
 
@@ -417,9 +427,6 @@ header .dash-border-light-bg {
     border: 0.2vw solid #EB8075;
 }
 
-.fuming-bg {
-    background-color: #EB8075;
-}
 
 .fuming:checked {
     background-color: #EB8075;
@@ -428,10 +435,6 @@ header .dash-border-light-bg {
 .repulse {
     box-shadow: 0px 0px 5px #E8988E;
     border: 0.2vw solid #E8988E;
-}
-
-.repulse-bg {
-    background-color: #E8988E;
 }
 
 .repulse:checked {
@@ -444,9 +447,6 @@ header .dash-border-light-bg {
     border: 0.2vw solid #E55A90;
 }
 
-.stressed-bg {
-    background-color: #E55A90;
-}
 
 .stressed:checked {
     background-color: #E55A90;
