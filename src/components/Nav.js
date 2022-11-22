@@ -1,5 +1,4 @@
 import React from 'react';
-import { Routes, Route, Link } from "react-router-dom";
 import Home from './home.js';
 import Profile from './Profile.js';
 
@@ -7,7 +6,8 @@ export function NavHead(props) {
     const navArray = [{name:'HOME', url:'/'}, 
     {name:'MOOD LOG', url:'/mood-log'}, 
     {name:'MUSIC', url:'/music'}, 
-    {name:'PROFILE', url:'/profile'}];
+    {name:'PROFILE', url:'/profile'}
+];
 
 const navbar = navArray.map((elem) => {
     return (
