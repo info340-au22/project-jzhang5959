@@ -27,15 +27,15 @@ export default function Profile(props) {
     });
 
     return (
-    <div className="container-fluid">
+    <div className="container-profile">
         <header>
             <div className="profile-header">
             <h1>Profile</h1>
             </div>
         </header> 
 
-        <div id="profile">
-            <section id="basic-info">
+        <div className="profile">
+            <section className="basic-info">
                 <h2>{name}</h2>
 
                 <div className="container" id="front">
@@ -53,7 +53,7 @@ export default function Profile(props) {
                 </div>
             </section>
 
-            <section id="mood-daily">
+            <section className="mood-daily">
                 <h2>Past Mood Diary</h2>
 
                 <div className="container" id="front">
@@ -63,7 +63,7 @@ export default function Profile(props) {
                 <button type="view" value="view-all"><a href="/mood-diary">View All</a></button>
             </section>
 
-            <section id="recent-music">
+            <section className="recent-music">
                 <h2>Most Recent Listened Music</h2>
 
                 <div className="container" id="front">

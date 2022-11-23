@@ -76,7 +76,7 @@ export default function Login() {
             <h1>Log Into Your Account</h1>
         </header>
 
-        <main id="login-profile">
+        <main className="login-profile">
             <form id="login">
                 <div className="container">
                     <label key="email" id="label-email" onChange={emailChange}>Email</label>

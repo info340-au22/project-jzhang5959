@@ -100,7 +100,7 @@ export default function Register(props) {
             <h1>Create Your Account</h1>
         </header> 
 
-        <main id="create-profile">
+        <main className="create-profile">
             <form id="survey">
                 <div className="container">
                     <label key="name" id="label-name">Name</label>
