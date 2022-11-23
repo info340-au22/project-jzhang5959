@@ -7,7 +7,7 @@ export function Footer(props) {
     const socialMediaBar = socialMediaArray.map((elem) => {
         return (
             <li className="ps-3" key={elem.media}>
-                <a href={elem.link}><i className={elem.icon} aria-label={elem.media}></i></a>
+                <a href={elem.link}><em className={elem.icon} aria-label={elem.media}></em></a>
             </li>
         )
     });
