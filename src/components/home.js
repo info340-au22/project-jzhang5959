@@ -40,6 +40,7 @@ export default function Home() {
             <main>
                 <HomeContent />
             </main>
+            <Footer />
         </div>
     );
 }

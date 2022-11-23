@@ -10,6 +10,7 @@ import Mood from './Mood';
 
 
 export default function App() {
+    
     return (
         <div>
         <NavHead />
@@ -23,7 +24,7 @@ export default function App() {
         {/*<Register />*/}
         
 
-        <Footer />
+                
         </div>
     );
 }
