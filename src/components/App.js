@@ -8,13 +8,14 @@ import Register from './Register.js';
 
 
 export default function App() {
+    
     return (
         <div>
         {/*<Home />*/}
         {/*<Profile />*/}
         {/*<Login />*/}
-        <Home />
         {/*<Register />*/}
+        <Profile />
                 
         </div>
     );
