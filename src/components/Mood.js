@@ -12,8 +12,8 @@ const moods = {
 function MoodHeader() {
     return(
         <header>
-            <div className="container">
-                <h1 className="primary-dark-color">Mood Log</h1>
+            <div className="container dash-border-light-bg">
+                <h1 className="primary-dark-color">MOOD LOG</h1>
             </div>
         </header>
     );

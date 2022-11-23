@@ -34,52 +34,73 @@ export default function Profile(props) {
     return (
     <div className="container-fluid">
         <header>
-            <div className="profile-header">
-            <h1>Profile</h1>
+            <div className="container dash-border-light-bg">
+                <h1 className='primary-dark-color'>YOUR PROFILE</h1>
             </div>
         </header> 
 
         <div id="profile">
-            <section id="basic-info">
-                <h2>{name}</h2>
+            <div id="basic-info">
+                <h2 className='primary-dark-color'>User Information</h2>
 
-                <div className="container" id="front">
-                    <img src={image} alt="profile photo"/>
-                    <a href="https://unsplash.com/@michaeldam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" 
-                        target="_blank" rel="noopener noreferrer" 
-                        title="Download free do whatever you want high-resolution photos from Michael Dam">
-                        <title></title>
-                        <span><p>Taken by Michael Dam</p></span>
+                <div className="container row" id="front">
+                    <div className='col'>
+                        <img className="profile-photo" src={image} alt="profile photo"/>
+                    
+                        <a href="https://unsplash.com/@michaeldam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" 
+                            target="_blank" rel="noopener noreferrer" 
+                            title="Download free do whatever you want high-resolution photos from Michael Dam">
+                            <title></title>
+                            <span><p>Taken by Michael Dam</p></span>
                         </a>
-                    <button type="edit" value="edit-photo" onClick={imageChange}><a href="/update-photo">Edit your photo</a></button>
-                    <p> Gender: 
-                    <span className="material-icons md-48" aria-label="gender">{gender}</span>
-                    Status: 
-                    <span className="material-icons md-48" aria-label="status">{status}</span>
-                    </p>
-                    <p>{sentence}</p>
-                </div>
-            </section>
 
-            <section id="mood-daily">
-                <h2>Past Mood Diary</h2>
+                        <div className="container d-flex justify-content-center">
+                            <button className="primary-bt" type="edit" value="edit-photo" onClick={imageChange}>
+                                <a href="/update-photo">Edit your photo</a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="col user-info">
+                        <h3>User Name:{name}</h3>
+                        <h3> 
+                            Gender: <span className="material-icons md-48" aria-label="gender">{gender}</span>
+                        </h3>
+
+                        <h3>
+                            Status: <span className="material-icons md-48" aria-label="status">{status}</span>
+                        </h3>
+                        
+                        <h3>{sentence}</h3>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div id="mood-daily">
+                <h2 className='primary-dark-color'>Past Mood Diary</h2>
 
                 <div className="container" id="front">
                     {moodLog}
                 </div>
 
-                <button type="view" value="view-all"><a href="/mood-diary">View All</a></button>
-            </section>
+                <div className="container d-flex justify-content-center">
+                    <button className="primary-bt" type="view" value="view-all"><a href="/mood-diary">View All</a></button>
+                </div>
+            </div>
 
-            <section id="recent-music">
-                <h2>Most Recent Listened Music</h2>
+            <div id="recent-music">
+                <h2 className='primary-dark-color'>Most Recent Listened Music</h2>
 
                 <div className="container" id="front">
                     <img src="img/recent-music.png" alt="album's photo"/>
                     <p>BLACKPINK-STAY</p>
-                    <button type="music" value="play-music"><a href="/play">Play Now ~</a></button>
+                    <div className="container d-flex justify-content-center">
+                        <button className="primary-bt" type="music" value="play-music"><a href="/play">Play Now ~</a></button>
+                    </div>
+                    
                 </div>
-            </section>
+            </div>
 
         </div>
 

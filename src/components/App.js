@@ -23,8 +23,7 @@ export default function App() {
         {/*<Login />*/}
         {/*<Register />*/}
         
-
-                
+        <Footer />     
         </div>
     );
 }

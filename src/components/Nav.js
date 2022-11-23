@@ -6,10 +6,10 @@ import Music from './music.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function NavHead(props) {
-    const navArray = [{name:'HOME', url:'http://localhost:3000/'}, 
-    {name:'MOOD LOG', url:'http://localhost:3000/mood'}, 
-    {name:'MUSIC', url:'http://localhost:3000/music'}, 
-    {name:'PROFILE', url:'http://localhost:3000/profile'}
+    const navArray = [{name:'HOME', url:'/'}, 
+    {name:'MOOD LOG', url:'/mood'}, 
+    {name:'MUSIC', url:'/music'}, 
+    {name:'PROFILE', url:'/profile'}
 ];
 
 const navbar = navArray.map((elem) => {

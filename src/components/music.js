@@ -34,7 +34,7 @@ export function RecommandMusicSection() {
                     <div className="row my-3 px-2"> 
                         <div className="col-lg-3 col-md-5 col-sm-5 my-1"><h3>Today's Mood</h3></div>
                         <div className="col"></div>
-                        <div className="col-lg-3 col-md-5 col-sm-5 my-1"><button className="primary-bt"><a href="mood-log.html">Place Your Mood</a></button></div>
+                        <div className="col-lg-3 col-md-5 col-sm-5 my-1"><button className="primary-bt"><a href="/mood-log">Place Your Mood</a></button></div>
                     </div>
                     
                     <div className="container">
@@ -93,7 +93,7 @@ export default function Music() {
     return (
         <div>
             <header>
-                <div className="container">
+                <div className="container dash-border-light-bg">
                     <h1 className="primary-dark-color">Music With Your Mood</h1>
                 </div>
             </header>

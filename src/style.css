@@ -20,7 +20,6 @@ h1 {
 h2 {
     font-size: 1.5rem;
     margin: 1rem;
-    margin-right: 0;
     font-weight: bold;
 }
 
@@ -41,6 +40,20 @@ header {
     padding: 1rem 0;
     border-radius: 1rem;
     background-color: white;
+    margin-bottom: 5rem;
+}
+
+.primary-bt {
+    background-color: #3DACB4;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 16px;
+}
+
+.primary-bt:hover {
+    color: #ececec;;
 }
 
 /* custom colors */
@@ -119,21 +132,12 @@ nav button {
     color: gray;
 }
 
-.primary-bt {
-    background-color: #3DACB4;
-    border: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.4rem;
-    font-size: 16px;
-}
-
-.primary-bt:hover {
-    color: #ececec;;
-}
-
 
 /* footer */
+
+footer {
+    margin: 5rem 2rem;
+}
 
 footer a {
     font-size: 2rem;
@@ -916,39 +920,48 @@ header .dash-border-light-bg {
 
 #profile {
     background-color: #eefffe;
-    max-width: 500px;
+    max-width: 80%;
     margin: 50px auto;
     padding: 30px 20px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.profile-photo {
+    margin: 2rem;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
 
 #basic-info h2 {
     margin-top: 0;
     margin-bottom: 1rem;
-    margin-right: 1rem;
-    padding: 2rem;
 }
 
-td img {
-    height: 100px;
-    width: 100px ;
-}
 
 #basic-info {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.user-info {
+    margin: 2rem;
+}
+
+.user-info h3{
+    display:block;
+    font-size: 18px;
+    line-height: 2;
+    text-align: center;
 }
 
 #profile h2 {
     text-align: center;
 }
 
-#basic-info img {
-    height: 300px;
-    width: 300px ;
-    margin: 2rem;
+#mood-daily {
+    margin-bottom: 3rem;
 }
+
 
 #recent-music img {
     height: 200px;
@@ -977,17 +990,14 @@ td img {
     width: 95%;
 }
 
-#create-profile button,
-#profile button,
-#login-profile button {
-    background-color: white;
-    border: 1px solid #777;
-    border-radius: 2px;
-    font-size: 21px;
-    display: block;
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 20px;
+#profile button a {
+    color: white;
+    text-decoration: none;
+}
+
+#profile button a:hover {
+    color: #ececec;
+    text-decoration:underline;
 }
 
 #create-profile .create-intro {
@@ -1028,11 +1038,11 @@ td img {
 /*  styling of the screen width of 992px or greater */
 @media (min-width: 992px) {
     h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     a {
@@ -1051,4 +1061,18 @@ td img {
         border-width: .3rem;
     }
 
+
+    /*  profile page */
+    .user-info h3{
+        font-size: 32px;
+    }
+
+    #basic-info {
+        margin-bottom: 5rem;
+    }
+
+    #recent-music img {
+        height: 500px;
+        width: 500px ;
+    }
 }
