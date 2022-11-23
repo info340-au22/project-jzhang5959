@@ -120,7 +120,7 @@ function RadioWrap(props) {
 }
 
 
-export function Mood() {
+export default function Mood() {
 
     return (
 

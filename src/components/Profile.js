@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {Footer} from './Footer';
+import {Link } from 'react-router-dom';
+import EditPhoto from './EditPhoto.js';
 
 const exampleMood = [{date:"2022-07-04" , mood:"Happy day", icon:"dot joyful"},
                     {date:"2022-07-03" , mood:"Sad", icon:"dot miserable"},
@@ -11,13 +13,6 @@ export default function Profile(props) {
     const [status, setStatus] = useState("");
     const [gender, updateG] = useState("girl");
     const [sentence, setSent] = useState("Enjoy my life");
-    const [image, updateImage] = useState('img/profile-photo.jpg');
-
-
-    const imageChange = (event) => {
-        const image = event.target.value;
-        updateImage(image);
-      }
     
     const moodLog = exampleMood.map((elem) => {
         return (
@@ -44,14 +39,7 @@ export default function Profile(props) {
                 <h2>{name}</h2>
 
                 <div className="container" id="front">
-                    <img src={image} alt="profile photo"/>
-                    <a href="https://unsplash.com/@michaeldam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" 
-                        target="_blank" rel="noopener noreferrer" 
-                        title="Download free do whatever you want high-resolution photos from Michael Dam">
-                        <title></title>
-                        <span><p>Taken by Michael Dam</p></span>
-                        </a>
-                    <button type="edit" value="edit-photo" onClick={imageChange}><a href="/update-photo">Edit your photo</a></button>
+                    <EditPhoto />
                     <p> 
                     Email: {email}
                     </p>
