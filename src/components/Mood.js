@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState} from 'react';
 
 const moods = {
     "1row":["enraged", "stressed", "shocked", "surprised", "motivated", "ecstatic"],
@@ -37,15 +38,33 @@ function CardWarp() {
     );
 }
 
+function Slider() {
+    const [value, setValue] = useState(0);
+    const MAX = 15;
+    const getBackgroundSize = () => {
+	return {
+		backgroundSize: `${(value * 100) / MAX}% 100%`,
+	};
+    }
+    return(
+        <div className="slidecontainer">
+            <label for="sleep-time" className="d-none">How many hours did you sleep?</label>
+            <input type="range" min="0" max={MAX} onChange={(e) => setValue(e.target.value)} style={getBackgroundSize()} value={value} id="sleep-time"/>
+            <p>You slept for <output className="primary-dark-color">{value}</output> hours last night. </p>
+        </div>
+    );
+    
+}
+
 function SleepCard() {
     return (
         <div className="m-2 col-lg-5 col-xl-6 col">
             <div className="card row p-2 mb-3 mood-card">
                 <div className="card-body">
                     <p className="primary-dark-color"> How long did you sleep last night? </p>
+                    
                     <div className="slidecontainer">
-                        <input type="range" min="0" max="15" value="8" onInput="this.nextElementSibling.value = this.value"/>
-                        <p>You slept for <output className="primary-dark-color">8</output> hours last night. </p>
+                        <Slider />
                     </div>
                 </div>
             </div>
@@ -94,7 +113,8 @@ function RadioHelper(props) {
             const radio = value.map((item) => {
                 const component = 
                     <div className="ggtool" key={item}>
-                        <input type="radio" name="mood" value={item} className={`input-radio ${item}`}/>
+                        <label for={item} className="d-none">Are you {item} ?</label>
+                        <input type="radio" name={item} value={item} id={item} className={`input-radio ${item}`}/>
                         <span className="tooltiptext">{item}</span>
                     </div>; //pass prop down!
                 return component; //add this new component to resulting array
