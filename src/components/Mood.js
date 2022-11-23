@@ -12,8 +12,8 @@ const moods = {
 function MoodHeader() {
     return(
         <header>
-            <div class="container">
-                <h1>Mood Log</h1>
+            <div className="container">
+                <h1 className="primary-dark-color">Mood Log</h1>
             </div>
         </header>
     );
@@ -22,15 +22,17 @@ function MoodHeader() {
 function CardWarp() {
     return (
         <div className="container">
-          <h2>How is your day? </h2>
-            <div className="card-container row d-flex justify-content-evenly mood-log-space">
-                <SleepCard />
-                <MoodRadio />
-                <div class="d-flex justify-content-center">
-                    <button class="btn save p-3 m-4" type="submit">Save</button>
-                    <a class="btn save p-3 m-4" href="mood-vis.html">View the Graphs</a>
+          <h2 className="primary-dark-color">How is your day? </h2>
+          <form>
+                <div className="card-container row d-flex justify-content-evenly mood-log-space">
+                    <SleepCard />
+                    <MoodRadio />
+                    <div className="d-flex justify-content-center">
+                        <button className="btn save p-3 m-4" type="submit">Save</button>
+                        <a className="btn save p-3 m-4" href="mood-vis.html">View the Graphs</a>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
@@ -40,17 +42,17 @@ function SleepCard() {
         <div className="m-2 col-lg-5 col-xl-6 col">
             <div className="card row p-2 mb-3 mood-card">
                 <div className="card-body">
-                    <p> How long did you sleep last night? </p>
+                    <p className="primary-dark-color"> How long did you sleep last night? </p>
                     <div className="slidecontainer">
-                        <input type="range" min="0" max="15" value="8" className="slider" oninput="this.nextElementSibling.value = this.value"/>
-                        <output>8</output>
+                        <input type="range" min="0" max="15" value="8" onInput="this.nextElementSibling.value = this.value"/>
+                        <p>You slept for <output className="primary-dark-color">8</output> hours last night. </p>
                     </div>
                 </div>
             </div>
 
-            <div className="card row p-4 mood-card">
-                <label for="moodquestion" className="mb-2">Daily Note</label>
-                <textarea id="moodquestion" name="moodquestion" placeholder="Write something.." aria-label="mood log text input"></textarea>
+            <div className="card row pt-3 pb-3 ps-3 pe-4 mood-card">
+                <label for="moodquestion" className="mb-2 primary-dark-color">Daily Note</label>
+                <textarea className="m-2" id="moodquestion" name="moodquestion" placeholder="Write something.." aria-label="mood log text input"></textarea>
             </div>
         </div>
     );
@@ -59,18 +61,18 @@ function SleepCard() {
 function MoodRadio () {
     return(
     <div className="card m-2 p-2 col-lg-6 col-xl-5 six-dots-container mood-card">
-        <div class="card-body">
-            <p> How is your mood today? </p>
-            <div class="row">
-                <div class="col-1">
-                    <p class="vertical axis">&larr; Energy</p>
+        <div className="card-body">
+            <p className="mb-4 ms-4 primary-dark-color"> How is your mood today? </p>
+            <div className="row">
+                <div className="col-1">
+                    <p className="vertical axis">&larr; Energy</p>
                 </div>
-                <div class="col-11 six-dots">
+                <div className="col-11 six-dots">
                     <RadioWrap moods = {moods}/>
                     <div>
-                        <p class="axis d-flex justify-content-evenly">
-                            <span class="negative"></span>
-                            <span class="positive">Positive &rarr; </span>
+                        <p className="axis d-flex justify-content-evenly">
+                            <span className="negative"></span>
+                            <span className="positive pt-1">Positive &rarr; </span>
                         </p>
                     </div>
                     
@@ -91,14 +93,14 @@ function RadioHelper(props) {
         if (key === row) {
             const radio = value.map((item) => {
                 const component = 
-                    <div class="ggtool" key={item}>
+                    <div className="ggtool" key={item}>
                         <input type="radio" name="mood" value={item} className={`input-radio ${item}`}/>
-                        <span class="tooltiptext">{item}</span>
+                        <span className="tooltiptext">{item}</span>
                     </div>; //pass prop down!
                 return component; //add this new component to resulting array
              })
             return (
-                <div class="d-flex flex-row" key = {key}>
+                <div className="d-flex flex-row" key = {key}>
                     {radio}
                 </div>
             );
