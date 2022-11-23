@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 const recommandMusicSample = [{mood:"Repulse", color:"#E8988E", playPageLink:"/#", musicType:["quick","sad"]},
 {mood:"Fuming", color:"#EB8075", playPageLink:"/#", musicType:["slow","sad"]},
 {mood:"Stressed", color:"#E55A90", playPageLink:"/#", musicType:["quick","sad","acoustic"]}]
@@ -50,7 +52,7 @@ export function StyleMusicSection() {
     const musicRow = musicSample.map((obj) => {
         const styleList = obj.musicType.map((type) => {
             return(
-                <li className="list-inline-item">
+                <li className="list-inline-item" key={type}>
                     <div class="col"><button class="btn btn-dark" id={type}>{type}</button></div>
                 </li>
             )

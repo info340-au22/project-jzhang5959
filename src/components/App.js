@@ -22,6 +22,8 @@ export default function App() {
         {/*<Profile />*/}
         {/*<Login />*/}
         {/*<Register />*/}
+        <Home />
+
                 
         </div>
     );
