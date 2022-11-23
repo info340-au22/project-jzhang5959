@@ -16,13 +16,12 @@ export default function App() {
         <NavHead />
         
         {/*<Home />*/}
-        {/*<MoodMusicSection />*/}
         {/*<MainMusicSection />*/}
         {/*<Mood /> */}
         {/*<Profile />*/}
         {/*<Login />*/}
         {/*<Register />*/}
-        <Home />
+        <Profile />
 
                 
         </div>

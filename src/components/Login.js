@@ -88,7 +88,7 @@ export default function Login() {
             {successMessage()}
         </div>
 
-        {Footer};
+        <Footer />
     </div>
 
     )

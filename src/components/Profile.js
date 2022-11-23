@@ -7,7 +7,7 @@ const exampleMood = [{date:"2022-07-04" , mood:"Happy day", icon:"dot joyful"},
 
 export default function Profile(props) {
     const [name, updateName] = useState("Bella");
-    const [email, updateEmail] = useState("");
+    const [email, updateEmail] = useState("gehuijun@uw.edu");
     const [status, setStatus] = useState("");
     const [gender, updateG] = useState("girl");
     const [sentence, setSent] = useState("Enjoy my life");
@@ -52,7 +52,11 @@ export default function Profile(props) {
                         <span><p>Taken by Michael Dam</p></span>
                         </a>
                     <button type="edit" value="edit-photo" onClick={imageChange}><a href="/update-photo">Edit your photo</a></button>
-                    <p> Gender: 
+                    <p> 
+                    Email: {email}
+                    </p>
+                    <p>
+                    Gender: 
                     <span className="material-icons md-48" aria-label="gender">{gender}</span>
                     Status: 
                     <span className="material-icons md-48" aria-label="status">{status}</span>
@@ -83,7 +87,7 @@ export default function Profile(props) {
 
         </div>
 
-       {Footer};
+       <Footer />
     </div>
     
     );

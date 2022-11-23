@@ -180,7 +180,7 @@ export default function Register(props) {
             {successMessage()}
         </div>
 
-       {Footer};
+        <Footer />
     </div>
 
     )

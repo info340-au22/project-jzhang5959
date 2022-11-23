@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './home.js';
 import Profile from './Profile.js';
+import { Link, NavLink } from 'react-router-dom';
 
 export function NavHead(props) {
     const navArray = [{name:'HOME', url:'/'}, 
