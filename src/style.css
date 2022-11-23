@@ -939,16 +939,17 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 
 /* profile */
-#profile.container {
+.container-profile {
     max-width: 960px;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: auto;
     padding: 1rem;
-    text-align: left;
+    text-align: center;
+    
 }
 
 
-#profile {
+.profile {
     background-color: #eefffe;
     max-width: 500px;
     margin: 50px auto;
@@ -957,7 +958,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 
-#basic-info h2 {
+.basic-info h2 {
     margin-top: 0;
     margin-bottom: 1rem;
     margin-right: 1rem;
@@ -969,27 +970,18 @@ td img {
     width: 100px ;
 }
 
-#basic-info {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-#profile h2 {
-    text-align: center;
-}
-
-#basic-info img {
+.basic-info img {
     height: 300px;
     width: 300px ;
     margin: 2rem;
 }
 
-#recent-music img {
+.recent-music img {
     height: 200px;
     width: 200px ;
 }
 
-#survey {
+form {
     background-color: #eefffe;
     max-width: 500px;
     margin: 50px auto;
@@ -997,14 +989,13 @@ td img {
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-#create-profile .container label {
+.create-profile .container label {
     display: block;
     margin:20px 0 5px 0;
 }
 
 
-#create-profile select, input
-#edit select {
+.create-profile select, input {
     border: 1px solid #777;
     border-radius: 2px;
     padding: 10px;
@@ -1012,9 +1003,8 @@ td img {
     width: 95%;
 }
 
-#create-profile button,
-#profile button,
-#login-profile button {
+.create-profile button,
+.login-profile button {
     background-color: white;
     border: 1px solid #777;
     border-radius: 2px;
@@ -1022,9 +1012,11 @@ td img {
     display: block;
     margin-top: 50px;
     margin: 50px 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#create-profile .create-intro {
+.create-profile .create-intro {
     margin-top: 50px;
     margin-bottom: 20px;
     max-width: 960px;
@@ -1033,24 +1025,14 @@ td img {
     text-align: center;
 }
 
-#front {
-    text-align:center;
-}
 
-#login {
-    background-color: #eefffe;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px 20px;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
-}
 
-#login-profile .container label {
+.login-profile .container label {
     display: block;
     margin:20px 0 5px 0;
 }
 
-#login-profile select, input {
+.login-profile select, input {
     border: 1px solid #777;
     border-radius: 2px;
     padding: 10px;
@@ -1085,11 +1067,4 @@ td img {
         border-width: .3rem;
     }
 
-}
-
-#edit {
-    max-width: 960px;
-    border-right: 10px;
-    margin:20px 0 5px 0;
-    text-align: center;
 }

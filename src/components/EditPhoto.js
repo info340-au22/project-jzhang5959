@@ -30,7 +30,7 @@ export default function EditPhoto(props) {
 
     return (
         <div>
-            <form id="edit">
+            <form className="edit">
                 <div className="container">
                     <img src={image} alt="profile photo"/>
                     <p><label key="photo" id="photo">
