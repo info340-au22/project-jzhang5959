@@ -17,7 +17,7 @@ function HomeContent() {
             </div>
 
             <div className="container home-mood-fill">
-                <h2>How do you feel today?</h2>
+                <h2 className="primary-dark-color">How do you feel today?</h2>
                 <button className="primary-bt"><a href="/#">Place My Mood</a></button>
             </div>
 
@@ -33,7 +33,7 @@ export default function Home() {
         <div>
             <header>
             <div className="container dash-border-light-bg">
-                <h1>Welcome to Your Moody Space</h1>
+                <h1 className="primary-dark-color">Welcome to Your Moody Space</h1>
             </div>
             </header>
 

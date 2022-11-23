@@ -9,16 +9,13 @@ body {
 
 h1, h2, p{
     font-family: "PT Sans Caption";
-    color: #247B82;
 }
 
 h1 {
     font-size: 2rem;
     text-align: center;
     margin: 2rem;
-
 }
-
 
 h2 {
     font-size: 1.5rem;
@@ -31,10 +28,28 @@ h3 {
     font-size: 1.5rem;
 }
 
-
 header {
     text-align: center;
     margin: 2rem;
+}
+
+/* custom styles */
+.dash-border-light-bg {
+    border-color: #3DACB4;
+    border-style: dashed;
+    border-width: 0.2rem;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+/* custom colors */
+.primary-dark-color {
+    color:#247B82;
+}
+
+.primary-color {
+    color:#43c0c9;
 }
 
 
@@ -75,7 +90,7 @@ nav li {
 .sign-register{
     font-family: "PT Serif Caption";
     font-size: 14px;
-    position: fixed;
+    position: absolute;
     right: 1rem;
     background-color: #F4FFFE;
     padding: 1rem;
@@ -131,15 +146,6 @@ footer a:hover {
 
 
 /* home page*/
-
-.dash-border-light-bg {
-    border-color: #3DACB4;
-    border-style: dashed;
-    border-width: 0.2rem;
-    padding: 1rem 0;
-    border-radius: 1rem;
-    background-color: white;
-}
 
 header .dash-border-light-bg {
     width: 80%;
@@ -256,9 +262,8 @@ header .dash-border-light-bg {
 }
 
 .heading-style {
-    color:#247B82;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 42px;
 }
 
 .heading-style:hover {
