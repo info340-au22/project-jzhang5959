@@ -1003,7 +1003,8 @@ td img {
 }
 
 
-#create-profile select, input {
+#create-profile select, input
+#edit select {
     border: 1px solid #777;
     border-radius: 2px;
     padding: 10px;
@@ -1019,9 +1020,8 @@ td img {
     border-radius: 2px;
     font-size: 21px;
     display: block;
-    width: 100%;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin: 50px 50px;
 }
 
 #create-profile .create-intro {
@@ -1085,4 +1085,11 @@ td img {
         border-width: .3rem;
     }
 
+}
+
+#edit {
+    max-width: 960px;
+    border-right: 10px;
+    margin:20px 0 5px 0;
+    text-align: center;
 }

@@ -3,22 +3,23 @@ import Home from './home.js';
 import Profile from './Profile.js';
 import Mood from './Mood.js';
 import Music from './music.js';
+import Register from './Register.js';
+import Login from './Login.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function NavHead(props) {
     const navArray = [{name:'HOME', url:'http://localhost:3000/'}, 
-    {name:'MOOD LOG', url:'http://localhost:3000/mood'}, 
+    {name:'MOOD LOG', url:'http://localhost:/mood'}, 
     {name:'MUSIC', url:'http://localhost:3000/music'}, 
-    {name:'PROFILE', url:'http://localhost:3000/profile'}
-];
+    {name:'PROFILE', url:'http://localhost:3000/profile'}];
 
-const navbar = navArray.map((elem) => {
-    return (
-        <li className="nav-item" key={elem.name}> 
-            <a className="nav-link"  href={elem.url}>{elem.name}</a> 
-        </li>
-    ); // no current effect
-})
+    const navbar = navArray.map((elem) => {
+        return (
+            <li className="nav-item" key={elem.name}> 
+                <a className="nav-link"  href={elem.url}>{elem.name}</a> 
+            </li>
+        ); // no current effect
+    });
 
     return(
         <div>
@@ -38,20 +39,13 @@ const navbar = navArray.map((elem) => {
                 </div>
 
                 <div className="sign-register">
-                    <a href="login.html" className="login">Login</a>
-                    <button className="primary-bt" > Register</button>
+                    <a href="http://localhost:3000/login" className="login">Login</a>
+                    <button className="primary-bt"><a className="register" href="http://localhost:3000/register">Register</a></button>
                 </div>
             </div>
             
         </nav>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/mood" element={<Mood />} />
-                    <Route path="/music" element={<Music />} />
-                    <Route path="/profile" element={<Profile />} />
-                </Routes>
-            </BrowserRouter>
+            
         </div>
     );
 }
