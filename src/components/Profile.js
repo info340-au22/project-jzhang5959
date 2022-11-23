@@ -75,7 +75,6 @@ export default function Profile(props) {
 
         </div>
 
-       <Footer />
     </div>
     
     );

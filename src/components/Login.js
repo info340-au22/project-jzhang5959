@@ -107,7 +107,6 @@ export default function Login() {
             {successMessage()}
         </div>
 
-        <Footer />
     </div>
 
     )

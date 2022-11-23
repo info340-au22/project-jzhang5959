@@ -182,7 +182,6 @@ export default function Register(props) {
             {successMessage()}
         </div>
 
-        <Footer />
     </div>
 
     )

@@ -5,23 +5,21 @@ import Mood from './Mood.js';
 import Music from './music.js';
 import Register from './Register.js';
 import Login from './Login.js';
-import EditPhoto from './EditPhoto.js';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function NavHead(props) {
     const navArray = [{name:'HOME', url:'http://localhost:3000/'}, 
     {name:'MOOD LOG', url:'http://localhost:/mood'}, 
     {name:'MUSIC', url:'http://localhost:3000/music'}, 
-    {name:'PROFILE', url:'http://localhost:3000/profile'}
-];
+    {name:'PROFILE', url:'http://localhost:3000/profile'}];
 
-const navbar = navArray.map((elem) => {
-    return (
-        <li className="nav-item" key={elem.name}> 
-            <a className="nav-link"  href={elem.url}>{elem.name}</a> 
-        </li>
-    ); // no current effect
-})
+    const navbar = navArray.map((elem) => {
+        return (
+            <li className="nav-item" key={elem.name}> 
+                <a className="nav-link"  href={elem.url}>{elem.name}</a> 
+            </li>
+        ); // no current effect
+    });
 
     return(
         <div>
@@ -47,17 +45,7 @@ const navbar = navArray.map((elem) => {
             </div>
             
         </nav>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/mood" element={<Mood />} />
-                    <Route path="/music" element={<Music />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/EditPhoto" element={<EditPhoto />} />
-                </Routes>
-            </BrowserRouter>
+            
         </div>
     );
 }

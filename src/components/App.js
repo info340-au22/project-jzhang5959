@@ -1,13 +1,13 @@
 import React from 'react';
-import Home from './home.js';
-import Profile from './Profile.js';
-import Login from './Login.js';
-import Register from './Register.js';
+import Home from './home';
+import Profile from './Profile';
+import Login from './Login';
+import Register from './Register';
 import {NavHead} from './Nav';
 import {Footer} from './Footer';
-import {MainMusicSection} from './music';
+import Music from './music';
 import Mood from './Mood';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 
 export default function App() {
@@ -16,15 +16,19 @@ export default function App() {
         <div>
         <NavHead />
         
-        {/*<Home />*/}
-        {/*<MainMusicSection />*/}
-        {/*<Mood />*/}
-        {/*<Profile />*/}
-        {/*<Login />*/}
-        {/*<Register />*/}
-        {/*<Home />*/}
+        <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/mood" element={<Mood />} />
+                    <Route path="/music" element={<Music />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                </Routes>
+        </BrowserRouter>
+        
 
-                
+        <Footer />  
         </div>
     );
 }

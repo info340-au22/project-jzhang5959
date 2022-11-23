@@ -980,16 +980,14 @@ td img {
 
 #create-profile button,
 #profile button,
-#login-profile button
-#edit button {
+#login-profile button {
     background-color: white;
     border: 1px solid #777;
     border-radius: 2px;
     font-size: 21px;
     display: block;
-    width: 100%;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin: 50px 50px;
 }
 
 #create-profile .create-intro {

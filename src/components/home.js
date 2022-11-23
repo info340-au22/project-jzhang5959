@@ -1,5 +1,4 @@
 import React from 'react';
-import {NavHead} from './Nav';
 import {Footer} from './Footer';
 import {RecommandMusicSection} from './music';
 
@@ -40,7 +39,6 @@ export default function Home() {
             <main>
                 <HomeContent />
             </main>
-            <Footer />
         </div>
     );
 }
