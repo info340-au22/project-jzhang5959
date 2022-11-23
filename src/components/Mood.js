@@ -113,8 +113,8 @@ function RadioHelper(props) {
             const radio = value.map((item) => {
                 const component = 
                     <div className="ggtool" key={item}>
-                        <label for={item} className="d-none">Are you {item} ?</label>
-                        <input type="radio" name={item} value={item} id={item} className={`input-radio ${item}`}/>
+                        <label for="mood" className="d-none">Are you {item} ?</label>
+                        <input type="radio" name="mood" value={item} id={item} className={`input-radio ${item}`}/>
                         <span className="tooltiptext">{item}</span>
                     </div>; //pass prop down!
                 return component; //add this new component to resulting array
