@@ -1,12 +1,13 @@
 import React from 'react';
-import Home from './home.js';
-import Profile from './Profile.js';
+import Home from './home';
+import Profile from './Profile';
+import {MainMusicSection}from './music';
 
 export function NavHead(props) {
-    const navArray = [{name:'HOME', url:'/'}, 
-    {name:'MOOD LOG', url:'/mood-log'}, 
-    {name:'MUSIC', url:'/music'}, 
-    {name:'PROFILE', url:'/profile'}
+    const navArray = [{name:'HOME', url:'./home'}, 
+    {name:'MOOD LOG', url:'./mood-log'}, 
+    {name:'MUSIC', url:'./music'}, 
+    {name:'PROFILE', url:'./Profile'}
 ];
 
 const navbar = navArray.map((elem) => {
