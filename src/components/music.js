@@ -87,7 +87,7 @@ export function StyleMusicSection() {
     )
 }
 
-export function MainMusicSection() {
+export default function Music() {
     return (
         <div>
             <header>

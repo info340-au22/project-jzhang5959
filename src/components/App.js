@@ -6,7 +6,7 @@ import Register from './Register.js';
 import {NavHead} from './Nav';
 import {Footer} from './Footer';
 import {MainMusicSection} from './music';
-import {Mood} from './Mood';
+import Mood from './Mood';
 
 
 export default function App() {
@@ -17,10 +17,11 @@ export default function App() {
         {/*<Home />*/}
         {/*<MoodMusicSection />*/}
         {/*<MainMusicSection />*/}
-        <Mood />
+        {/*<Mood />*/}
         {/*<Profile />*/}
         {/*<Login />*/}
         {/*<Register />*/}
+        
 
         <Footer />
         </div>
