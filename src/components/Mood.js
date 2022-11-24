@@ -29,15 +29,11 @@ function MoodHeader() {
     );
 }
 
-const submit = <button className="btn save p-3 m-4" type="submit">Save</button>;
-
 function CardWarp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(`Your mood today has been placed! `);
     }
-
-
 
     return (
         <div className="container">
