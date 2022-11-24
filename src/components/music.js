@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PlayMusic from './music-play';
 import MUSIC_SAMPLE from '../data/music-sample.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
     const typeMusicObj = {};
     for(const musicObj of MUSIC_SAMPLE) {
@@ -33,6 +34,8 @@ const musicSample = [{mood:"Repulse", color:"#E8988E", playPageLink:"/#", musicT
 {mood:"Stressed", color:"#E55A90", playPageLink:"/#", musicType:["quick","sad","acoustic"]}]
 
 export function RecommandMusicSection() {
+
+
     const musicList = recommandMusicSample.map((obj) => {
         return (
             <div className="col">
@@ -67,6 +70,22 @@ export function RecommandMusicSection() {
 
 
 export function StyleMusicSection() {
+    const [type, updateType] = useState('');
+
+
+    const typeChange = (event) => {
+        const type = event.target.value;
+        updateType(type);
+      }
+    
+    const filter = () => {
+        let result = null;
+        if (type != null) {
+          result = musicRow.filter((key) => key.type.includes(type));
+          return result;
+        }
+      };
+
     const musicRow = musicSample.map((obj) => {
         const styleList = obj.musicType.map((type) => {
             return(
@@ -99,6 +118,12 @@ export function StyleMusicSection() {
         <div className="container style-music">
                 <div className="container mt-5 mb-3">
                     <h2 className="primary-dark-color">Choose Style</h2>
+                    <select className="choice" id="type-choice" value={type} onChange={typeChange}>
+                        <option className="value" value={filter()}>quick</option> 
+                        <option className="value" value={filter()}>sad</option> 
+                        <option className="value" value={filter()}>slow</option> 
+                        <option className="value" value={filter()}>acoustic</option>
+                    </select>
                     <div className="row text-center">
                         {musicRow}
                     </div>
