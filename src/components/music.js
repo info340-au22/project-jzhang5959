@@ -68,40 +68,37 @@ export function RecommandMusicSection() {
 
 
 export function StyleMusicSection() {
-    const musicRow = musicSample.map((obj) => {
-        const styleList = obj.musicType.map((type) => {
-            return(
-                <li className="list-inline-item" key={type}>
-                    <div className="col"><button className="btn btn-dark" id={type}>{type}</button></div>
-                </li>
-            )
-        });
-
-        return (
+    const typeList = [];
+    for(const type in typeMusicObj) {
+        const typeMusicList = [];
+        for (const obj of MUSIC_SAMPLE) {
+            const typeList = obj.musicType;
+            if(type in typeList) {
+                typeMusicList.push(obj);
+            }
+        }
+        
+        const typeName = type[0].toUpperCase() + type.substring(1);
+        typeList.push(
             <div className="col">
                 <div className="row d-flex justify-content-center">
                     <div className="card p-3 square-sm mx-3 ">
                         <div>
-                            <a className="heading-style primary-dark-color" href="/music-play">{obj.mood}</a>
+                            <a className="heading-style primary-dark-color" href="/music-play">{typeName}</a>
                         </div>
                     </div>
                 </div>
 
-                <div className="row mt-3">
-                    <ul className="d-flex justify-content-center m-0 align-content-start flex-wrap">
-                        {styleList}
-                    </ul>
-                 </div>
             </div>
-        )
-    });
+        );
+    }
 
     return(
         <div className="container style-music">
                 <div className="container mt-5 mb-3">
                     <h2 className="primary-dark-color">Choose Style</h2>
                     <div className="row text-center">
-                        {musicRow}
+                        {typeList}
                     </div>
                 </div>
             </div>
