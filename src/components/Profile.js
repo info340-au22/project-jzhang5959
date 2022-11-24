@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {Footer} from './Footer';
 import {Link } from 'react-router-dom';
 import EditPhoto from './EditPhoto.js';
 
@@ -63,7 +62,7 @@ export default function Profile(props) {
                 </div>
 
                 <div className="container d-flex justify-content-center">
-                    <button className="primary-bt" type="view" value="view-all"><a href="/mood-diary">View All</a></button>
+                    <button className="primary-bt" type="view" value="view-all"><a href="/mood-vis.html">View All</a></button>
                 </div>
             </div>
 
@@ -73,7 +72,7 @@ export default function Profile(props) {
                     <img src="img/recent-music.png" alt="album's photo"/>
                     <p>BLACKPINK-STAY</p>
                     <div className="container d-flex justify-content-center">
-                        <button className="primary-bt" type="music" value="play-music"><a href="/play">Play Now ~</a></button>
+                        <button className="primary-bt" type="music" value="play-music"><Link to="/music">Play Now ~</Link></button>
                     </div>
                     
                 </div>

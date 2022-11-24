@@ -1,10 +1,4 @@
-import React from 'react';
-import Home from './home.js';
-import Profile from './Profile.js';
-import Mood from './Mood.js';
-import Music from './music.js';
-import Register from './Register.js';
-import Login from './Login.js';
+import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export function NavHead(props) {
@@ -12,6 +6,7 @@ export function NavHead(props) {
     {name:'MOOD LOG', url:'/mood'}, 
     {name:'MUSIC', url:'/music'}, 
     {name:'PROFILE', url:'/profile'}];
+    const [tog, updateTog] = useState();
 
     const navbar = navArray.map((elem) => {
         return (
@@ -21,19 +16,22 @@ export function NavHead(props) {
         ); // no current effect
     });
 
+    
+
     return(
         <div>
         
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg" id="menu">
             
             <div className="container-fluid p-3">
                 <p className="navbar-brand">Moody</p>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="true" aria-label="Toggle navigation">
+                <button id="tog" className="navbar-toggler ml-auto" type="button" 
+                data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarToggler">
-                    <ul className="navbar-nav">
+                    <ul className="navbar-nav" id="navbar">
                         {navbar}
                     </ul>
                 </div>
