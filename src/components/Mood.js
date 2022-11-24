@@ -10,6 +10,15 @@ const moods = {
     "6row":["despair", "bored", "drained", "calm", "tranquil", "serene"]
 };
 
+const moodObjects = {
+    "1row":[{mood:"enraged", color:'#F04E48', index:1}, {mood:"stressed", color:'#E55A90', index:2}, {mood:"shocked", color:'#EAACC1', index:3}, {mood:"surprised", color:'#E89C5D', index:4}, {mood:"motivated", color:'#e7b64b', index:5}, {mood:"ecstatic", color:'#E9D05A', index:6}],
+    "2row":[{mood:"fuming", color:'#EB8075', index:7}, {mood:"angry", color:'#E874A3', index:8}, {mood:"restless", color:'#EBADC4', index:9}, {mood:"energized", color:'#E99C5C', index:10}, {mood:"optimistic", color:'#E4B063', index:11}, {mood:"excited", color:'#e4e47d', index:12}],
+    "3row":[{mood:"repulse", color:'#E8988E', index:13}, {mood:"worried", color:'#E8B0C2', index:14}, {mood:"peeved", color:'#E5C4CE', index:15}, {mood:"joyful", color:'#EAC192', index:16}, {mood:"hopeful", color:'#e5d58e', index:17}, {mood:"blissful", color:'#e1dc84', index:18}],
+    "4row":[{mood:"disgusted", color:'#9c8db0', index:19}, {mood:"excluded", color:'#8d9eb7', index:20}, {mood:"shamed", color:'#9caeb8', index:21}, {mood:"at-ease", color:'#BBD4A3', index:22}, {mood:"content", color:'#87a49c', index:23}, {mood:"fullfilled", color:'#758c97', index:24}],
+    "5row":[{mood:"miserable", color:'#8973a6', index:25}, {mood:"lonely", color:'#788aa5', index:26}, {mood:"tired", color:'#83a0b0', index:27}, {mood:"satisfied", color:'#95C982', index:28}, {mood:"secured", color:'#649f8d', index:29}, {mood:"balanced", color:'#5f8699', index:30}],
+    "6row":[{mood:"despair", color:'#74618D', index:31}, {mood:"bored", color:'#5B6B83', index:32}, {mood:"drained", color:'#7499AD', index:33}, {mood:"calm", color:'#85C663', index:34}, {mood:"tranquil", color:'#4EA48A', index:35}, {mood:"serene", color:'#3A7492', index:36}]
+};
+
 function MoodHeader() {
     return(
         <header>
@@ -20,16 +29,25 @@ function MoodHeader() {
     );
 }
 
+const submit = <button className="btn save p-3 m-4" type="submit">Save</button>;
+
 function CardWarp() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Your mood today has been placed! `);
+    }
+
+
+
     return (
         <div className="container">
           <h2 className="primary-dark-color">How is your day? </h2>
-          <form>
+          <form onSubmit={handleSubmit}>
                 <div className="card-container row d-flex justify-content-evenly mood-log-space">
                     <SleepCard />
                     <MoodRadio />
                     <div className="d-flex justify-content-center">
-                        <button className="btn save p-3 m-4" type="submit">Save</button>
+                        <input className="btn save p-3 m-4" type="submit"/>
                         <a className="btn save p-3 m-4" href="http://localhost:3000/graph">View the Graphs</a>
                     </div>
                 </div>
@@ -38,13 +56,15 @@ function CardWarp() {
     );
 }
 
+
+
 function Slider() {
     const [value, setValue] = useState(0);
     const MAX = 15;
     const getBackgroundSize = () => {
-	return {
-		backgroundSize: `${(value * 100) / MAX}% 100%`,
-	};
+        return {
+            backgroundSize: `${(value * 100) / MAX}% 100%`,
+        };
     }
     return(
         <div className="slidecontainer">
@@ -138,6 +158,7 @@ function RadioWrap(props) {
     }
     return result;
 }
+
 
 
 export default function Mood() {
