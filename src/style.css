@@ -75,11 +75,12 @@ header {
 
 
 /* nav bar */
+
 nav {
     width: 100%;
     background-image: url(../public/img/nav-bg.png);
     background-repeat: no-repeat;
-    position: fixed; 
+    position: relative; 
     left: 0;
     top: 0;
     font-family: "PT Mono";
@@ -1047,7 +1048,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 
 /*  styling of the screen width of 780px or greater */
-@media (min-width: 780px) {
+@media (min-width: 768px) {
     h1 {
         font-size: 3rem;
     }
