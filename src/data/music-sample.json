@@ -1,30 +1,34 @@
 [
     {
-        "musicName":"Beat", 
-        "mood":"Repulse", 
+        "musicName":"Walk Tall", 
+        "artist": "Mr.Smith",
+        "mood":["Repulse"], 
         "audioLink":"../../public/audio/Mr-Smith-Walk-Tall.mp3", 
         "musicType":["rock","quick"]
     },
 
     {
-        "musicName":"Beat", 
-        "mood":"Repulse", 
-        "audioLink":"../../public/audio/Mr-Smith-Walk-Tall.mp3", 
-        "musicType":["rock","quick"]
+        "musicName":"It's Dark, It's Cold, It's Winter", 
+        "artist":"Sleepmakeswaves",
+        "mood":["calm", "tranquil", "serene"],
+        "audioLink":"../../public/audio/Sleepmakeswaves-It's-Dark,It's-Cold,It's-Winter.mp3", 
+        "musicType":["rock","slow"]
     },
 
     {
-        "musicName":"Beat", 
-        "mood":"Repulse", 
-        "audioLink":"../../public/audio/Mr-Smith-Walk-Tall.mp3", 
-        "musicType":["rock","quick"]
+        "musicName":"Wind in Her Hair",
+        "artist":"Motorama",
+        "mood":["joyful", "hopeful", "blissful"],
+        "audioLink":"../../public/audio/Motorama-Wind-in-Her-Hair", 
+        "musicType":["rock","alternative"]
     },
 
     {
-        "musicName":"Beat", 
-        "mood":"Repulse", 
-        "audioLink":"../../public/audio/Mr-Smith-Walk-Tall.mp3", 
-        "musicType":["rock","quick"]
+        "musicName":"Sunrise", 
+        "artist":"Yeasayer",
+        "mood":["energized", "optimistic", "excited"],
+        "audioLink":"../../public/audio/Yeasayer-Sunrise.mp3", 
+        "musicType":["indie rock","quick"]
     },
 
     {

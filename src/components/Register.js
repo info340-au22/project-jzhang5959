@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Footer} from './Footer';
+import {Link } from 'react-router-dom';
 
 export default function Register(props) {
     const [name, updateName] = useState("");
@@ -45,7 +46,7 @@ export default function Register(props) {
         event.preventDefault();
         if (name === '' || email === '' || password === '' || age === '' || gender === '') {
           setError(true);
-          {/*saveStateToLocalStorage();*/}
+          saveStateToLocalStorage();
         } else {
           setSubmitted(true);
           setError(false);
@@ -75,17 +76,18 @@ export default function Register(props) {
           </div>
         );
       };
+
     const state = [{name: {name}, email: {email}, password: {password}, age: {age}, gender:{gender}}];
 
-    {/*const saveStateToLocalStorage = () => { 
+    const saveStateToLocalStorage = () => { 
         localStorage.setItem('state', JSON.stringify({state})); 
-      };*/}
+      };
       
-    {/*const getStateFromLocalStorage = () => { 
+    const getStateFromLocalStorage = () => { 
         let data = localStorage.getItem('state');  
         const initialValue = JSON.parse(data);
         return initialValue;
-      };*/}
+      };
       
     const applyInfo = (event) => {
         event.preventDefault();
@@ -98,7 +100,7 @@ export default function Register(props) {
             <h1>Create Your Account</h1>
         </header> 
 
-        <main id="create-profile">
+        <main className="create-profile">
             <form id="survey">
                 <div className="container">
                     <label key="name" id="label-name">Name</label>
@@ -165,7 +167,7 @@ export default function Register(props) {
                 </div>
 
                 <div className="container">
-                    <button type="join" value="join" onClick={handleSubmit}>Join now</button>
+                    <button type="join" value="join" onClick={handleSubmit}><Link to='/profile'>Join Now</Link></button>
                 </div>
 
                 <div className="create-intro">
@@ -180,7 +182,6 @@ export default function Register(props) {
             {successMessage()}
         </div>
 
-       {Footer};
     </div>
 
     )

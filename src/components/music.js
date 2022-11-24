@@ -28,13 +28,13 @@ export function RecommandMusicSection() {
     });
 
     return(
-        <div className="recommand-music inline-block">
+        <div className="recommand-music container">
                 <h2 className="primary-dark-color">Get Your Mood Music</h2>
                 <div className="container text-center dash-border-light-bg">
                     <div className="row my-3 px-2"> 
                         <div className="col-lg-3 col-md-5 col-sm-5 my-1"><h3>Today's Mood</h3></div>
                         <div className="col"></div>
-                        <div className="col-lg-3 col-md-5 col-sm-5 my-1"><button className="primary-bt"><a href="/mood-log">Place Your Mood</a></button></div>
+                        <div className="col-lg-3 col-md-5 col-sm-5 my-1"><button className="primary-bt"><a href="/mood">Place Your Mood</a></button></div>
                     </div>
                     
                     <div className="container">

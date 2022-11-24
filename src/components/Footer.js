@@ -1,13 +1,13 @@
 import React from 'react';
 
-const socialMediaArray = [{media:"instagram" , icon:"fa fa-instagram"},
-                          {media:"facebook" , icon:"fa fa-facebook-square"},
-                          {media:"github" , icon:"fa fa-github"}];
+const socialMediaArray = [{media:"instagram" , icon:"fa fa-instagram", link:"https://www.instagram.com/"},
+                          {media:"facebook" , icon:"fa fa-facebook-square", link:"https://www.facebook.com/"},
+                          {media:"github" , icon:"fa fa-github", link:"https://github.com/info340-au22/project-jzhang5959"}];
 export function Footer(props) {
     const socialMediaBar = socialMediaArray.map((elem) => {
         return (
             <li className="ps-3" key={elem.media}>
-                <a href="#"><em className={elem.icon} aria-label={elem.media}></em></a>
+                <a href={elem.link}><em className={elem.icon} aria-label={elem.media}></em></a>
             </li>
         )
     });
