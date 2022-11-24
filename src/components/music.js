@@ -17,7 +17,7 @@ const musicSample = [{mood:"Repulse", color:"#E8988E", playPageLink:"/#", musicT
 export function RecommandMusicSection() {
     const musicList = recommandMusicSample.map((obj) => {
         return (
-            <div className="col">
+            <div className="col" key={obj.mood}>
                 <div className="square-md m-4" style={{backgroundColor: obj.color}}>
                     <div className="p-5" >
                         <a href="{obj.playPageLink}" className="style-bt">{obj.mood}</a>
@@ -53,7 +53,7 @@ export function StyleMusicSection() {
         const styleList = obj.musicType.map((type) => {
             return(
                 <li className="list-inline-item" key={type}>
-                    <div class="col"><button class="btn btn-dark" id={type}>{type}</button></div>
+                    <div className="col"><button className="btn btn-dark" id={type}>{type}</button></div>
                 </li>
             )
         });
