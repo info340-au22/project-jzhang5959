@@ -88,7 +88,6 @@ export function StyleMusicSection() {
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }
