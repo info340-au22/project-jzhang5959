@@ -1050,7 +1050,6 @@ button#Join,
 button#Login {
     background-color: #3DACB4;
     border: none;
-    color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
     margin-top: 1rem;
@@ -1058,6 +1057,18 @@ button#Login {
     margin-right: auto;
     font-size: 16px;
 }
+
+button#Join,
+button#Login a {
+    color: white;
+    text-decoration: none;
+}
+
+button#Join,
+button#Login a:hover {
+    color: rgb(230, 230, 230);
+}
+
 
 
 /*  styling of the screen width of 780px or greater */
