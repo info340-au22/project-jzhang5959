@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 export function NavHead(props) {
     const navArray = [{name:'HOME', url:'/'}, 
@@ -11,7 +13,7 @@ export function NavHead(props) {
     const navbar = navArray.map((elem) => {
         return (
             <li className="nav-item" key={elem.name}> 
-                <a className="nav-link"  href={elem.url}>{elem.name}</a> 
+                <Nav.Link className="nav-link"  href={elem.url}>{elem.name}</Nav.Link> 
             </li>
         ); // no current effect
     });
@@ -21,17 +23,16 @@ export function NavHead(props) {
     return(
         <div>
         
-        <nav className="navbar navbar-expand-lg" id="menu">
+         {/* <nav className="navbar navbar-expand-lg">
             
             <div className="container-fluid p-3">
                 <p className="navbar-brand">Moody</p>
-                <button id="tog" className="navbar-toggler ml-auto" type="button" 
-                data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarToggler">
-                    <ul className="navbar-nav" id="navbar">
+                    <ul className="navbar-nav">
                         {navbar}
                     </ul>
                 </div>
@@ -42,7 +43,23 @@ export function NavHead(props) {
                 </div>
             </div>
             
-        </nav>
+        </nav> */}
+
+<Navbar expand="md" className="navbar">
+            <div className="container-fluid p-3">
+                <Navbar.Brand href="/">Moody</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav>
+                        {navbar}
+                    </Nav>
+                </Navbar.Collapse>
+                <div className="sign-register">
+                    <a href="http://localhost:3000/login" className="login">Login</a>
+                    <button className="primary-bt"><a className="register" href="http://localhost:3000/register">Register</a></button>
+                </div>
+            </div>
+            </Navbar>
             
         </div>
     );
