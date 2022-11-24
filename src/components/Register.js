@@ -166,7 +166,7 @@ export default function Register(props) {
                 </div>
 
                 <div className="container">
-                    <button type="join" value="join" onClick={handleSubmit}><Link to='/profile'>Join Now</Link></button>
+                    <button id="Join" type="join" value="join" onClick={handleSubmit}><Link to='/profile'>Join Now</Link></button>
                 </div>
 
                 <div className="create-intro">

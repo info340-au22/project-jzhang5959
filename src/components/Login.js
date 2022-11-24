@@ -95,7 +95,7 @@ export default function Login() {
                 </div>
 
                 <div className="container">
-                    <button type="login" value="login" onClick={handleSubmit}><Link to='/profile'>Login</Link></button>
+                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>Login</Link></button>
                 </div>
             </form>
         </main>
