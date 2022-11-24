@@ -1,7 +1,6 @@
 import React from 'react';
 
-const socialMediaArray = [{media:"instagram" , icon:"fa fa-instagram", link:"https://www.instagram.com/"},
-                          {media:"facebook" , icon:"fa fa-facebook-square", link:"https://www.facebook.com/"},
+const socialMediaArray = [
                           {media:"github" , icon:"fa fa-github", link:"https://github.com/info340-au22/project-jzhang5959"}];
 export function Footer(props) {
     const socialMediaBar = socialMediaArray.map((elem) => {

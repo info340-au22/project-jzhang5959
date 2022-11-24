@@ -29,16 +29,25 @@ function MoodHeader() {
     );
 }
 
+const submit = <button className="btn save p-3 m-4" type="submit">Save</button>;
+
 function CardWarp() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Your mood today has been placed! `);
+    }
+
+
+
     return (
         <div className="container">
           <h2 className="primary-dark-color">How is your day? </h2>
-          <form>
+          <form onSubmit={handleSubmit}>
                 <div className="card-container row d-flex justify-content-evenly mood-log-space">
                     <SleepCard />
                     <MoodRadio />
                     <div className="d-flex justify-content-center">
-                        <button className="btn save p-3 m-4" type="submit">Save</button>
+                        <input className="btn save p-3 m-4" type="submit"/>
                         <a className="btn save p-3 m-4" href="http://localhost:3000/graph">View the Graphs</a>
                     </div>
                 </div>
@@ -47,13 +56,15 @@ function CardWarp() {
     );
 }
 
+
+
 function Slider() {
     const [value, setValue] = useState(0);
     const MAX = 15;
     const getBackgroundSize = () => {
-	return {
-		backgroundSize: `${(value * 100) / MAX}% 100%`,
-	};
+        return {
+            backgroundSize: `${(value * 100) / MAX}% 100%`,
+        };
     }
     return(
         <div className="slidecontainer">
@@ -147,6 +158,7 @@ function RadioWrap(props) {
     }
     return result;
 }
+
 
 
 export default function Mood() {
