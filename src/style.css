@@ -179,9 +179,9 @@ header .dash-border-light-bg {
 }
 
 .home-mood-fill {
-    text-align: right;
+    text-align: center;
     margin: 4rem auto;
-    width: 50%;
+    width: 60%;
     color: #247B82;
     padding: 0;
 }

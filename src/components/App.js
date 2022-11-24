@@ -7,6 +7,7 @@ import {NavHead} from './Nav';
 import {Footer} from './Footer';
 import Music from './music';
 import Mood from './Mood';
+import Graph from './Graph';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
 
@@ -24,6 +25,7 @@ export default function App() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/graph" element={<Graph />} />
                 </Routes>
         </BrowserRouter>
         
