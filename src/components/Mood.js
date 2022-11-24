@@ -30,7 +30,7 @@ function CardWarp() {
                     <MoodRadio />
                     <div className="d-flex justify-content-center">
                         <button className="btn save p-3 m-4" type="submit">Save</button>
-                        <a className="btn save p-3 m-4" href="mood-vis.html">View the Graphs</a>
+                        <a className="btn save p-3 m-4" href="http://localhost:3000/graph">View the Graphs</a>
                     </div>
                 </div>
             </form>
@@ -132,7 +132,7 @@ function RadioWrap(props) {
     const moods = props.moods;
     const result = [];
     for (let key in moods) {
-        result.push(<div class="d-flex flex-row">
+        result.push(<div className="d-flex flex-row">
                         <RadioHelper moods={moods} row={key} />
                     </div>);
     }

@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import {Footer} from './Footer.js';
-import Profile from './Profile.js';
 import {Link } from 'react-router-dom';
 
 

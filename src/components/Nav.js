@@ -10,8 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
 
 export function NavHead(props) {
     const navArray = [{name:'HOME', url:'/'}, 
@@ -27,10 +25,12 @@ export function NavHead(props) {
         ); // no current effect
     });
 
+    
+
     return(
         <div>
         
-        {/* <nav className="navbar navbar-expand-lg">
+         {/* <nav className="navbar navbar-expand-lg">
             
             <div className="container-fluid p-3">
                 <p className="navbar-brand">Moody</p>
@@ -52,7 +52,7 @@ export function NavHead(props) {
             
         </nav> */}
 
-        <Navbar expand="md" className="navbar">
+<Navbar expand="md" className="navbar">
             <div className="container-fluid p-3">
                 <Navbar.Brand href="/">Moody</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

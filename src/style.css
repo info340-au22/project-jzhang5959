@@ -179,9 +179,9 @@ header .dash-border-light-bg {
 }
 
 .home-mood-fill {
-    text-align: right;
+    text-align: center;
     margin: 4rem auto;
-    width: 50%;
+    width: 60%;
     color: #247B82;
     padding: 0;
 }
@@ -1047,8 +1047,8 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 
-/*  styling of the screen width of 800px or greater */
-@media (min-width: 800px) {
+/*  styling of the screen width of 760px or greater */
+@media (min-width: 760px) {
     h1 {
         font-size: 3rem;
     }
@@ -1116,11 +1116,18 @@ input[type="range"]::-webkit-slider-thumb:active {
     }
 
     .square-md {
-        width: 17rem;
-        height: 17rem;
+        width: 20rem;
+        height: 20rem;
     }
 }
 
+/*  styling of the screen width of 992px or greater */
+@media (min-width: 992px) {
+    .square-md {
+        width: 14rem;
+        height: 14rem;
+    }
+}
 
 /*  styling of the screen width of 1200px or greater */
 @media (min-width: 1200px) {
@@ -1140,5 +1147,4 @@ input[type="range"]::-webkit-slider-thumb:active {
         width: 16rem;
         height: 16rem;
     }
-
 }

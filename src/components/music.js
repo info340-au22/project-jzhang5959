@@ -53,7 +53,7 @@ export function StyleMusicSection() {
         const styleList = obj.musicType.map((type) => {
             return(
                 <li className="list-inline-item" key={type}>
-                    <div class="col"><button class="btn btn-dark" id={type}>{type}</button></div>
+                    <div className="col"><button className="btn btn-dark" id={type}>{type}</button></div>
                 </li>
             )
         });
