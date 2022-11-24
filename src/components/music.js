@@ -119,10 +119,13 @@ export function StyleMusicSection() {
                     <div className="container mt-5 mb-3">
                         <h2 className="primary-dark-color">Choose Style</h2>
                         <select className="choice" id="type-choice" value={type} onChange={typeChange}>
+                        <option className="value" value={filter()}>rock</option> 
                             <option className="value" value={filter()}>quick</option> 
                             <option className="value" value={filter()}>sad</option> 
                             <option className="value" value={filter()}>slow</option> 
-                            <option className="value" value={filter()}>acoustic</option>
+                            <option className="value" value={filter()}>piano</option>
+                            <option className="value" value={filter()}>alternative</option>
+                            <option className="value" value={filter()}>indie rock</option>
                         </select>
 
                         <div className="row text-center">
