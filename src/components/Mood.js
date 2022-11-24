@@ -132,7 +132,7 @@ function RadioWrap(props) {
     const moods = props.moods;
     const result = [];
     for (let key in moods) {
-        result.push(<div class="d-flex flex-row">
+        result.push(<div className="d-flex flex-row">
                         <RadioHelper moods={moods} row={key} />
                     </div>);
     }
