@@ -1,33 +1,68 @@
 import React from 'react';
+import MUSIC_SAMPLE from '../data/music-sample.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export function PlayMusic(props) {
-    const typeObj = props.type;
+/*
+{"rock":[], "quick": []}
+*/
 
 
+    const typeMusicObj = {};
+    for(const musicObj of MUSIC_SAMPLE) {
+        const typeList = musicObj.musicType;
+        const audioLink = musicObj.audioLink;
+        for(const type of typeList) {
+            if(typeMusicObj.hasOwnProperty(type)) {
+                typeMusicObj[type].push(audioLink);
+            }
+            else {
+                typeMusicObj[type] = [];
+                typeMusicObj[type].push(audioLink);
+            }
+        }
+    };
 
-}
-
-const musicSample = [{musicName:"Beat", mood:"Repulse", audioLink:"", musicType:["rock","quick"]},
-{musicName:"Asad", mood:"Fuming", audioLink:"", musicType:["rock","quick"]},
-{musicName:"fgsraetehf", mood:"Stressed", audioLink:"", musicType:["rock","quick","pop"]}];
-
-const moodSample = [{mood:"Repulse", color:"#EB8075", index:1},
-{mood:"Fuming", color:"#EB8075",index:2},
-{mood:"Stressed", color:"#E55A90",index:3}];
-
-const typeSample = [{musicType:"rock", playPageLink:<PlayMusic type="rock"/>, musicList:[]},
-{musicType:"quick", playPageLink:"/#"},
-{musicType:"pop", playPageLink:"/#"}];
-
-const moodMusicObj = {};
-for(const musicObj of musicSample) {
-    if(moodMusicObj.hasOwnProperty("{musicObj.mood}")) {
-        moodMusicObj.moodMusicObj["{musicObj.mood}"].push("{musicObj.audioLink}");
-    } else {
-        moodMusicObj["{musicObj.mood}"] = [];
+export default function MusicPlay(props) {
+    const type = "rock";
+    const typeMusicList = typeMusicObj[type];
+    const musicList = [];
+    for (const obj of MUSIC_SAMPLE) {
+        for(const musicLink of typeMusicList) {
+            if(obj.audioLink == musicLink) {
+                musicList.push(
+                    <div className="row my-4">
+                        <div className="col-11"> 
+                            <p>{obj.musicName}</p>
+                        </div>
+        
+                        <audio controls>
+                            <source src={obj.audioLink} type="audio/mpeg"></source>
+                        </audio>
+                    </div>
+                )
+            }
+        }
     }
-    
+
+    const typeName = type[0].toUpperCase() + type.substring(1);
+    return(
+        <div className="container-fluid music-play-bg">
+            <header>
+                <div>
+                    <h1>Get Your Mood Music</h1>
+                </div>
+            </header>
+
+            <main>
+
+                <div className="container play-music">
+                    <div class="music-name square-md">
+                        <h2>{typeName}</h2>
+                    </div>
+                    {musicList}
+                </div>
+            </main>
+
+        </div>
+    );
 }
-
-const typeSampleList = [];
-

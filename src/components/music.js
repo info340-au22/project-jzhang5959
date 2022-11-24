@@ -1,4 +1,22 @@
 import React from 'react';
+import PlayMusic from './music-play';
+import MUSIC_SAMPLE from '../data/music-sample.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+    const typeMusicObj = {};
+    for(const musicObj of MUSIC_SAMPLE) {
+        const typeList = musicObj.musicType;
+        const audioLink = musicObj.audioLink;
+        for(const type of typeList) {
+            if(typeMusicObj.hasOwnProperty(type)) {
+                typeMusicObj[type].push(audioLink);
+            }
+            else {
+                typeMusicObj[type] = [];
+                typeMusicObj[type].push(audioLink);
+            }
+        }
+    };
 
 
 const recommandMusicSample = [{mood:"Repulse", color:"#E8988E", playPageLink:"/#", musicType:["quick","sad"]},
@@ -63,7 +81,7 @@ export function StyleMusicSection() {
                 <div className="row d-flex justify-content-center">
                     <div className="card p-3 square-sm mx-3 ">
                         <div>
-                            <a className="heading-style primary-dark-color" href="{obj.playPageLink}">{obj.mood}</a>
+                            <a className="heading-style primary-dark-color" href="/music-play">{obj.mood}</a>
                         </div>
                     </div>
                 </div>
