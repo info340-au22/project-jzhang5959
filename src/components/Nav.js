@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './home.js';
 import Profile from './Profile.js';
 import Mood from './Mood.js';
@@ -57,7 +58,9 @@ export function NavHead(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
+                    <ul className="navbar-nav">
                         {navbar}
+                    </ul>
                     </Nav>
                 </Navbar.Collapse>
                 <div className="sign-register">
