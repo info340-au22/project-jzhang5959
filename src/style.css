@@ -181,7 +181,7 @@ header .dash-border-light-bg {
 .home-mood-fill {
     text-align: center;
     margin: 4rem auto;
-    width: 60%;
+    width: 0%;
     color: #247B82;
     padding: 0;
 }
@@ -223,7 +223,7 @@ header .dash-border-light-bg {
 .square-md {
     width: 15rem;
     height: 15rem;
-    margin: 2rem 0;
+    margin-top: 2rem;
     line-height: 10rem;
     font-weight: bold;
     text-align: center;
@@ -848,7 +848,7 @@ header .dash-border-light-bg {
     background-color: #e1dc84;
 }
 
-.dot.optimistic {
+.dot.disgusted {
     background-color: #E9D05A;
 }
 
@@ -1060,8 +1060,8 @@ button#Login {
 }
 
 
-/*  styling of the screen width of 760px or greater */
-@media (min-width: 760px) {
+/*  styling of the screen width of 780px or greater */
+@media (min-width: 768px) {
     h1 {
         font-size: 3rem;
     }
@@ -1127,20 +1127,8 @@ button#Login {
     .profile p {
         font-size: 22px;
     }
-
-    .square-md {
-        width: 20rem;
-        height: 20rem;
-    }
 }
 
-/*  styling of the screen width of 992px or greater */
-@media (min-width: 992px) {
-    .square-md {
-        width: 14rem;
-        height: 14rem;
-    }
-}
 
 /*  styling of the screen width of 1200px or greater */
 @media (min-width: 1200px) {
@@ -1156,8 +1144,4 @@ button#Login {
         font-size: 24px;
     }
 
-    .square-md {
-        width: 16rem;
-        height: 16rem;
-    }
 }
