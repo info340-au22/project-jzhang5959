@@ -223,7 +223,7 @@ header .dash-border-light-bg {
 .square-md {
     width: 15rem;
     height: 15rem;
-    margin-top: 2rem;
+    margin: 2rem 0;
     line-height: 10rem;
     font-weight: bold;
     text-align: center;
@@ -1047,8 +1047,8 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 
-/*  styling of the screen width of 780px or greater */
-@media (min-width: 768px) {
+/*  styling of the screen width of 760px or greater */
+@media (min-width: 760px) {
     h1 {
         font-size: 3rem;
     }
@@ -1114,8 +1114,20 @@ input[type="range"]::-webkit-slider-thumb:active {
     .profile p {
         font-size: 22px;
     }
+
+    .square-md {
+        width: 20rem;
+        height: 20rem;
+    }
 }
 
+/*  styling of the screen width of 992px or greater */
+@media (min-width: 992px) {
+    .square-md {
+        width: 14rem;
+        height: 14rem;
+    }
+}
 
 /*  styling of the screen width of 1200px or greater */
 @media (min-width: 1200px) {
@@ -1131,4 +1143,8 @@ input[type="range"]::-webkit-slider-thumb:active {
         font-size: 24px;
     }
 
+    .square-md {
+        width: 16rem;
+        height: 16rem;
+    }
 }

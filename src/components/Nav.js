@@ -1,4 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './home.js';
+import Profile from './Profile.js';
+import Mood from './Mood.js';
+import Music from './music.js';
+import Register from './Register.js';
+import Login from './Login.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
@@ -49,12 +58,14 @@ export function NavHead(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
+                    <ul className="navbar-nav">
                         {navbar}
+                    </ul>
                     </Nav>
                 </Navbar.Collapse>
                 <div className="sign-register">
-                    <a href="http://localhost:3000/login" className="login">Login</a>
-                    <button className="primary-bt"><a className="register" href="http://localhost:3000/register">Register</a></button>
+                    <a href="/login" className="login">Login</a>
+                    <button className="primary-bt"><a className="register" href="/register">Register</a></button>
                 </div>
             </div>
             </Navbar>
