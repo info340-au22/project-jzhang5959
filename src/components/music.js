@@ -2,6 +2,7 @@ import React from 'react';
 import PlayMusic from './music-play';
 import MUSIC_SAMPLE from '../data/music-sample.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MOODS from '../data/MOODS.json'
 
     const typeMusicObj = {};
     for(const musicObj of MUSIC_SAMPLE) {

@@ -5,8 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 /*
 {"rock":[], "quick": []}
 */
-
-
     const typeMusicObj = {};
     for(const musicObj of MUSIC_SAMPLE) {
         const typeList = musicObj.musicType;
