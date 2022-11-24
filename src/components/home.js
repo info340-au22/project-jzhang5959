@@ -1,5 +1,4 @@
 import React from 'react';
-import {Footer} from './Footer';
 import {RecommandMusicSection} from './music';
 
 function HomeContent() {

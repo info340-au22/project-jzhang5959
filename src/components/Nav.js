@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
@@ -8,7 +7,6 @@ export function NavHead(props) {
     {name:'MOOD LOG', url:'/mood'}, 
     {name:'MUSIC', url:'/music'}, 
     {name:'PROFILE', url:'/profile'}];
-    const [tog, updateTog] = useState();
 
     const navbar = navArray.map((elem) => {
         return (

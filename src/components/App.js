@@ -8,7 +8,7 @@ import {Footer} from './Footer';
 import Music from './music';
 import Mood from './Mood';
 import Graph from './Graph';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 export default function App() {
