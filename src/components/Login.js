@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 
 
-export default function Login() {
+export default function Login({update}) {
     const [email, updateEmail] = useState("");
     const [password, updateP] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
+
+    useEffect(() => { 
+       
+    }, []);
 
     const emailChange = (event) => {
         const email = event.target.value;
@@ -25,11 +29,11 @@ export default function Login() {
         if (email === '' || password === '') {
           setError(true);
           saveStateToLocalStorage();
-          
         } else {
           setSubmitted(true);
           setError(false);
         }
+        update(email);
       };
     
       const successMessage = () => {
@@ -61,12 +65,6 @@ export default function Login() {
     const saveStateToLocalStorage = () => { 
           localStorage.setItem('state', JSON.stringify({state})); 
         };
-    
-    {/*const getStateFromLocalStorage = () => { 
-            let data = localStorage.getItem('state');  
-            const initialValue = JSON.parse(data);
-            return initialValue;
-        };*/}
 
     return (
         <div className="container-fluid">
@@ -83,6 +81,9 @@ export default function Login() {
                         placeholder="Enter Your Email" 
                         value={email} 
                         onChange={emailChange}/>
+                    {submitted && !email &&
+                        <div className="invalid-feedback">Email is required</div>
+                    }
                 </div>
 
                 <div className="container">
@@ -92,10 +93,15 @@ export default function Login() {
                         placeholder="Enter your password" 
                         value={password} 
                         onChange={pwChange}/>
+                    {submitted && !password &&
+                        <div className="invalid-feedback">Password is required</div>
+                    }
                 </div>
 
                 <div className="container">
-                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>Login</Link></button>
+                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>
+                    Login
+                    </Link></button>
                 </div>
             </form>
         </main>

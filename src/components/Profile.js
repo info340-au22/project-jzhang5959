@@ -8,10 +8,11 @@ const exampleMood = [{date:"2022-07-04" , mood:"Happy day", icon:"dot joyful"},
 
 export default function Profile(props) {
     const [name, updateName] = useState("Bella");
-    const [email, updateEmail] = useState("gehuijun@uw.edu");
+    //const [email, updateEmail] = useState("gehuijun@uw.edu");
     const [status, setStatus] = useState("");
     const [gender, updateG] = useState("girl");
     const [sentence, setSent] = useState("Enjoy my life");
+    const storeEmail = props.upEmail;
     
     const moodLog = exampleMood.map((elem) => {
         return (
@@ -43,7 +44,7 @@ export default function Profile(props) {
                     User Name: {name}
                     </p>
                     <p> 
-                    Email: {email}
+                    Email: {storeEmail}
                     </p>
                     <p>
                     Gender: 

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App.js';
+import 'whatwg-fetch';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
