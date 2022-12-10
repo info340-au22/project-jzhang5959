@@ -4,7 +4,7 @@ import Home from './home.js';
 import Profile from './Profile.js';
 import Mood from './Mood.js';
 import Music from './music.js';
-import Register from './Register.js';
+import Registration from './Registration.js';
 import Login from './Login.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';

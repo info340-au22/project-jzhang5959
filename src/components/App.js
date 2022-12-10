@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './home';
 import Profile from './Profile';
 import Login from './Login';
-import Register from './Register';
+import Registration from './Registration';
 import {NavHead} from './Nav';
 import {Footer} from './Footer';
 import Music from './music';
@@ -26,7 +26,7 @@ export default function App() {
                         <Route path="/music-play" element={<MusicPlay />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/register" element={<Registration />} />
                     <Route path="/graph" element={<Graph />} />
                 </Routes>
         </BrowserRouter>

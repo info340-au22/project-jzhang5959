@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Link } from 'react-router-dom';
-import EditPhoto from './EditPhoto.js';
+import PhotoEdition from './PhotoEdition.js';
 
 const exampleMood = [{date:"2022-07-04" , mood:"Happy day", icon:"dot joyful"},
                     {date:"2022-07-03" , mood:"Sad", icon:"dot miserable"},
@@ -38,7 +38,7 @@ export default function Profile(props) {
                 <h2 className='primary-dark-color'>User Information</h2>
 
                 <div className="container" id="front">
-                    <EditPhoto />
+                    <PhotoEdition />
                     <p>
                     User Name: {name}
                     </p>
