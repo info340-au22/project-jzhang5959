@@ -16,7 +16,7 @@ export default function Login({update}) {
         const email = event.target.value;
         updateEmail(email);
         setSubmitted(false);
-      }
+    }
 
     const pwChange = (event) => {
         const password = event.target.value;
@@ -33,7 +33,7 @@ export default function Login({update}) {
           setSubmitted(true);
           setError(false);
         }
-        update(email);
+        //update(email);
       };
     
       const successMessage = () => {
