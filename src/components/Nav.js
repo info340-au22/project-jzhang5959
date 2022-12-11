@@ -64,8 +64,8 @@ export function NavHead(props) {
                     </Nav>
                 </Navbar.Collapse>
                 <div className="sign-register">
-                    <a href="/login" className="login">Login</a>
-                    <button className="primary-bt"><a className="register" href="/register">Register</a></button>
+                    <button className="primary-bt"><a href="/login" className="login">Login</a></button>
+                   { /*<button className="primary-bt"><a className="register" href="/register">Register</a></button>*/}
                 </div>
             </div>
             </Navbar>
