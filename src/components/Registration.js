@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
+import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 
-export default function Register(props) {
+export default function Register({newR}) {
     const [name, updateName] = useState("");
     const [email, updateEmail] = useState("");
     const [password, updateP] = useState("");
@@ -50,6 +51,7 @@ export default function Register(props) {
           setSubmitted(true);
           setError(false);
         }
+        newR(name, email, password, gender);
       };
     
       const successMessage = () => {
@@ -87,11 +89,41 @@ export default function Register(props) {
         const initialValue = JSON.parse(data);
         return initialValue;
       };
-      
-    const applyInfo = (event) => {
-        event.preventDefault();
-        props.applyCallback(name, email, password, age, gender);
+
+    useEffect(() => { 
+      const db = getDatabase(); //"the database"
+      const allMessageRef = ref(db, "Register");
+
+      //addEventLister("databse value change")
+    //returns the instructions how to turn it off
+    const offFunction = onValue(allMessageRef, (snapshot) => {
+      const valueObj = snapshot.val();
+      const objKeys = Object.keys(valueObj);
+
+      console.log(valueObj);
+
+     updateEmail(valueObj.email); //needs to be an array
+    })
+
+    //the useEffect callback returns...
+    function cleanup() {
+      console.log("component is being removed");
+      console.log("turn out the lights");
+      offFunction();
     }
+
+    return cleanup; 
+    }, []);
+
+    const db = getDatabase(); //"the database"
+    const allMessageRef = ref(db, "Register");
+    const addUser = {
+      "name": name,
+      "email": email,
+      "password": password,
+      "gender": gender
+    }
+    firebaseSet(allMessageRef, addUser);
 
     return (
         <div className="container-fluid">
@@ -140,9 +172,9 @@ export default function Register(props) {
                 <div className="container">
                     <label key="gender" id="label-gender">Gender</label>
                     <select className="form-select" id="gender" value={gender} onChange={genderChange}>
-                        <option value="female">Female</option>
-                        <option value="male">Male</option>
-                        <option value="not-to-say">Perfer not to say</option>
+                        <option value="women">Female</option>
+                        <option value="man">Male</option>
+                        <option value="Not-to-say">Perfer not to say</option>
                     </select>
                 </div>
 

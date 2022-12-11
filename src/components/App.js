@@ -19,6 +19,7 @@ export default function App() {
     const [image, updateImage] = useState('img/female-1.png');
     const [gender, updateG] = useState("girl");
     const [sentence, setSent] = useState("Enjoy my life");
+    const [password, updateP] = useState("");
 
     //function updateData(emails) {
         //updateEmail(emails);
@@ -30,6 +31,18 @@ export default function App() {
         updateImage(image1);
         updateG(gender1);
         setSent(sentence1);
+    }
+
+    function updateLogin(email2, password2) {
+        updateName(email2);
+        updateP(password2);
+    }
+
+    function newRegister(name3, email3, password3, gender3) {
+        updateName(name3);
+        updateEmail(email3);
+        updateP(password3);
+        updateG(gender3);
     }
 
 
@@ -44,9 +57,9 @@ export default function App() {
                     <Route path="/mood" element={<Mood />} />
                     <Route path="/music" element={<Music />} />
                         <Route path="/music-play" element={<MusicPlay />} />
-                    <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence}/>} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Registration />} />
+                    <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} pas={password}/>} />
+                    <Route path="/login" element={<Login update={updateLogin}/>} />
+                    <Route path="/register" element={<Registration newR={newRegister}/>} />
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
                     <Route path="/graph" element={<Graph />} />
                 </Routes>

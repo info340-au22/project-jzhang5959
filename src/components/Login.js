@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
-
+import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 
 export default function Login({update}) {
     const [email, updateEmail] = useState("");
@@ -9,8 +9,38 @@ export default function Login({update}) {
     const [error, setError] = useState(false);
 
     useEffect(() => { 
-       
+      const db = getDatabase(); //"the database"
+      const allMessageRef = ref(db, "Info");
+
+      //addEventLister("databse value change")
+    //returns the instructions how to turn it off
+    const offFunction = onValue(allMessageRef, (snapshot) => {
+      const valueObj = snapshot.val();
+      const objKeys = Object.keys(valueObj);
+
+      
+      console.log(valueObj);
+
+     updateEmail(valueObj.email); //needs to be an array
+    })
+
+    //the useEffect callback returns...
+    function cleanup() {
+      console.log("component is being removed");
+      console.log("turn out the lights");
+      offFunction();
+    }
+
+    return cleanup; 
     }, []);
+
+    const db = getDatabase(); //"the database"
+    const allMessageRef = ref(db, "Info");
+    const addUser = {
+      "email": email,
+      "password": password
+    }
+    firebaseSet(allMessageRef, addUser);
 
     const emailChange = (event) => {
         const email = event.target.value;
@@ -33,7 +63,7 @@ export default function Login({update}) {
           setSubmitted(true);
           setError(false);
         }
-        //update(email);
+        update(email, password);
       };
     
       const successMessage = () => {
