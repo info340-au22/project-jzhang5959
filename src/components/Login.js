@@ -1,12 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
+import {StyledFirebaseAuth} from 'react-firebaseui';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
 
 export default function Login({update}) {
     const [email, updateEmail] = useState("");
     const [password, updateP] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
+    const auth = getAuth();
+
+    const configObj = {
+      signInOptions: [
+        {
+          provider: EmailAuthProvider.PROVIDER_ID,
+          requireDisplayedName: true,
+        },
+        {
+          provider: GoogleAuthProvider.PROVIDER_ID
+        }
+      ],
+      signInFlow: 'popup',
+      callbacks: {
+        signInSuccessWithAuthResult: () => false
+      },
+      credentialHelper: "none"
+    }
 
     useEffect(() => { 
       const db = getDatabase(); //"the database"
@@ -18,7 +38,6 @@ export default function Login({update}) {
       const valueObj = snapshot.val();
       const objKeys = Object.keys(valueObj);
 
-      
       console.log(valueObj);
 
      updateEmail(valueObj.email); //needs to be an array
@@ -104,6 +123,7 @@ export default function Login({update}) {
 
         <main className="login-profile">
             <form id="login">
+              
                 <div className="container">
                     <label key="email" id="label-email" onChange={emailChange}>Email</label>
                     <input type="email"
@@ -133,6 +153,8 @@ export default function Login({update}) {
                     Login
                     </Link></button>
                 </div>
+                
+                <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj}/>
             </form>
         </main>
 

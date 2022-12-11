@@ -11,6 +11,7 @@ import Mood from './Mood';
 import Graph from './Graph';
 import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 
 export default function App() {
@@ -45,7 +46,20 @@ export default function App() {
         updateG(gender3);
     }
 
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (firebaseUser) => {
+            if(firebaseUser) {
+                console.log("sign in as", firebaseUser.displayName);
+                
+                console.log(firebaseUser);
+            }
+            else {
+                console.log("sign out");
+            }
+        });
 
+    }, [])
     
     return (
         <div>
