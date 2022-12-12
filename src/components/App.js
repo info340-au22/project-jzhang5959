@@ -6,7 +6,7 @@ import Registration from './Registration';
 import {NavHead} from './Nav';
 import {Footer} from './Footer';
 import Mood from './Mood';
-import Graph from './Graph';
+import MoodDisplay from './MoodDisplay';
 import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import MusicPage from './music/MusicPage';
@@ -78,7 +78,7 @@ export default function App() {
         <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/mood" element={<Mood />} />
+                    <Route path="/mood-display" element={<MoodDisplay />} />
                     <Route path="/music" element={<MusicPage />} >
                         <Route path=":musicType" element={<MusicPlayList />} />
                     </Route>
@@ -86,7 +86,7 @@ export default function App() {
                     <Route path="/login" element={<Login update={updateLogin} />} />
                         <Route path="/register" element={<Registration newR={newRegister}/>} />
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
-                    <Route path="/graph" element={<Graph />} />
+                    <Route path="/mood" element={<Mood />} />
                 </Routes>
         </BrowserRouter>
         <Footer />     

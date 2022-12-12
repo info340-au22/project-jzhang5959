@@ -52,7 +52,6 @@ export default function Register({newR}) {
           setError(false);
         }
         newR(name, email, password, gender);
-        firebasePush(allMessageRef, addUser);
       };
     
       const successMessage = () => {
@@ -90,8 +89,33 @@ export default function Register({newR}) {
         const initialValue = JSON.parse(data);
         return initialValue;
       };
-    
-    const db = getDatabase();
+
+    useEffect(() => { 
+      const db = getDatabase(); //"the database"
+      const allMessageRef = ref(db, "Register");
+
+      //addEventLister("databse value change")
+    //returns the instructions how to turn it off
+    const offFunction = onValue(allMessageRef, (snapshot) => {
+      const valueObj = snapshot.val();
+      const objKeys = Object.keys(valueObj);
+
+      console.log(valueObj);
+
+     updateEmail(valueObj.email); //needs to be an array
+    })
+
+    //the useEffect callback returns...
+    function cleanup() {
+      console.log("component is being removed");
+      console.log("turn out the lights");
+      offFunction();
+    }
+
+    return cleanup; 
+    }, []);
+
+    const db = getDatabase(); //"the database"
     const allMessageRef = ref(db, "Register");
     const addUser = {
       "name": name,
@@ -99,28 +123,12 @@ export default function Register({newR}) {
       "password": password,
       "gender": gender
     }
-
-    useEffect(() => { 
-
-    const offFunction = onValue(allMessageRef, (snapshot) => {
-      const valueObj = snapshot.val();
-      console.log(valueObj);
-    })
-
-    function cleanup() {
-      console.log("component is being added");
-      offFunction();
-    }
-
-    return cleanup; 
-    }, []);
-
-
+    firebaseSet(allMessageRef, addUser);
 
     return (
         <div className="container-fluid">
         <header>
-            <h1>Add More Info</h1>
+            <h1>Create Your Account</h1>
         </header> 
 
         <main className="create-profile">
@@ -166,7 +174,7 @@ export default function Register({newR}) {
                     <select className="form-select" id="gender" value={gender} onChange={genderChange}>
                         <option value="women">Female</option>
                         <option value="man">Male</option>
-                        <option value="person">Perfer not to say</option>
+                        <option value="Not-to-say">Perfer not to say</option>
                     </select>
                 </div>
 
