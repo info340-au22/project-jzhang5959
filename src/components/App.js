@@ -69,7 +69,7 @@ export default function App() {
     }, [])
 
     // music
-    const [musicMood,setMusicMood] = useState("rock");
+    const [musicMood,setMusicMood] = useState("joyful");
     
     function changeMood(newMood) {
         setMusicMood(newMood);

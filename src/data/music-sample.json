@@ -19,14 +19,14 @@
         "musicName":"Wind in Her Hair",
         "artist":"Motorama",
         "mood":["joyful", "hopeful", "blissful"],
-        "audioLink":"../../public/audio/Motorama-Wind-in-Her-Hair", 
+        "audioLink":"../../public/audio/Motorama-Wind-in-Her-Hair.mp3", 
         "musicType":["rock","alternative"]
     },
 
     {
         "musicName":"Sunrise", 
         "artist":"Yeasayer",
-        "mood":["energized", "optimistic", "excited"],
+        "mood":["energized", "optimistic", "excited", "joyful"],
         "audioLink":"../../public/audio/Yeasayer-Sunrise.mp3", 
         "musicType":["indie rock","quick"]
     },
