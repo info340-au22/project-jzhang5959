@@ -3,10 +3,10 @@ import {Link } from 'react-router-dom';
 
 export default function PhotoEdition({edit}) {
     const [image, updateImage] = useState('img/female-1.png');
-    const [email, updateEmail] = useState("gehuijun@uw.edu");
+    const [email, updateEmail] = useState("");
     const [gender, updateG] = useState("girl");
-    const [sentence, setSent] = useState("Enjoy my life");
-    const [name, updateName] = useState("Bella");
+    const [sentence, setSent] = useState("");
+    const [name, updateName] = useState("");
 
     const photos = [{name:'female-1', value:'img/female-1.png'}, 
     {name:'female-2', value:'img/female-2.png'}, 

@@ -1,17 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
-
+import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
+import {StyledFirebaseAuth} from 'react-firebaseui';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider,  signOut} from 'firebase/auth';
 
 export default function Login({update}) {
     const [email, updateEmail] = useState("");
     const [password, updateP] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
+    const auth = getAuth();
 
-    useEffect(() => { 
-       
-    }, []);
 
+
+    const configObj = {
+      signInOptions: [
+        {
+          provider: EmailAuthProvider.PROVIDER_ID,
+          requireDisplayedName: true,
+        },
+        {
+          provider: GoogleAuthProvider.PROVIDER_ID
+        }
+      ],
+      signInFlow: 'popup',
+      callbacks: {
+        signInSuccessWithAuthResult: () => false
+      },
+      credentialHelper: "none"
+    }
+    
     const emailChange = (event) => {
         const email = event.target.value;
         updateEmail(email);
@@ -33,7 +51,7 @@ export default function Login({update}) {
           setSubmitted(true);
           setError(false);
         }
-        //update(email);
+        update(email, password);
       };
     
       const successMessage = () => {
@@ -59,6 +77,7 @@ export default function Login({update}) {
           </div>
         );
       };
+
     
     const state = [{email: {email}, password: {password}}];
 
@@ -74,7 +93,8 @@ export default function Login({update}) {
 
         <main className="login-profile">
             <form id="login">
-                <div className="container">
+              
+                {/*<div className="container">
                     <label key="email" id="label-email" onChange={emailChange}>Email</label>
                     <input type="email"
                         id="email"
@@ -96,11 +116,25 @@ export default function Login({update}) {
                     {submitted && !password &&
                         <div className="invalid-feedback">Password is required</div>
                     }
-                </div>
+                  </div>
 
                 <div className="container">
                     <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>
                     Login
+                    </Link></button>
+                </div>*/}
+                
+                <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj}/>
+                <div className="container">
+                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/register'>
+                    New User? 
+                    </Link></button>
+                    <p>Please Provide More Information To Us.</p>
+                </div>
+
+                <div className="container">
+                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>
+                    Welcome Back!
                     </Link></button>
                 </div>
             </form>

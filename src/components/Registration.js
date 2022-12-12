@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
+import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 
-export default function Register(props) {
+export default function Register({newR}) {
     const [name, updateName] = useState("");
     const [email, updateEmail] = useState("");
     const [password, updateP] = useState("");
@@ -50,6 +51,8 @@ export default function Register(props) {
           setSubmitted(true);
           setError(false);
         }
+        newR(name, email, password, gender);
+        firebasePush(allMessageRef, addUser);
       };
     
       const successMessage = () => {
@@ -87,16 +90,37 @@ export default function Register(props) {
         const initialValue = JSON.parse(data);
         return initialValue;
       };
-      
-    const applyInfo = (event) => {
-        event.preventDefault();
-        props.applyCallback(name, email, password, age, gender);
+    
+    const db = getDatabase();
+    const allMessageRef = ref(db, "Register");
+    const addUser = {
+      "name": name,
+      "email": email,
+      "password": password,
+      "gender": gender
     }
+
+    useEffect(() => { 
+
+    const offFunction = onValue(allMessageRef, (snapshot) => {
+      const valueObj = snapshot.val();
+      console.log(valueObj);
+    })
+
+    function cleanup() {
+      console.log("component is being added");
+      offFunction();
+    }
+
+    return cleanup; 
+    }, []);
+
+
 
     return (
         <div className="container-fluid">
         <header>
-            <h1>Create Your Account</h1>
+            <h1>Add More Info</h1>
         </header> 
 
         <main className="create-profile">
@@ -140,9 +164,9 @@ export default function Register(props) {
                 <div className="container">
                     <label key="gender" id="label-gender">Gender</label>
                     <select className="form-select" id="gender" value={gender} onChange={genderChange}>
-                        <option value="female">Female</option>
-                        <option value="male">Male</option>
-                        <option value="not-to-say">Perfer not to say</option>
+                        <option value="women">Female</option>
+                        <option value="man">Male</option>
+                        <option value="person">Perfer not to say</option>
                     </select>
                 </div>
 

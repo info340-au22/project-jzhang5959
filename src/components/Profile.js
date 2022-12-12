@@ -7,6 +7,7 @@ export default function Profile(props) {
     const storeGender = props.Gender;
     const storeBio = props.bio;
     const storeImg = props.Img;
+    const storePass = props.pas;
 
 
     return (
