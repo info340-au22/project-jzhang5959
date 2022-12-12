@@ -10,8 +10,8 @@ import MusicPlay from './music-play';
 import Mood from './Mood';
 import Graph from './Graph';
 import InfoEdition from './InfoEdition';
-import { BrowserRouter, Routes, Route, Redirect, Link} from 'react-router-dom';
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 
 
 export default function App() {
@@ -48,7 +48,7 @@ export default function App() {
 
     useEffect(() => {
         const auth = getAuth();
-        onAuthStateChanged(auth, (firebaseUser) => {
+        const unregisterFunction = onAuthStateChanged(auth, (firebaseUser) => {
             if(firebaseUser) {
                 console.log("sign in as", firebaseUser.displayName);
                 console.log(firebaseUser);
@@ -58,6 +58,13 @@ export default function App() {
                 console.log("sign out");
             }
         });
+
+        signOut(auth).catch(err => console.log(err));
+
+        function cleanup() {
+            unregisterFunction(); //call the unregister function
+          }
+          return cleanup;
 
     }, [])
 

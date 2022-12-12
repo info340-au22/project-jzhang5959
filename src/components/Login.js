@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 import {StyledFirebaseAuth} from 'react-firebaseui';
-import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider,  signOut} from 'firebase/auth';
 
 export default function Login({update}) {
     const [email, updateEmail] = useState("");
