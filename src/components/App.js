@@ -5,12 +5,12 @@ import Login from './Login';
 import Registration from './Registration';
 import {NavHead} from './Nav';
 import {Footer} from './Footer';
-import Music from './music';
-import MusicPlay from './music-play';
 import Mood from './Mood';
 import Graph from './Graph';
 import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import MusicPage from './music/MusicPage';
+import MusicPlayList from './music/MusicPlayList';
 import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 
 
@@ -68,8 +68,9 @@ export default function App() {
 
     }, [])
 
+    // music
+    const [musictype,setMusictype] = useState("rock");
 
-    
     return (
         <div>
         <NavHead currentUser={currentUser}/>
@@ -83,11 +84,11 @@ export default function App() {
                     <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
                         <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
+
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
                     <Route path="/graph" element={<Graph />} />
                 </Routes>
         </BrowserRouter>
-        
         <Footer />     
         </div>
     );

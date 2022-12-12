@@ -27,33 +27,9 @@ export function NavHead(props) {
         signOut(getAuth());
       } 
     
-
     return(
         <div>
-        
-         {/* <nav className="navbar navbar-expand-lg">
-            
-            <div className="container-fluid p-3">
-                <p className="navbar-brand">Moody</p>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarToggler">
-                    <ul className="navbar-nav">
-                        {navbar}
-                    </ul>
-                </div>
-
-                <div className="sign-register">
-                    <a href="http://localhost:3000/login" className="login">Login</a>
-                    <button className="primary-bt"><a className="register" href="http://localhost:3000/register">Register</a></button>
-                </div>
-            </div>
-            
-        </nav> */}
-
-<Navbar expand="md" className="navbar">
+        <Navbar expand="md" className="navbar">
             <div className="container-fluid p-3">
                 <Navbar.Brand href="/">Moody</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -69,8 +45,8 @@ export function NavHead(props) {
                     <button className="primary-bt" onClick={handleSignOut}>Sign Out</button>
                 </div>
             </div>
+
             </Navbar>
-            
         </div>
     );
 }
