@@ -84,7 +84,7 @@ export default function App() {
         else { //otherwise, show the child route content
           return <Outlet />
         }
-      }
+    }
 
     return (
         <div>
