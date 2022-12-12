@@ -3,24 +3,28 @@ import MUSIC_SAMPLE from '../../data/music-sample.json'
 import { useParams } from 'react-router-dom';
 import { typeMusicObject } from './StyleMusic'
 
-export default function MusicPlayList() {
+export default function MusicPlayPage() {
     const params = useParams();
     const type = params.musicType;
-    console.log(params);
     const typeMusicList = typeMusicObject(MUSIC_SAMPLE);
-    const nameList = typeMusicList.get(type);
+    const nameList = typeMusicList[type];
+
+    function playAudio(url) {
+        var audio = new Audio(url);
+        audio.play();
+    }
 
     const musicList = [];
     for(const name of nameList) {
         for(const music of MUSIC_SAMPLE) {
             if(music.musicName === name) {
                 musicList.push(
-                    <div className="row my-4">
+                    <div className="row my-4" key={music.musicName}>
                         <div className="col-11"> 
                             <p>{music.musicName}</p>
                         </div>
         
-                        <audio controls>
+                        <audio controls onClick={playAudio("{music.audioLink}")}>
                             <source src={music.audioLink} type="audio/mpeg"></source>
                         </audio>
                     </div>
@@ -30,7 +34,7 @@ export default function MusicPlayList() {
     }
 
     const typeName = type[0].toUpperCase() + type.substring(1);
-    return(
+    return (
         <div className="container-fluid music-play-bg">
             <header>
                 <div>
@@ -41,7 +45,7 @@ export default function MusicPlayList() {
             <main>
 
                 <div className="container play-music">
-                    <div class="music-name square-md">
+                    <div className="music-name square-md">
                         <h2>{typeName}</h2>
                     </div>
                     {musicList}

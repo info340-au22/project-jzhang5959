@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import MUSIC_SAMPLE from '../../data/music-sample.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -47,7 +47,7 @@ function StyleMusicCard(props) {
 export default function StyleMusicList(props) {
     const typeMusicObj =  typeMusicObject(MUSIC_SAMPLE);
     const styleList = Object.keys(typeMusicObj).map((type) => {
-        return <StyleMusicCard type={type}/>
+        return <StyleMusicCard type={type} key={type}/>
     })
 
     return(
