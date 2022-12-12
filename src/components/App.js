@@ -5,15 +5,16 @@ import Login from './Login';
 import Registration from './Registration';
 import {NavHead} from './Nav';
 import {Footer} from './Footer';
-import Music from './music';
-import MusicPlay from './music-play';
 import Mood from './Mood';
 import Graph from './Graph';
 import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import MusicPage from './music/MusicPage';
+import MusicPlayList from './music/MusicPlayList';
 
 
 export default function App() {
+    // profile
     const [name, updateName] = useState("Bella");
     const [email, updateEmail] = useState("gehuijun@uw.edu");
     const [image, updateImage] = useState('img/female-1.png');
@@ -33,7 +34,9 @@ export default function App() {
     }
 
 
-    
+    // music
+    const [musictype,setMusictype] = useState("rock");
+
     return (
         <div>
         <NavHead />
@@ -42,8 +45,9 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/mood" element={<Mood />} />
-                    <Route path="/music" element={<Music />} />
-                        <Route path="/music-play" element={<MusicPlay />} />
+                    <Route path="/music" element={<MusicPage />} >
+                        <Route path=":musicType" element={<MusicPlayList />} />
+                    </Route>
                     <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence}/>} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Registration />} />
@@ -51,7 +55,6 @@ export default function App() {
                     <Route path="/graph" element={<Graph />} />
                 </Routes>
         </BrowserRouter>
-        
         <Footer />     
         </div>
     );
