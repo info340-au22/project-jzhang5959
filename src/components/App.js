@@ -69,7 +69,11 @@ export default function App() {
     }, [])
 
     // music
-    const [musictype,setMusictype] = useState("rock");
+    const [musicMood,setMusicMood] = useState("rock");
+    
+    function changeMood(newMood) {
+        setMusicMood(newMood);
+    }
 
     return (
         <div>
@@ -78,8 +82,8 @@ export default function App() {
         <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/mood" element={<Mood />} />
-                    <Route path="/music" element={<MusicPage />} >
+                    <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
+                    <Route path="/music" element={<MusicPage mood={musicMood}/>} >
                         <Route path=":musicType" element={<MusicPlayList />} />
                     </Route>
                     <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} pas={password}/>} />

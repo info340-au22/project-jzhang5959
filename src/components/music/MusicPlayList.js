@@ -7,7 +7,6 @@ export default function MusicPlayList() {
     const params = useParams();
     const type = params.musicType;
     console.log(params);
-    
     const typeMusicList = typeMusicObject(MUSIC_SAMPLE);
     const nameList = typeMusicList.get(type);
 
