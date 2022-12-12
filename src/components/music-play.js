@@ -47,7 +47,7 @@ export default function MusicPlay(props) {
         <div className="container-fluid music-play-bg">
             <header>
                 <div>
-                    <h1>Get Your Mood Music</h1>
+                    <h1>Enjoy Your Mood Music</h1>
                 </div>
             </header>
 

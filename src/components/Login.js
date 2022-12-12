@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 import {StyledFirebaseAuth} from 'react-firebaseui';
-import {getAuth, EmailAuthProvider, GoogleAuthProvider} from 'firebase/auth';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider,  signOut} from 'firebase/auth';
 
 export default function Login({update}) {
     const [email, updateEmail] = useState("");
@@ -10,6 +10,8 @@ export default function Login({update}) {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const auth = getAuth();
+
+
 
     const configObj = {
       signInOptions: [
@@ -27,40 +29,7 @@ export default function Login({update}) {
       },
       credentialHelper: "none"
     }
-
-    useEffect(() => { 
-      const db = getDatabase(); //"the database"
-      const allMessageRef = ref(db, "Info");
-
-      //addEventLister("databse value change")
-    //returns the instructions how to turn it off
-    const offFunction = onValue(allMessageRef, (snapshot) => {
-      const valueObj = snapshot.val();
-      const objKeys = Object.keys(valueObj);
-
-      console.log(valueObj);
-
-     updateEmail(valueObj.email); //needs to be an array
-    })
-
-    //the useEffect callback returns...
-    function cleanup() {
-      console.log("component is being removed");
-      console.log("turn out the lights");
-      offFunction();
-    }
-
-    return cleanup; 
-    }, []);
-
-    const db = getDatabase(); //"the database"
-    const allMessageRef = ref(db, "Info");
-    const addUser = {
-      "email": email,
-      "password": password
-    }
-    firebaseSet(allMessageRef, addUser);
-
+    
     const emailChange = (event) => {
         const email = event.target.value;
         updateEmail(email);
@@ -108,6 +77,7 @@ export default function Login({update}) {
           </div>
         );
       };
+
     
     const state = [{email: {email}, password: {password}}];
 
@@ -124,7 +94,7 @@ export default function Login({update}) {
         <main className="login-profile">
             <form id="login">
               
-                <div className="container">
+                {/*<div className="container">
                     <label key="email" id="label-email" onChange={emailChange}>Email</label>
                     <input type="email"
                         id="email"
@@ -146,15 +116,27 @@ export default function Login({update}) {
                     {submitted && !password &&
                         <div className="invalid-feedback">Password is required</div>
                     }
-                </div>
+                  </div>
 
                 <div className="container">
                     <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>
                     Login
                     </Link></button>
-                </div>
+                </div>*/}
                 
                 <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj}/>
+                <div className="container">
+                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/register'>
+                    New User? 
+                    </Link></button>
+                    <p>Please Provide More Information To Us.</p>
+                </div>
+
+                <div className="container">
+                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>
+                    Welcome Back!
+                    </Link></button>
+                </div>
             </form>
         </main>
 
