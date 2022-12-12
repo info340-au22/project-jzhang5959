@@ -20,7 +20,8 @@ export default function App() {
     const [image, updateImage] = useState('img/female-1.png');
     const [gender, updateG] = useState("");
     const [sentence, setSent] = useState("");
-    const [password, updateP] = useState("");
+    const [age, setAge] = useState();
+    const [currentUser, setCurrentUser] = useState("");
 
     //function updateData(emails) {
         //updateEmail(emails);
@@ -34,37 +35,36 @@ export default function App() {
         setSent(sentence1);
     }
 
-    function updateLogin(email2, password2) {
+    function updateLogin(email2, name2) {
         updateName(email2);
-        updateP(password2);
+        updateName(name2);
     }
 
-    function newRegister(name3, email3, password3, gender3) {
+    function newRegister(name3, email3, gender3, sentence3, age3) {
         updateName(name3);
         updateEmail(email3);
-        updateP(password3);
         updateG(gender3);
+        setSent(sentence3);
+        setAge(age3);
     }
 
     useEffect(() => {
         const auth = getAuth();
-        const unregisterFunction = onAuthStateChanged(auth, (firebaseUser) => {
+        onAuthStateChanged(auth, (firebaseUser) => {
             if(firebaseUser) {
                 console.log("sign in as", firebaseUser.displayName);
                 console.log(firebaseUser);
-
+                firebaseUser.userName = firebaseUser.displayName;
+                setCurrentUser(firebaseUser);
             }
             else {
                 console.log("sign out");
+                setCurrentUser("");
             }
         });
 
         signOut(auth).catch(err => console.log(err));
-
-        function cleanup() {
-            unregisterFunction(); //call the unregister function
-          }
-          return cleanup;
+    
 
     }, [])
 
@@ -77,18 +77,19 @@ export default function App() {
 
     return (
         <div>
-        <NavHead />
+        <NavHead currentUser={currentUser}/>
         
         <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
+
                     <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
                     <Route path="/music" element={<MusicPage mood={musicMood}/>} >
                         <Route path=":musicType" element={<MusicPlayList />} />
                     </Route>
-                    <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} pas={password}/>} />
-                    <Route path="/login" element={<Login update={updateLogin} />} />
-                        <Route path="/register" element={<Registration newR={newRegister}/>} />
+                    <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
+                    <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
+                        <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
                     <Route path="/graph" element={<Graph />} />
                 </Routes>

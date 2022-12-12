@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Link } from 'react-router-dom';
+import {getAuth} from 'firebase/auth';
 
 export default function Profile(props) {
+    const currentUser = props.currentUser;
     const storeEmail = props.Email;
     const storeName = props.Name;
     const storeGender = props.Gender;
     const storeBio = props.bio;
     const storeImg = props.Img;
-    const storePass = props.pas;
+    const storeAge = props.age;
 
 
     return (
@@ -31,6 +33,9 @@ export default function Profile(props) {
                     </p>
                     <p> 
                     Email: {storeEmail}
+                    </p>
+                    <p>
+                    Age: {storeAge}
                     </p>
                     <p>
                     Gender: 
