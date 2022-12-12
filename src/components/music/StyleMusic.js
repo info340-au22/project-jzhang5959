@@ -25,6 +25,7 @@ export function typeMusicObject(MUSIC_SAMPLE) {
 }
 
 
+
 function StyleMusicCard(props) {
     // single style
     const type = props.type;

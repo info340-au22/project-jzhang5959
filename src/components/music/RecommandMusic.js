@@ -1,36 +1,59 @@
 import React from 'react';
+import MUSIC_SAMPLE from '../../data/music-sample.json';
 
-const recommandMusicSample = [{mood:"Repulse", color:"#E8988E", playPageLink:"/#", musicType:["quick","sad"]},
-{mood:"Fuming", color:"#EB8075", playPageLink:"/#", musicType:["slow","sad"]},
-{mood:"Stressed", color:"#E55A90", playPageLink:"/#", musicType:["quick","sad","acoustic"]}]
+const moodMusicObj = {};
+for(const musicObj of MUSIC_SAMPLE) {
+    const moodList = musicObj.mood;
+    for(const mood of moodList) {
+        if(moodMusicObj.hasOwnProperty(mood)) {
+            moodMusicObj[mood].push(musicObj.musicName);
+        }
+        else {
+            moodMusicObj[mood] = [];
+            moodMusicObj[mood].push(musicObj.musicName);
+        }
+    }
+}
 
+function playAudio(url) {
+    new Audio(url).play();
+}
 
-export default function RecommandMusic() {
-    const musicList = recommandMusicSample.map((obj) => {
-        return (
-            <div className="col" key={obj.mood}>
-                <div className="square-md " style={{backgroundColor: obj.color}}>
-                    <div className="p-5" >
-                        <a href="{obj.playPageLink}" className="style-bt" key={obj.mood}>{obj.mood}</a>
-                    </div>
-                </div>
-            </div>
-        )
-    });
+export default function RecommandMusic(props) {
+    const mood = props.mood;
+    const moodName = mood[0].toUpperCase() + mood.substring(1);
+    const moodList = moodMusicObj[mood];
+    const random = Math.floor(Math.random() * moodList.length);
+    const randomMusicName = moodList[random];
+    let music = MUSIC_SAMPLE.find(item => item.musicName === randomMusicName);
+
 
     return(
         <div className="recommand-music container">
                 <h2 className="primary-dark-color">Get Your Mood Music</h2>
                 <div className="container text-center dash-border-light-bg">
                     <div className="row my-3 px-2"> 
-                        <div className="col-lg-3 col-md-5 col-sm-5 my-1"><h3>Today's Mood</h3></div>
+                        <div className="col-lg-5 col-md-5 col-sm-5 my-1 mx-2"><h3>Today's Mood</h3></div>
                         <div className="col"></div>
-                        <div className="col-lg-3 col-md-5 col-sm-5 my-1"><button className="primary-bt"><a href="/mood">Place Your Mood</a></button></div>
+                        <div className="col-lg-5 col-md-5 col-sm-5 my-1 mx-2"><button className="primary-bt"><a href="/mood">Place Your Mood</a></button></div>
                     </div>
                     
                     <div className="container">
                         <div className="row d-flex justify-content-between">
-                            {musicList}
+                            <div className="col" key={mood}>
+                                <div className="square-recommand-music" style={{backgroundColor: "#E8988E"}}>
+                                    <div >
+                                        <div className='row'>
+                                            <p className="style-bt" key={mood} >{moodName}</p>
+                                        </div>
+                                        <div className='row px-2'>
+                                            <audio controls>
+                                                <source src="Motorama-Wind-in-Her-Hair.mp3" type="audio/mpeg"></source>                   
+                                            </audio>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
