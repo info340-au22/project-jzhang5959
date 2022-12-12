@@ -11,8 +11,9 @@ import Protected from './Protected';
 import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'react-router-dom';
 import MusicPage from './music/MusicPage';
-import MusicPlayList from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence, signInWithEmailAndPassword } from 'firebase/auth';
+import MusicPlayPage from './music/MusicPlayList';
+import {getAuth, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence, signInWithEmailAndPassword} from 'firebase/auth';
+
 
 
 export default function App() {
@@ -93,18 +94,17 @@ export default function App() {
         
         <BrowserRouter>
                 <Routes>
+
                     <Route path="/denied" element={<Protected currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mood-display" element={<MoodDisplay />} />
-                        <Route path="/music" element={<MusicPage />} />
 
                         <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
-                        <Route path="/music" element={<MusicPage mood={musicMood}/>} >
-                            <Route path=":musicType" element={<MusicPlayList />} />
-                        </Route>
+                        <Route path="/music" element={<MusicPage mood={musicMood}/>} />
+                        <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />

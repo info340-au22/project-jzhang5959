@@ -1,7 +1,8 @@
 import React from 'react';
-import {RecommandMusicSection} from './music';
+import RecommandMusic from './music/RecommandMusic';
 
-function HomeContent() {
+function HomeContent(props) {
+    const mood = props.mood;
     return (
         <div>
 
@@ -23,13 +24,14 @@ function HomeContent() {
                 </div>
             </div>
 
-            <RecommandMusicSection />
+            <RecommandMusic mood={mood}/>
         </div>
     );
 }
 
-export default function Home() {
-
+export default function Home(props) {
+    const mood = props.mood;
+    
     return (
 
         <div>
@@ -40,7 +42,7 @@ export default function Home() {
             </header>
 
             <main>
-                <HomeContent />
+                <HomeContent mood={mood}/>
             </main>
         </div>
     );

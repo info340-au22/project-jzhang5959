@@ -1,5 +1,6 @@
 import React from 'react';
 import MUSIC_SAMPLE from '../../data/music-sample.json';
+import MOOD from '../../data/MOODS.json';
 
 const moodMusicObj = {};
 for(const musicObj of MUSIC_SAMPLE) {
@@ -15,10 +16,6 @@ for(const musicObj of MUSIC_SAMPLE) {
     }
 }
 
-function playAudio(url) {
-    new Audio(url).play();
-}
-
 export default function RecommandMusic(props) {
     const mood = props.mood;
     const moodName = mood[0].toUpperCase() + mood.substring(1);
@@ -27,6 +24,7 @@ export default function RecommandMusic(props) {
     const randomMusicName = moodList[random];
     let music = MUSIC_SAMPLE.find(item => item.musicName === randomMusicName);
 
+    let color = MOOD.find(item => item.mood === mood).color;
 
     return(
         <div className="recommand-music container">
@@ -41,7 +39,7 @@ export default function RecommandMusic(props) {
                     <div className="container">
                         <div className="row d-flex justify-content-between">
                             <div className="col" key={mood}>
-                                <div className="square-recommand-music" style={{backgroundColor: "#E8988E"}}>
+                                <div className="square-recommand-music" style={{backgroundColor: color}}>
                                     <div >
                                         <div className='row'>
                                             <p className="style-bt" key={mood} >{moodName}</p>
