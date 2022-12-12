@@ -189,6 +189,8 @@ export default function Mood(props) {
         console.log(db);
     }
 
+    let user = props.currentUser;
+
     // const handleInputChange = (e) => {
     //     const {id , value} = e.target;
     //     if(id === "sleep-time"){
@@ -289,7 +291,7 @@ export default function Mood(props) {
     
             <header>
                 <div className="container dash-border-light-bg">
-                    <h1 className="primary-dark-color">MOOD LOG</h1>
+                    <h1 className="primary-dark-color">NEW MOOD LOG</h1>
                 </div>
             </header>
 
@@ -321,8 +323,8 @@ export default function Mood(props) {
                         </div>
                         <MoodRadio />
                         <div className="d-flex justify-content-center">
+                            <a className="btn save p-3 m-4" href="http://localhost:3000/mood-display">Cancel</a>
                             <input className="btn save p-3 m-4" type="submit"/>
-                            <a className="btn save p-3 m-4" href="http://localhost:3000/graph">View the Graphs</a>
                         </div>
                     </div>
                 </form>

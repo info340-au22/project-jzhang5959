@@ -11,7 +11,7 @@ export function NavHead(props) {
     const currentUser = props.currentUser;
 
     const navArray = [{name:'HOME', url:'/'}, 
-    {name:'MOOD LOG', url:'/mood'}, 
+    {name:'MOOD LOG', url:'/mood-display'}, 
     {name:'MUSIC', url:'/music'}, 
     {name:'PROFILE', url:'/profile'}];
 
