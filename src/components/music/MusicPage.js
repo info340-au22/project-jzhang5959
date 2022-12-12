@@ -1,7 +1,8 @@
 import StyleMusicList from "./StyleMusic"
 import RecommandMusic from "./RecommandMusic"
 
-export default function MusicPage() {
+export default function MusicPage(props) {
+    let mood = props.mood;
     return (
         <div>
             <header>

@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 
-export default function Register({newR}) {
+export default function Register(props) {
     const [name, updateName] = useState("");
     const [email, updateEmail] = useState("");
-    const [password, updateP] = useState("");
     const [age, updateAge] = useState("");
     const [gender, updateG] = useState("");
+    const [bio, setBio] = useState("");
 
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
-    
+    const currentUser = props.currentUser;
+    const newR = props.newR;
+
     const nameChange = (event) => {
         const username = event.target.value;
         updateName(username);
@@ -21,12 +23,6 @@ export default function Register({newR}) {
     const emailChange = (event) => {
         const email = event.target.value;
         updateEmail(email);
-        setSubmitted(false);
-      }
-
-    const pwChange = (event) => {
-        const password = event.target.value;
-        updateP(password);
         setSubmitted(false);
       }
 
@@ -41,17 +37,24 @@ export default function Register({newR}) {
         updateG(gender);
         setSubmitted(false);
       }
+
+      const bioChange = (event) => {
+        const bio = event.target.value;
+        setBio(bio);
+        setSubmitted(false);
+      }
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (name === '' || email === '' || password === '' || age === '' || gender === '') {
+        if (name === '' || email === '' || age === '' || gender === '' || bio === '') {
           setError(true);
           saveStateToLocalStorage();
         } else {
           setSubmitted(true);
           setError(false);
         }
-        newR(name, email, password, gender);
+        newR(name, email, gender, bio, age);
+        firebasePush(allMessageRef, addUser);
       };
     
       const successMessage = () => {
@@ -78,57 +81,43 @@ export default function Register({newR}) {
         );
       };
 
-    const state = [{name: {name}, email: {email}, password: {password}, age: {age}, gender:{gender}}];
+    const state = [{name: {name}, email: {email}, age: {age}, gender:{gender}, bio:{bio}}];
 
     const saveStateToLocalStorage = () => { 
         localStorage.setItem('state', JSON.stringify({state})); 
       };
-      
-    const getStateFromLocalStorage = () => { 
-        let data = localStorage.getItem('state');  
-        const initialValue = JSON.parse(data);
-        return initialValue;
-      };
+    
+    const db = getDatabase();
+    const allMessageRef = ref(db, "Register");
+    const addUser = {
+      "name": name,
+      "email": email,
+      "gender": gender,
+      "age": age,
+      "bio": bio
+    }
 
     useEffect(() => { 
-      const db = getDatabase(); //"the database"
-      const allMessageRef = ref(db, "Register");
 
-      //addEventLister("databse value change")
-    //returns the instructions how to turn it off
     const offFunction = onValue(allMessageRef, (snapshot) => {
       const valueObj = snapshot.val();
-      const objKeys = Object.keys(valueObj);
-
       console.log(valueObj);
-
-     updateEmail(valueObj.email); //needs to be an array
     })
 
-    //the useEffect callback returns...
     function cleanup() {
-      console.log("component is being removed");
-      console.log("turn out the lights");
+      console.log("component is being added");
       offFunction();
     }
 
     return cleanup; 
     }, []);
 
-    const db = getDatabase(); //"the database"
-    const allMessageRef = ref(db, "Register");
-    const addUser = {
-      "name": name,
-      "email": email,
-      "password": password,
-      "gender": gender
-    }
-    firebaseSet(allMessageRef, addUser);
+
 
     return (
         <div className="container-fluid">
         <header>
-            <h1>Create Your Account</h1>
+            <h1>Provide More Info</h1>
         </header> 
 
         <main className="create-profile">
@@ -137,7 +126,7 @@ export default function Register({newR}) {
                     <label key="name" id="label-name">Name</label>
                     <input type="text"
                         id="name"
-                        placeholder="What is your name?" 
+                        placeholder="What is your username?" 
                         value={name} 
                         onChange={nameChange}/>
                 </div>
@@ -146,18 +135,9 @@ export default function Register({newR}) {
                     <label key="email" id="label-email">Email</label>
                     <input type="email"
                         id="email"
-                        placeholder="What is your email?" 
+                        placeholder="Re-enter your email" 
                         value={email} 
                         onChange={emailChange}/>
-                </div>
-
-                <div className="container">
-                    <label key="password" id="label-password">Password</label>
-                    <input type="password"
-                        id="password"
-                        placeholder="Enter your password?" 
-                        value={password} 
-                        onChange={pwChange}/>
                 </div>
 
                 <div className="container">
@@ -172,17 +152,19 @@ export default function Register({newR}) {
                 <div className="container">
                     <label key="gender" id="label-gender">Gender</label>
                     <select className="form-select" id="gender" value={gender} onChange={genderChange}>
-                        <option value="women">Female</option>
-                        <option value="man">Male</option>
-                        <option value="Not-to-say">Perfer not to say</option>
+                        <option value="girl">Female</option>
+                        <option value="boy">Male</option>
+                        <option value="person">Perfer not to say</option>
                     </select>
                 </div>
 
                 <div className="container">
-                    <label key="mood" id="label-mood">Do you remember your mood yesterday?</label>
+                    <label key="mood" id="label-mood">What do you want to show on your profile?</label>
                     <input type="text"
                         id="mood"
-                        placeholder="Any feelings or mood?" />
+                        placeholder="Any feelings or words?" 
+                        value={bio}
+                        onChange={bioChange}/>
                 </div>
 
                 <div className="container">
