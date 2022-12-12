@@ -79,8 +79,8 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/mood" element={<Mood />} />
-                    <Route path="/music" element={<Music />} />
-                        <Route path="/music-play" element={<MusicPlay />} />
+                    <Route path="/music" element={<MusicPage />} />
+                        <Route path="/music-play" element={<MusicPlayList />} />
                     <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
                         <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
