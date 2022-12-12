@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import {Link } from 'react-router-dom';
+import {Link, Navigate } from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 import {StyledFirebaseAuth} from 'react-firebaseui';
-import {getAuth, EmailAuthProvider, GoogleAuthProvider,  signOut} from 'firebase/auth';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider, signOut} from 'firebase/auth';
 
-export default function Login({update}) {
+export default function Login(props) {
     const [email, updateEmail] = useState("");
-    const [password, updateP] = useState("");
+    const [name, updateName] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const auth = getAuth();
+    const update = props.update;
+    const currentUser = props.currentUser;
 
-
+    if(currentUser.userName) { //if signed in
+      return <Navigate to="/register" />
+    } 
 
     const configObj = {
       signInOptions: [
@@ -29,30 +33,6 @@ export default function Login({update}) {
       },
       credentialHelper: "none"
     }
-    
-    const emailChange = (event) => {
-        const email = event.target.value;
-        updateEmail(email);
-        setSubmitted(false);
-    }
-
-    const pwChange = (event) => {
-        const password = event.target.value;
-        updateP(password);
-        setSubmitted(false);
-      }
-    
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        if (email === '' || password === '') {
-          setError(true);
-          saveStateToLocalStorage();
-        } else {
-          setSubmitted(true);
-          setError(false);
-        }
-        update(email, password);
-      };
     
       const successMessage = () => {
         return (
@@ -78,12 +58,6 @@ export default function Login({update}) {
         );
       };
 
-    
-    const state = [{email: {email}, password: {password}}];
-
-    const saveStateToLocalStorage = () => { 
-          localStorage.setItem('state', JSON.stringify({state})); 
-        };
 
     return (
         <div className="container-fluid">
@@ -125,18 +99,6 @@ export default function Login({update}) {
                 </div>*/}
                 
                 <StyledFirebaseAuth firebaseAuth={auth} uiConfig={configObj}/>
-                <div className="container">
-                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/register'>
-                    New User? 
-                    </Link></button>
-                    <p>Please Provide More Information To Us.</p>
-                </div>
-
-                <div className="container">
-                    <button id="Login" type="login" value="login" onClick={handleSubmit}><Link to='/profile'>
-                    Welcome Back!
-                    </Link></button>
-                </div>
             </form>
         </main>
 
