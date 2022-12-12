@@ -7,21 +7,22 @@ import {NavHead} from './Nav';
 import {Footer} from './Footer';
 import Mood from './Mood';
 import MoodDisplay from './MoodDisplay';
+import Protected from './Protected';
 import InfoEdition from './InfoEdition';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'react-router-dom';
 import MusicPage from './music/MusicPage';
 import MusicPlayPage from './music/MusicPlayList';
 import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 
 
 export default function App() {
-    const [name, updateName] = useState("");
-    const [email, updateEmail] = useState("");
+    const [name, updateName] = useState('');
+    const [email, updateEmail] = useState('');
     const [image, updateImage] = useState('img/female-1.png');
-    const [gender, updateG] = useState("");
-    const [sentence, setSent] = useState("");
+    const [gender, updateG] = useState('');
+    const [sentence, setSent] = useState('');
     const [age, setAge] = useState();
-    const [currentUser, setCurrentUser] = useState("");
+    const [currentUser, setCurrentUser] = useState('');
 
     //function updateData(emails) {
         //updateEmail(emails);
@@ -59,7 +60,7 @@ export default function App() {
             }
             else {
                 console.log("sign out");
-                setCurrentUser("");
+                setCurrentUser('');
             }
         });
 
@@ -75,22 +76,37 @@ export default function App() {
         setMusicMood(newMood);
     }
 
+    function ProtectedPage(props) {
+        //...determine if user is logged in
+        if(props.currentUser === '') { //if no user, send to sign in
+          return <Navigate to="/denied" />
+        }
+        else { //otherwise, show the child route content
+          return <Outlet />
+        }
+    }
+
     return (
         <div>
         <NavHead currentUser={currentUser}/>
         
         <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home mood={musicMood}/>} />
-                    <Route path="/mood-display" element={<MoodDisplay />} />
-                    <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
-                    <Route path="/music" element={<MusicPage mood={musicMood}/>} />
-                    <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                    <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
+
+                    <Route path="/denied" element={<Protected currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
-                        <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
+                    <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
+                    <Route element={<ProtectedPage currentUser={currentUser}/>}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/mood-display" element={<MoodDisplay />} />
+
+                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
+                        <Route path="/music" element={<MusicPage mood={musicMood}/>} />
+                        <Route path="/music/:musicType" element={<MusicPlayPage />} />
+                        <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
+                        
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
-                    <Route path="/mood" element={<Mood />} />
+                    </Route>
                 </Routes>
         </BrowserRouter>
         <Footer />     

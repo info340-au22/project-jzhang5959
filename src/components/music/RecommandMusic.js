@@ -15,10 +15,6 @@ for(const musicObj of MUSIC_SAMPLE) {
     }
 }
 
-function playAudio(url) {
-    new Audio(url).play();
-}
-
 export default function RecommandMusic(props) {
     const mood = props.mood;
     const moodName = mood[0].toUpperCase() + mood.substring(1);

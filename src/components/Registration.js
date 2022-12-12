@@ -6,7 +6,7 @@ export default function Register(props) {
     const [name, updateName] = useState("");
     const [email, updateEmail] = useState("");
     const [age, updateAge] = useState("");
-    const [gender, updateG] = useState("");
+    const [gender, updateG] = useState("girl");
     const [bio, setBio] = useState("");
 
     const [submitted, setSubmitted] = useState(false);
@@ -154,6 +154,7 @@ export default function Register(props) {
                     <select className="form-select" id="gender" value={gender} onChange={genderChange}>
                         <option value="girl">Female</option>
                         <option value="boy">Male</option>
+                        <option value="other">Other</option>
                         <option value="person">Perfer not to say</option>
                     </select>
                 </div>
