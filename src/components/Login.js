@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Link, Navigate } from 'react-router-dom';
-import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 import {StyledFirebaseAuth} from 'react-firebaseui';
-import {getAuth, EmailAuthProvider, GoogleAuthProvider, signOut} from 'firebase/auth';
+import {getAuth, EmailAuthProvider, GoogleAuthProvider, setPersistence, signInWithEmailAndPassword, browserSessionPersistence} from 'firebase/auth';
 
 export default function Login(props) {
     const [email, updateEmail] = useState("");
@@ -16,6 +15,8 @@ export default function Login(props) {
     if(currentUser.userName) { //if signed in
       return <Navigate to="/register" />
     } 
+
+
 
     const configObj = {
       signInOptions: [

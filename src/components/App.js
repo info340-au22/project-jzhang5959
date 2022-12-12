@@ -12,7 +12,7 @@ import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'react-router-dom';
 import MusicPage from './music/MusicPage';
 import MusicPlayList from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
+import {getAuth, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 
 
 export default function App() {
@@ -63,7 +63,6 @@ export default function App() {
                 setCurrentUser('');
             }
         });
-
         signOut(auth).catch(err => console.log(err));
     
 
@@ -79,12 +78,14 @@ export default function App() {
     function ProtectedPage(props) {
         //...determine if user is logged in
         if(props.currentUser === '') { //if no user, send to sign in
-          return <Navigate to="/denied" />
+          return <Navigate to="/login" />
         }
         else { //otherwise, show the child route content
           return <Outlet />
         }
     }
+
+
 
     return (
         <div>

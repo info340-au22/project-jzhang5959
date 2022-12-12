@@ -27,24 +27,6 @@ export function NavHead(props) {
         signOut(getAuth());
     }
     
-    const UserLoggedin = () => {
-        if (currentUser == '') {
-            return (<button className="primary-bt" ><a href="/login" className="login">Login</a></button>);
-        } else {
-            return (<button className="primary-bt d-none" ><a href="/login" className="login">Login</a></button>);
-        }
-        
-    }
-
-    const UserSignOut = () => {
-        if (currentUser == '') {
-            return (<button className="primary-bt d-none" onClick={handleSignOut}>Sign Out</button>);
-        } else {
-            return (<button className="primary-bt" onClick={handleSignOut}>Sign Out</button>);
-        }
-        
-    }
-    
     return(
         <div>
         <Navbar expand="md" className="navbar">
@@ -59,8 +41,11 @@ export function NavHead(props) {
                     </Nav>
                 </Navbar.Collapse>
                 <div className="sign-register">
-                    <UserLoggedin />
-                    <UserSignOut />
+                {currentUser ? (
+                    <button className="primary-bt" onClick={handleSignOut}>Sign Out</button> )
+                    : (
+                    <button className="primary-bt" ><a href="/login" className="login">Login</a></button>
+                    )}
                 </div>
             </div>
 
