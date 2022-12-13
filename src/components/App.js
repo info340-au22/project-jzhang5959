@@ -123,7 +123,7 @@ export default function App() {
                         <Route path="/mood" element={<Mood currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/music" element={<MusicPage mood={musicType}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} currentUserMood={currentUserMood}  />} />
+                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicType}  />} />
 
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />
                     </Route>
