@@ -14,7 +14,7 @@ import MusicPage from './music/MusicPage';
 import { ref, getDatabase, onValue} from "firebase/database";
 import MusicPlayPage from './music/MusicPlayList';
 import {getAuth, onAuthStateChanged} from 'firebase/auth';
-
+import Graph from './Graph';
 
 
 export default function App() {
@@ -114,6 +114,7 @@ export default function App() {
 
                     <Route path="/denied" element={<Protected currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login currentUser={currentUser}/>} />
+                    <Route path="/graph" element={<Graph/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home currentUserMood={currentUserMood} />} />
