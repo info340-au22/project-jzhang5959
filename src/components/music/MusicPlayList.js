@@ -17,11 +17,8 @@ export default function MusicPlayPage() {
             if(music.musicName === name) {
                 musicList.push(
                     <div className="row my-4" key={music.musicName}>
-                        <div className="col"> 
+                        <div className='music-header'> 
                             <p>{music.musicName}</p>
-                        </div>
-                        < div className="col-1">
-                            <em className="fa fa-heart" aria-label="like"></em>  
                         </div>
                         <div className='row'>
                             <ReactAudioPlayer src={audioLink} autoplay controls />        

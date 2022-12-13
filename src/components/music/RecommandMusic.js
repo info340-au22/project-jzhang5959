@@ -53,6 +53,10 @@ export default function RecommandMusic(props) {
                             </div>
                         </div>
 
+                        <div className='music-header'> 
+                            <p>{music.musicName}</p>
+                        </div>
+
                         <div className='row'>
                             <ReactAudioPlayer src={audioLink} autoplay controls />        
                         </div>

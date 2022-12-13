@@ -83,16 +83,19 @@ export default function App() {
         }
     })
 
-    const sortedMoodsList = moodsList
-    .filter((moodObj) => {
-       return moodObj.userEmail === currentUser.email;
-    })
-    .sort((a,b) => b.date - a.date);
-
-    const currentUserMood = sortedMoodsList[0];
-    //const music = currentUserMood.mood;
-    const musicType = "excited";
-    console.log(moodsList);
+    let musicType = "";
+    if(moodsList.length == 0) {
+        musicType = "excited";
+    } else {
+        const sortedMoodsList = moodsList
+        .filter((moodObj) => {
+        return moodObj.userEmail === currentUser.email;
+        })
+        .sort((a,b) => b.date - a.date);
+        const currentUserMood = sortedMoodsList[0];
+        musicType = currentUserMood.mood;
+        //console.log(musicType);
+    }
 
     
     function ProtectedPage(props) {
