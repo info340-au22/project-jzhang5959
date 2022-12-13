@@ -36,10 +36,6 @@ export default function App() {
         setSent(sentence1);
     }
 
-    function updateLogin(email2, name2) {
-        updateEmail(email2);
-        updateName(name2);
-    }
 
     function newRegister(name3, gender3, sentence3, age3) {
         updateName(name3);
@@ -115,7 +111,7 @@ export default function App() {
                 <Routes>
 
                     <Route path="/denied" element={<Protected currentUser={currentUser}/>} />
-                    <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
+                    <Route path="/login" element={<Login currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home />} />
@@ -124,7 +120,7 @@ export default function App() {
                         <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
                         <Route path="/music" element={<MusicPage mood={musicMood}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                        <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
+                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />
                     </Route>
