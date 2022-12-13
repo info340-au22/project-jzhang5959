@@ -84,7 +84,7 @@ export default function App() {
             return theMoodObj;
         })
     //   console.log(Array.isArray(objArray));
-        if (Math.random() > 0.5) {
+        if (Math.random() > 0.3) {
             setMoodsList(objArray);
         }
         
@@ -120,16 +120,16 @@ export default function App() {
                     <Route path="/denied" element={<Protected currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
-                    <Route element={<ProtectedPage currentUser={currentUser}/>}>
+                    {/* <Route element={<ProtectedPage currentUser={currentUser}/>}> */}
                         <Route path="/" element={<Home />} />
-                        <Route path="/mood-display" element={<MoodDisplay />} />
+                        <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
                         <Route path="/music" element={<MusicPage mood={musicMood}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
-                    </Route>
+                    {/* </Route> */}
                 </Routes>
         </BrowserRouter>
         <Footer />     

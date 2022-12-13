@@ -16,10 +16,10 @@ export default function MoodDisplay (props) {
         console.log(date);
 
         return (
-            <div>
+            
                 <Card style={{ width: '18rem' }}>
                     <Card.Body>
-                        <Card.Title>{date}</Card.Title>
+                        <Card.Title className="primary-dark-color">{date}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">{mood}</Card.Subtitle>
                         {/* <Card.Text className={mood}>
                             {mood}
@@ -29,20 +29,30 @@ export default function MoodDisplay (props) {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-            </div>
+            
         );   
     }
     
 
+    function MoodArrange () {
+        const moodResult = moodsList.map((moodObj) => {
+        const result = 
+        <div className='pt-3 pb-3 ps-3 pe-4'> 
+            <MoodCard 
+        moodData={moodObj}
+        key={moodObj.key} />
+        </div>;
+        
+        return result;
+    });
+    return (<div className='d-flex' style={{flexDirection: "row", justifyContent: "center"}}> 
+        {moodResult}
+    </div>);
 
-    function MoodArray() {
-        moodsList.map((moodObj) => {
-            return(<MoodCard 
-              moodData={moodObj}
-              key={moodObj.key} 
-            />);
-        })
     }
+    
+        
+       
     
 
     if(moodsList.length === 0){
@@ -70,7 +80,7 @@ export default function MoodDisplay (props) {
                     <a className="btn save p-3 m-4" href="http://localhost:3000/mood">Create New Mood Log</a>
                 </div>
                 <div>
-                    <MoodArray/>
+                    <MoodArrange/>
                 </div>
             </main>
         </div>
