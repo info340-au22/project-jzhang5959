@@ -3,6 +3,8 @@ import RecommandMusic from "./RecommandMusic"
 
 export default function MusicPage(props) {
     let mood = props.mood;
+    const currentUser = props.currentUser;
+    const moodsList = props.moodsList
     return (
         <div>
             <header>

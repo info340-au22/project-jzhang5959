@@ -6,7 +6,7 @@ export default function MoodDisplay (props) {
     const currentUser = props.currentUser;
     const moodsList = props.moodsList
     .filter((moodObj) => {
-       return moodObj.sleepValue > 0;
+        return moodObj.userEmail === currentUser.userEmail;
     })
     .sort((a,b) => b.date - a.date);
 

@@ -82,7 +82,7 @@ export default function App() {
             setMoodsList(objArray);
         }
         
-    //   console.log(objArray);
+    console.log(objArray);
     })
 
     // music
@@ -91,7 +91,7 @@ export default function App() {
     function changeMood(newMood) {
         setMusicMood(newMood);
     }
-
+    
     function ProtectedPage(props) {
         //...determine if user is logged in
         if(props.currentUser.userId === '') { //if no user, send to sign in
@@ -116,8 +116,8 @@ export default function App() {
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
-                        <Route path="/music" element={<MusicPage mood={musicMood}/>} />
+                        <Route path="/mood" element={<Mood />} />
+                        <Route path="/music" element={<MusicPage mood={musicMood} currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
