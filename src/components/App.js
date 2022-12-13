@@ -96,11 +96,13 @@ export default function App() {
     
     function ProtectedPage(props) {
         //...determine if user is logged in
-        if(props.currentUser.userName === '') { //if no user, send to sign in
-          return <Navigate to="/login" />
+        if(props.currentUser.userName === undefined || props.currentUser.userName === null) { //if no user, send to sign in
+            return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
-          return <Outlet />
+            console.log(props.currentUser.userName);
+
+            return <Outlet />;
         }
     }
 
