@@ -6,10 +6,9 @@ export default function MoodDisplay (props) {
     const currentUser = props.currentUser;
     const moodsList = props.moodsList
     .filter((moodObj) => {
-       return moodObj.userEmail === currentUser.userEmail;
+       return moodObj.userEmail === props.currentUser.userEmail;
     })
     .sort((a,b) => b.date - a.date);
-
     const MoodCard = (props) => {
         const {date, key, mood, note, sleepValue} = props.moodData;
 
@@ -17,7 +16,7 @@ export default function MoodDisplay (props) {
 
         return (
             
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '15rem' }}>
                     <Card.Body>
                         <Card.Title className="primary-dark-color">{date}</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">{mood}</Card.Subtitle>
@@ -37,7 +36,7 @@ export default function MoodDisplay (props) {
     function MoodArrange () {
         const moodResult = moodsList.map((moodObj) => {
         const result = 
-        <div className='pt-3 pb-3 ps-3 pe-4'> 
+        <div className='m-2 col-xl-5 col-sm-8 col-lg-5'> 
             <MoodCard 
         moodData={moodObj}
         key={moodObj.key} />
@@ -45,7 +44,7 @@ export default function MoodDisplay (props) {
         
         return result;
     });
-    return (<div className='d-flex' style={{flexDirection: "row", justifyContent: "center"}}> 
+    return (<div className='row container d-flex home-mood-fill' style={{flexDirection: "row", justifyContent: "space-evenly"}}> 
         {moodResult}
     </div>);
 
@@ -108,7 +107,7 @@ export default function MoodDisplay (props) {
                 <div className="d-flex" style={{flexDirection: "row", justifyContent: "center"}}>
                     <a className="btn save p-3 m-4" href="http://localhost:3000/mood">Create New Mood Log</a>
                 </div>
-                <div>
+                <div style={{justifyContent: "center"}}>
                     <MoodArrange/>
                 </div>
             </main>

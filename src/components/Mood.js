@@ -57,8 +57,8 @@ export default function Mood(props) {
             console.log(date, sleepValue, note, mood);
             const userObj = currentUser;
             let moodObj = {
-                "userEmail": userObj.userEmail,
-                "userName": userObj.userName,
+                "userEmail": props.currentUser.userEmail,
+                "userName": props.currentUser.userName,
                 "date" : date,
                 "sleepValue":sleepValue,
                 "note":note,

@@ -53,7 +53,7 @@ export default function App() {
                 firebaseUser.userEmail = firebaseUser.email;
                 setCurrentUser(firebaseUser);
                 console.log("sign in as", firebaseUser.displayName);
-                console.log(firebaseUser);
+                console.log(currentUser);
             }
             else {
                 console.log("sign out");
@@ -116,7 +116,7 @@ export default function App() {
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home />} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
+                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood} currentUser={currentUser}/>}  />
                         <Route path="/music" element={<MusicPage mood={musicMood}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
