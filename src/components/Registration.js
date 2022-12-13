@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
-import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
+import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush, child, get} from 'firebase/database';
 
 export default function Register(props) {
     const [name, updateName] = useState();
@@ -108,7 +108,6 @@ export default function Register(props) {
     }, []);
 
 
-
     return (
         <div className="container-fluid">
         <header>
@@ -141,7 +140,7 @@ export default function Register(props) {
                     <select className="form-select" id="gender" value={gender} onChange={genderChange}>
                         <option value="girl">Female</option>
                         <option value="boy">Male</option>
-                        <option value="other">Other</option>
+                        <option value="emoji_nature">Other</option>
                         <option value="person">Perfer not to say</option>
                     </select>
                 </div>

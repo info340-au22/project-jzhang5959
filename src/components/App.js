@@ -13,7 +13,7 @@ import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'reac
 import MusicPage from './music/MusicPage';
 import { ref, getDatabase, onValue} from "firebase/database";
 import MusicPlayPage from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut, setPersistence, browserLocalPersistence, browserSessionPersistence} from 'firebase/auth';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 
 
