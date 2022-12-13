@@ -95,15 +95,14 @@ export default function App() {
     
 
     
-    function ProtectedPage(props) {
+    function ProtectedPage() {
         //...determine if user is logged in
         // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
         //     console.log(props.currentUser.userName);
-        if(props.currentUser.userName === "") { //if no user, send to sign in
+        if(!currentUser.userName) { //if no user, send to sign in
             return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
-            console.log(props.currentUser.userName);
 
             return <Outlet />;
         }
@@ -125,10 +124,10 @@ export default function App() {
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home mood={musicMood}/>} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood />} />
-                        <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList}/>} />
-                        <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicMood}/>} />
+                        <Route path="/mood" element={<Mood currentUser={currentUser}/>} />
+                        <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList} currentUser={currentUser}/>} />
+                        <Route path="/music/:musicType" element={<MusicPlayPage currentUser={currentUser}/>} />
+                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicMood} />} />
                         
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />

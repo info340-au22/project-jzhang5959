@@ -3,7 +3,7 @@ import {Link } from 'react-router-dom';
 import {getAuth} from 'firebase/auth';
 import RecommandMusic from "./music/RecommandMusic";
 
-const url = 'https://source.unsplash.com/random/600x600'
+const url = 'https://source.unsplash.com/random/600x600';
 
 export default function Profile(props) {
     const currentUser = props.currentUser;
