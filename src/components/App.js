@@ -83,12 +83,16 @@ export default function App() {
         }
     })
 
+    const sortedMoodsList = moodsList
+    .filter((moodObj) => {
+       return moodObj.userEmail === currentUser.email;
+    })
+    .sort((a,b) => b.date - a.date);
+
     // music
     const [musicMood,setMusicMood] = useState("joyful");
     
-    function changeMood(newMood) {
-        setMusicMood(newMood);
-    }
+
     
     function ProtectedPage(props) {
         //...determine if user is logged in
@@ -117,7 +121,7 @@ export default function App() {
                         <Route path="/" element={<Home mood={musicMood}/>} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/mood" element={<Mood />} />
-                        <Route path="/music" element={<MusicPage mood={musicMood} currentUser={currentUser} moodsList={moodsList}/>} />
+                        <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
