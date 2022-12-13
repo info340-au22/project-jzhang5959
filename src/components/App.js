@@ -92,9 +92,8 @@ export default function App() {
         return moodObj.userEmail === currentUser.email;
         })
         .sort((a,b) => b.date - a.date);
-        const currentUserMood = sortedMoodsList[0];
+        let currentUserMood = sortedMoodsList.slice(-1)[0];
         musicType = currentUserMood.mood;
-        //console.log(musicType);
     }
 
     
