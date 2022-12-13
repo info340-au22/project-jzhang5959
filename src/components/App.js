@@ -95,11 +95,11 @@ export default function App() {
     
 
     
-    function ProtectedPage() {
+    function ProtectedPage(props) {
         //...determine if user is logged in
         // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
         //     console.log(props.currentUser.userName);
-        if(currentUser.userName === "") { //if no user, send to sign in
+        if(props.currentUser.userName === "") { //if no user, send to sign in
             return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
@@ -128,8 +128,6 @@ export default function App() {
                         <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList} currentUser={currentUser}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage currentUser={currentUser}/>} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicMood} />} />
-                        
-                        <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />
                     </Route>
                 </Routes>
