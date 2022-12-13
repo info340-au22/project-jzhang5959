@@ -12,13 +12,12 @@ import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'react-router-dom';
 import MusicPage from './music/MusicPage';
 import MusicPlayPage from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence, signInWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, onAuthStateChanged, signOut, setPersistence, browserLocalPersistence, browserSessionPersistence} from 'firebase/auth';
 
 
 
 export default function App() {
     const [name, updateName] = useState('');
-    const [email, updateEmail] = useState('');
     const [image, updateImage] = useState('img/female-1.png');
     const [gender, updateG] = useState('');
     const [sentence, setSent] = useState('');
@@ -29,9 +28,8 @@ export default function App() {
         //updateEmail(emails);
     //}
 
-    function editProfile(name1, email1, image1, gender1, sentence1) {
+    function editProfile(name1, image1, gender1, sentence1) {
         updateName(name1);
-        updateEmail(email1);
         updateImage(image1);
         updateG(gender1);
         setSent(sentence1);
@@ -42,9 +40,8 @@ export default function App() {
         updateName(name2);
     }
 
-    function newRegister(name3, email3, gender3, sentence3, age3) {
+    function newRegister(name3, gender3, sentence3, age3) {
         updateName(name3);
-        updateEmail(email3);
         updateG(gender3);
         setSent(sentence3);
         setAge(age3);
@@ -54,21 +51,21 @@ export default function App() {
         const auth = getAuth();
         onAuthStateChanged(auth, (firebaseUser) => {
             if(firebaseUser) {
+                firebaseUser.userId = firebaseUser.uid;
+                firebaseUser.userName = firebaseUser.displayName;
+                firebaseUser.userEmail = firebaseUser.email;
+                setCurrentUser(firebaseUser);
                 console.log("sign in as", firebaseUser.displayName);
                 console.log(firebaseUser);
-                firebaseUser.userName = firebaseUser.displayName;
-                setCurrentUser(firebaseUser);
             }
             else {
                 console.log("sign out");
                 setCurrentUser('');
             }
         });
-        signOut(auth).catch(err => console.log(err));
-    
 
     }, [])
-
+    
     // music
     const [musicMood,setMusicMood] = useState("joyful");
     
@@ -78,14 +75,13 @@ export default function App() {
 
     function ProtectedPage(props) {
         //...determine if user is logged in
-        if(props.currentUser === '') { //if no user, send to sign in
+        if(props.currentUser.userId === '') { //if no user, send to sign in
           return <Navigate to="/login" />
         }
         else { //otherwise, show the child route content
           return <Outlet />
         }
     }
-
 
 
     return (
@@ -100,14 +96,14 @@ export default function App() {
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home />} />
-                        <Route path="/mood-display" element={<MoodDisplay />} />
-
-                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
-                        <Route path="/music" element={<MusicPage mood={musicMood}/>} />
-                        <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                        <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
+                        <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser}/>} />
+                        {/* redirect to general channel */}
+                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood} currentUser={currentUser}/>} />
+                        <Route path="/music" element={<MusicPage mood={musicMood} currentUser={currentUser}/>} />
+                        <Route path="/music/:musicType" element={<MusicPlayPage currentUser={currentUser}/>} />
+                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
-                        <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
+                        <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />
                     </Route>
                 </Routes>
         </BrowserRouter>
