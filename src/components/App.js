@@ -83,6 +83,7 @@ export default function App() {
         }
     })
 
+
     const sortedMoodsList = moodsList
     .filter((moodObj) => {
        return moodObj.userEmail === currentUser.email;
@@ -96,8 +97,9 @@ export default function App() {
     
     function ProtectedPage(props) {
         //...determine if user is logged in
-        if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
-            console.log(props.currentUser.userName);
+        // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
+        //     console.log(props.currentUser.userName);
+        if(props.currentUser.userName === "") { //if no user, send to sign in
             return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
@@ -107,7 +109,7 @@ export default function App() {
         }
     }
 
-    //console.log(moodsList);
+
 
 
     return (
