@@ -84,7 +84,7 @@ export default function App() {
     })
 
     let musicType = "";
-    if(moodsList.length > 0 && currentUser === undefined) {
+    if(moodsList.length > 0 && currentUser !== undefined) {
         const sortedMoodsList = moodsList
         .filter((moodObj) => {
         return moodObj.userEmail === currentUser.email;
