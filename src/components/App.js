@@ -83,18 +83,7 @@ export default function App() {
         }
     })
 
-    let musicType = "";
-    if(moodsList.length == 0) {
-        musicType = "excited";
-    } else {
-        const sortedMoodsList = moodsList
-        .filter((moodObj) => {
-        return moodObj.userEmail === currentUser.email;
-        })
-        .sort((a,b) => b.date - a.date);
-        let currentUserMood = sortedMoodsList.slice(-1)[0];
-        musicType = currentUserMood.mood;
-    }
+
 
     
     function ProtectedPage(props) {
@@ -107,6 +96,17 @@ export default function App() {
         else { //otherwise, show the child route content
             return <Outlet />;
         }
+    }
+
+    let musicType = "";
+    if(moodsList != undefined || moodsList != null) {
+        const sortedMoodsList = moodsList
+        .filter((moodObj) => {
+        return moodObj.userEmail === currentUser.userEmail;
+        })
+        .sort((a,b) => b.date - a.date);
+        let currentUserMood = sortedMoodsList.slice(-1)[0];
+        musicType = currentUserMood.mood;
     }
 
     return (
