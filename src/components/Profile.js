@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import {getAuth} from 'firebase/auth';
+import { ButtonToolbar } from 'react-bootstrap';
+
+const url = 'https://source.unsplash.com/random/600x600'
 
 export default function Profile(props) {
     const currentUser = props.currentUser;
@@ -12,6 +15,18 @@ export default function Profile(props) {
     const storeImg = props.Img;
     const storeAge = props.age;
 
+
+    useEffect(function() {
+        fetch(url)
+          .then(response => response.json())
+          .then(result => {//when done encoding
+            console.log(result);
+            Image.src = result.message})
+          .catch(err => 
+            //console.log(err.message); 
+            console.log(err.message)
+          )
+        }, [])    
 
     return (
     <div className="container-profile">
@@ -64,7 +79,7 @@ export default function Profile(props) {
             <div className="recent-music">
                 <h2 className='primary-dark-color'>Liked Songs</h2>
                 <div className="container" id="front">
-                    <img src="img/recent-music.png" alt="album's photo"/>
+                    <img src={url} alt="today's random photo for you"/>
                     <p>BLACKPINK-STAY</p>
                     <div className="container d-flex justify-content-center">
                         <button className="primary-bt" type="music" value="play-music"><Link to="/music">Play Now ~</Link></button>
