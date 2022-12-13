@@ -83,30 +83,31 @@ export default function App() {
         }
     })
 
-
-
+    let musicType = "";
+    if(moodsList.length > 0 && currentUser === undefined) {
+        const sortedMoodsList = moodsList
+        .filter((moodObj) => {
+        return moodObj.userEmail === currentUser.email;
+        })
+        .sort((a,b) => b.date - a.date);
+        let currentUserMood = sortedMoodsList.slice(-1)[0];
+        musicType = currentUserMood.mood;
+    } else {
+        musicType = "joyful";
+    }
+    //console.log(musicType)
+    //console.log(currentUser)
     
     function ProtectedPage(props) {
         //...determine if user is logged in
         // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
         //     console.log(props.currentUser.userName);
         if(props.currentUser.userName === "") { //if no user, send to sign in
-            return <Navigate to="/login" />;
+            return <Navigate to="/denied" />;
         }
         else { //otherwise, show the child route content
             return <Outlet />;
         }
-    }
-
-    let musicType = "";
-    if(moodsList != undefined || moodsList != null) {
-        const sortedMoodsList = moodsList
-        .filter((moodObj) => {
-        return moodObj.userEmail === currentUser.userEmail;
-        })
-        .sort((a,b) => b.date - a.date);
-        let currentUserMood = sortedMoodsList.slice(-1)[0];
-        musicType = currentUserMood.mood;
     }
 
     return (
