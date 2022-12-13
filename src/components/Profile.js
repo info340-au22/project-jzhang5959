@@ -4,7 +4,8 @@ import {getAuth} from 'firebase/auth';
 
 export default function Profile(props) {
     const currentUser = props.currentUser;
-    const storeEmail = props.Email;
+    const displayName = props.currentUser.userName;
+    const displayEmail = props.currentUser.userEmail;
     const storeName = props.Name;
     const storeGender = props.Gender;
     const storeBio = props.bio;
@@ -29,10 +30,10 @@ export default function Profile(props) {
                     <img src={storeImg} alt="profile photo"/>
                     </div>
                     <p>
-                    Name: {storeName}
+                    Name: {displayName} ({storeName})
                     </p>
                     <p> 
-                    Email: {storeEmail}
+                    Email: {displayEmail}
                     </p>
                     <p>
                     Age: {storeAge}
