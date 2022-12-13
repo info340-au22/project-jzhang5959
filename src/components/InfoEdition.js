@@ -3,7 +3,6 @@ import {Link } from 'react-router-dom';
 
 export default function PhotoEdition({edit}) {
     const [image, updateImage] = useState('img/female-1.png');
-    const [email, updateEmail] = useState("");
     const [gender, updateG] = useState("girl");
     const [sentence, setSent] = useState("");
     const [name, updateName] = useState("");
@@ -22,13 +21,10 @@ export default function PhotoEdition({edit}) {
     {name:'male-6', value:'img/male-6.png'}
 ];
     const nameChange = (event) => {
-    const name = event.target.value;
-    updateName(name);
+        const name = event.target.value;
+        updateName(name);
     }
-    const emailChange = (event) => {
-        const email = event.target.value;
-        updateEmail(email);
-    }
+
 
     const genderChange = (event) => {
         const gender = event.target.value;
@@ -54,7 +50,7 @@ export default function PhotoEdition({edit}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        edit(name, email, image, gender, sentence);
+        edit(name, image, gender, sentence);
     }
 
     return (
@@ -85,15 +81,6 @@ export default function PhotoEdition({edit}) {
                     <select className="choice" id="photo-choice" value={image}  onChange={imageChange}>
                         {choices}
                     </select></p>
-                </div>
-
-                <div className="container" id="front">
-                    <label key="email" id="label-email" onChange={emailChange}>Email</label>
-                    <input type="email"
-                        id="email"
-                        placeholder="Enter Your New Email" 
-                        value={email} 
-                        onChange={emailChange}/>
                 </div>
 
                 <div className="container" id="front">

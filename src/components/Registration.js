@@ -3,8 +3,7 @@ import {Link } from 'react-router-dom';
 import {getDatabase, ref, set as firebaseSet, onValue, push as firebasePush} from 'firebase/database';
 
 export default function Register(props) {
-    const [name, updateName] = useState("");
-    const [email, updateEmail] = useState("");
+    const [name, updateName] = useState();
     const [age, updateAge] = useState("");
     const [gender, updateG] = useState("girl");
     const [bio, setBio] = useState("");
@@ -12,17 +11,13 @@ export default function Register(props) {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const currentUser = props.currentUser;
+    const displayName = props.currentUser.userName;
+    const displayEmail = props.currentUser.userEmail;
     const newR = props.newR;
 
     const nameChange = (event) => {
         const username = event.target.value;
         updateName(username);
-        setSubmitted(false);
-      }
-
-    const emailChange = (event) => {
-        const email = event.target.value;
-        updateEmail(email);
         setSubmitted(false);
       }
 
@@ -46,14 +41,14 @@ export default function Register(props) {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (name === '' || email === '' || age === '' || gender === '' || bio === '') {
+        if (name === '' || age === '' || gender === '' || bio === '') {
           setError(true);
           saveStateToLocalStorage();
         } else {
           setSubmitted(true);
           setError(false);
         }
-        newR(name, email, gender, bio, age);
+        newR(name, gender, bio, age);
         firebasePush(allMessageRef, addUser);
       };
     
@@ -81,7 +76,7 @@ export default function Register(props) {
         );
       };
 
-    const state = [{name: {name}, email: {email}, age: {age}, gender:{gender}, bio:{bio}}];
+    const state = [{name: {name}, email: {displayEmail}, age: {age}, gender:{gender}, bio:{bio}}];
 
     const saveStateToLocalStorage = () => { 
         localStorage.setItem('state', JSON.stringify({state})); 
@@ -91,7 +86,7 @@ export default function Register(props) {
     const allMessageRef = ref(db, "Register");
     const addUser = {
       "name": name,
-      "email": email,
+      "email": displayEmail,
       "gender": gender,
       "age": age,
       "bio": bio
@@ -118,26 +113,18 @@ export default function Register(props) {
         <div className="container-fluid">
         <header>
             <h1>Provide More Info</h1>
+            <p>Welcome to your world, {displayName}</p>
         </header> 
 
         <main className="create-profile">
             <form id="survey">
                 <div className="container">
-                    <label key="name" id="label-name">Name</label>
+                    <label key="name" id="label-name">Preferred Name</label>
                     <input type="text"
                         id="name"
-                        placeholder="What is your username?" 
+                        placeholder="What is your perferred name?" 
                         value={name} 
                         onChange={nameChange}/>
-                </div>
-
-                <div className="container">
-                    <label key="email" id="label-email">Email</label>
-                    <input type="email"
-                        id="email"
-                        placeholder="Re-enter your email" 
-                        value={email} 
-                        onChange={emailChange}/>
                 </div>
 
                 <div className="container">

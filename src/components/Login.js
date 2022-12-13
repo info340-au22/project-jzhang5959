@@ -16,8 +16,6 @@ export default function Login(props) {
       return <Navigate to="/register" />
     } 
 
-
-
     const configObj = {
       signInOptions: [
         {
