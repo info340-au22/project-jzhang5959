@@ -266,6 +266,11 @@ header .dash-border-light-bg {
     text-decoration: underline;
 }
 
+.recommand-music em {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);;
+}
+
 
 /* style music blocks */
 .style-music {
@@ -1144,6 +1149,14 @@ button#Login a:hover {
    .recommand-music {
     width: 600px;
     margin: auto;
+    }
+
+    .play-music p {
+        font-size: 1.5rem;
+    }
+
+    .play-music em {
+        font-size: 1.5rem;
     }
 
     /* home page */
