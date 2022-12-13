@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {ref,push,child,update,getDatabase} from "firebase/database";
+import {ref,push,child,update,getDatabase,onValue} from "firebase/database";
+import MoodDisplay from './MoodDisplay';
 
 const moods = {
     "1row":["enraged", "stressed", "shocked", "surprised", "motivated", "ecstatic"],
@@ -23,25 +24,17 @@ const moodObjects = {
 export default function Mood(props) {
     const current = new Date();
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-
+    const [moodsList, setMoodsList] = useState([]);
     const currentUser = props.currentUser;
     const [note, updateNote] = useState('');
     const [mood, updateMood] = useState('');
-    const [sleepValue, setSleepValue] = useState(0);
+    const [sleepValue, setSleepValue] = useState('');
     const MAX = 15;
     const getBackgroundSize = () => {
         return {
             backgroundSize: `${(sleepValue * 100) / MAX}% 100%`,
         };
     }
-
-    const addMoods = (userId, userName, moodText) => {
-        const db = getDatabase();
-        console.log(db);
-    }
-
-    let user = props.currentUser;
-
     // const handleInputChange = (e) => {
     //     const {id , value} = e.target;
     //     if(id === "sleep-time"){
@@ -56,21 +49,70 @@ export default function Mood(props) {
     // }
 
     const handleSubmit = (event) => {
-        const db = getDatabase();
         event.preventDefault();
-        alert(`Your mood today has been placed! `);
-        console.log(date, sleepValue, note, mood);
-        let obj = {
-            date : date,
-            sleepValue:sleepValue,
-            note:note,
-            mood:mood,
-        }       
-        const newPostKey = push(child(ref(db), 'posts')).key;
-        const updates = {};
-        updates['/' + newPostKey] = obj
-        return update(ref(db), updates);
+        if (note===''||mood===''||sleepValue==='') {
+            alert(`Please fill all of the fields before submitting`);
+        } else {
+            alert(`Your mood today has been placed! `);
+            console.log(date, sleepValue, note, mood);
+            const userObj = currentUser;
+            let moodObj = {
+                // "userEmail": userObj.email,
+                // "userName": userObj.name,
+                "date" : date,
+                "sleepValue":sleepValue,
+                "note":note,
+                "mood":mood,
+            } 
+            // const newPostKey = push(child(ref(db), 'moodLogs')).key;
+            // const updates = {};
+            // updates['/' + newPostKey] = moodObj;
+            // return update(ref(db), updates);
+
+            
+            push(allMessageRef, moodObj);
+        }
     }
+    const db = getDatabase();
+    const allMessageRef = ref(db, 'MoodLogs');
+    // useEffect(() => { 
+
+    //     const offFunction = ref(allMessageRef, (snapshot) => {
+    //       const valueObj = snapshot.val();
+    //       console.log(valueObj);
+    //     })
+    
+    //     function cleanup() {
+    //       console.log("component is being added");
+    //       offFunction();
+    //     }
+    
+    //     return cleanup; 
+    //     }, []);
+
+    useEffect(() => {
+        //when db value changes
+        const offFunction = onValue(allMessageRef, (snapshot) => {
+          const valueObj = snapshot.val();
+          //convert object into array
+          const objKeys = Object.keys(valueObj);
+          const objArray = objKeys.map((keyString) => {
+            const theMoodObj = valueObj[keyString];
+            theMoodObj.key = keyString;
+            return theMoodObj;
+          })
+        //   console.log(Array.isArray(objArray));
+          setMoodsList(objArray);
+        //   console.log(objArray);
+        })
+    
+        function cleanup() {
+          console.log("component is being removed");
+        //when the component goes away, we turn off the listener
+        offFunction();
+        }
+        return cleanup; //return instructions on how to turn off lights
+      }, [])
 
     const MoodRadio = () => {
         return(
@@ -131,6 +173,8 @@ export default function Mood(props) {
                             <RadioHelper moods={moods} row={key} />
                         </div>);
         }
+        console.log(moodsList);
+
         return result;
     }
 

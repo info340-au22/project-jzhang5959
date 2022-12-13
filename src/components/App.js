@@ -12,8 +12,8 @@ import InfoEdition from './InfoEdition';
 import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'react-router-dom';
 import MusicPage from './music/MusicPage';
 import MusicPlayList from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
-
+import {getAuth, onAuthStateChanged, signOut,} from 'firebase/auth';
+import { ref, getDatabase, onValue} from "firebase/database";
 
 export default function App() {
     const [name, updateName] = useState('');
@@ -37,7 +37,7 @@ export default function App() {
     }
 
     function updateLogin(email2, name2) {
-        updateName(email2);
+        updateEmail(email2);
         updateName(name2);
     }
 
@@ -68,6 +68,27 @@ export default function App() {
     
 
     }, [])
+    const [moodsList, setMoodsList] = useState(()=>[]);
+
+    const db = getDatabase();
+    const allMessageRef = ref(db,'MoodLogs');
+
+    const offFunction = onValue(allMessageRef, (snapshot) => {
+        const valueObj = snapshot.val();
+        //convert object into array
+        const objKeys = Object.keys(valueObj);
+        const objArray = objKeys.map((keyString) => {
+            const theMoodObj = valueObj[keyString];
+            theMoodObj.key = keyString;
+            return theMoodObj;
+        })
+    //   console.log(Array.isArray(objArray));
+        if (Math.random() > 0.5) {
+            setMoodsList(objArray);
+        }
+        
+    //   console.log(objArray);
+    })
 
     // music
     const [musicMood,setMusicMood] = useState("joyful");
@@ -95,19 +116,19 @@ export default function App() {
                     <Route path="/denied" element={<Protected currentUser={currentUser}/>} />
                     <Route path="/login" element={<Login update={updateLogin} currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
-                    <Route element={<ProtectedPage currentUser={currentUser}/>}>
+                    {/* <Route element={<ProtectedPage currentUser={currentUser}/>}> */}
                         <Route path="/" element={<Home />} />
-                        <Route path="/mood-display" element={<MoodDisplay />} />
+                        <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/music" element={<MusicPage />} />
 
-                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
+                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood} currentUser={currentUser}/>} />
                         <Route path="/music" element={<MusicPage mood={musicMood}/>} >
                             <Route path=":musicType" element={<MusicPlayList />} />
                         </Route>
                         <Route path="/profile" element={<Profile Name={name} Email={email} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
-                    </Route>
+                    {/* </Route> */}
                 </Routes>
         </BrowserRouter>
         <Footer />     

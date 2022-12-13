@@ -5,8 +5,8 @@ import {StyledFirebaseAuth} from 'react-firebaseui';
 import {getAuth, EmailAuthProvider, GoogleAuthProvider, signOut} from 'firebase/auth';
 
 export default function Login(props) {
-    const [email, updateEmail] = useState("");
-    const [name, updateName] = useState("");
+    const [email, updateEmail] = useState('');
+    const [name, updateName] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const auth = getAuth();
