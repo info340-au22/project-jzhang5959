@@ -84,10 +84,10 @@ export default function App() {
     })
 
     let musicType = "";
-    if(moodsList.length > 0 && currentUser === undefined) {
+    if(moodsList.length > 0 ) {
         const sortedMoodsList = moodsList
         .filter((moodObj) => {
-        return moodObj.userEmail === currentUser.email;
+        return moodObj.userEmail === currentUser.userEmail;
         })
         .sort((a,b) => b.date - a.date);
         let currentUserMood = sortedMoodsList.slice(-1)[0];
@@ -100,10 +100,10 @@ export default function App() {
     
     function ProtectedPage(props) {
         //...determine if user is logged in
-        // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
+        // if(currentUser === '') { //if no user, send to sign in
         //     console.log(props.currentUser.userName);
         if(props.currentUser.userName === "") { //if no user, send to sign in
-            return <Navigate to="/denied" />;
+            return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
             return <Outlet />;
