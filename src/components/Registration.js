@@ -38,7 +38,7 @@ export default function Register(props) {
         setBio(bio);
         setSubmitted(false);
       }
-    
+    console.log(props.currentUser.userEmail);
     const handleSubmit = (event) => {
         event.preventDefault();
         if (name === '' || age === '' || gender === '' || bio === '') {

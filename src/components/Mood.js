@@ -28,7 +28,7 @@ export default function Mood(props) {
     const currentUser = props.currentUser;
     const [note, updateNote] = useState('');
     const [mood, updateMood] = useState('');
-    const [sleepValue, setSleepValue] = useState('');
+    const [sleepValue, setSleepValue] = useState(8);
     const MAX = 15;
     const getBackgroundSize = () => {
         return {
@@ -204,7 +204,7 @@ export default function Mood(props) {
                                     <div className="slidecontainer">
                                         <div className="slidecontainer">
                                             <label for="sleep-time" className="d-none">How many hours did you sleep?</label>
-                                            <input type="range" min="0" max={MAX} onChange={(e) => setSleepValue(e.target.value)} style={getBackgroundSize()} value={sleepValue} id="sleep-time"/>
+                                            <input type="range" min="0" max={MAX} onChange={(e) => setSleepValue(parseInt(e.target.value))} style={getBackgroundSize()} value={parseInt(sleepValue)} id="sleep-time"/>
                                             <p>You slept for <output className="primary-dark-color">{sleepValue}</output> hours last night. </p>
                                         </div>
                                     </div>
