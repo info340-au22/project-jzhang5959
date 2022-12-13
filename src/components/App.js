@@ -84,9 +84,7 @@ export default function App() {
     })
 
     let musicType = "";
-    if(moodsList.length == 0) {
-        musicType = "excited";
-    } else {
+    if(moodsList.length > 0 && currentUser === undefined) {
         const sortedMoodsList = moodsList
         .filter((moodObj) => {
         return moodObj.userEmail === currentUser.email;
@@ -94,8 +92,11 @@ export default function App() {
         .sort((a,b) => b.date - a.date);
         let currentUserMood = sortedMoodsList.slice(-1)[0];
         musicType = currentUserMood.mood;
+    } else {
+        musicType = "joyful";
     }
-
+    //console.log(musicType)
+    //console.log(currentUser)
     
     function ProtectedPage(props) {
         //...determine if user is logged in
