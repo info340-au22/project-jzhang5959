@@ -8,8 +8,6 @@ export default function MusicPage(props) {
     const newMood = moodsList.mood; // change to mood later
     //let mood = moodsList[0].mood;
 
-    //console.log(moodsList)
-
     return (
         <div>
             <header>

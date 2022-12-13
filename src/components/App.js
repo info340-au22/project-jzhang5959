@@ -83,6 +83,7 @@ export default function App() {
         }
     })
 
+
     const sortedMoodsList = moodsList
     .filter((moodObj) => {
        return moodObj.userEmail === currentUser.email;
@@ -106,7 +107,7 @@ export default function App() {
         }
     }
 
-    //console.log(moodsList);
+
 
 
     return (
