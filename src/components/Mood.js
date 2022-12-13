@@ -47,6 +47,7 @@ export default function Mood(props) {
     //     //     updateMood(value);
     //     // }
     // }
+    console.log(props.currentUser);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -57,8 +58,8 @@ export default function Mood(props) {
             console.log(date, sleepValue, note, mood);
             const userObj = currentUser;
             let moodObj = {
-                "userEmail": props.currentUser.userEmail,
-                "userName": props.currentUser.userName,
+                "userEmail": userObj.userEmail,
+                "userName": userObj.userName,
                 "date" : date,
                 "sleepValue":sleepValue,
                 "note":note,

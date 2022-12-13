@@ -125,7 +125,7 @@ export default function App() {
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home mood={musicMood}/>} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood />} />
+                        <Route path="/mood" element={<Mood />} currentUser={currentUser}/>
                         <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicMood}/>} />
