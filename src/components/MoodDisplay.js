@@ -138,7 +138,7 @@ export default function MoodDisplay (props) {
 
             <main>
                 <div className="d-flex" style={{flexDirection: "row", justifyContent: "center"}}>
-                    <a className="btn save p-3 m-4" href="http://localhost:3000/mood">Create New Mood Log</a>
+                    <a className="btn save p-3 m-4" href="mood">Create New Mood Log</a>
                 </div>
                 <div style={{justifyContent: "center"}}>
                     <MoodArrange/>
