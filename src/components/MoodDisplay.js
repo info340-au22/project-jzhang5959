@@ -1,6 +1,13 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend, 
+    ResponsiveContainer } from 'recharts';
 
 export default function MoodDisplay (props) {
     const currentUser = props.currentUser;
@@ -53,14 +60,26 @@ export default function MoodDisplay (props) {
 
     }
 
-    const data = [{'note':"aaaaa", 'sleepValue':19}, {'note':"ssssss", 'sleepValue':1}];
+    // const data = [{'note':"aaaaa", 'sleepValue':19}, {'note':"ssssss", 'sleepValue':1},];
     console.log(moodsList);
     const Chart = () => {
         return(
-            <ResponsiveContainer width="100%" height="100%">
-                <BarChart width={150} height={400} data={data}>
-                    <Bar dataKey="note" fill="#8884d8" />
-                </BarChart>
+            <ResponsiveContainer width="99%" height={500}>
+                <LineChart
+                width="99%"
+                height={300}
+                data={moodsList}
+                >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line
+                type="monotone"
+                dataKey="sleepValue"
+                stroke="#8884d8"/>
+                </LineChart>
             </ResponsiveContainer>
         );
         
@@ -123,7 +142,11 @@ export default function MoodDisplay (props) {
                 </div>
                 <div style={{justifyContent: "center"}}>
                     <MoodArrange/>
-                    <Chart/>
+                    <div className='card m-5 d-flex' style={{justifyContent: "center"}}>
+                        <h2 className="primary-dark-color" style={{textAlignVertical: "center",textAlign: "center",}} >Sleeping Time Graph</h2>
+                        <Chart/>
+                    </div>
+                    
                 </div>
                 
             </main>

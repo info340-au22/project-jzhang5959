@@ -72,6 +72,9 @@ header {
     color:#43c0c9;
 }
 
+.recharts-wrapper {
+    position: absolute;
+}
 
 
 /* nav bar */
