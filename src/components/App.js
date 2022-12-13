@@ -83,22 +83,26 @@ export default function App() {
         }
     })
 
-    const sortedMoodsList = moodsList
-    .filter((moodObj) => {
-       return moodObj.userEmail === currentUser.email;
-    })
-    .sort((a,b) => b.date - a.date);
-
-    const currentUserMood = sortedMoodsList[0];
-    console.log(currentUser);
+    let musicType = "";
+    if(moodsList.length == 0) {
+        musicType = "excited";
+    } else {
+        const sortedMoodsList = moodsList
+        .filter((moodObj) => {
+        return moodObj.userEmail === currentUser.email;
+        })
+        .sort((a,b) => b.date - a.date);
+        let currentUserMood = sortedMoodsList.slice(-1)[0];
+        musicType = currentUserMood.mood;
+    }
 
     
     function ProtectedPage(props) {
         //...determine if user is logged in
         // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
         //     console.log(props.currentUser.userName);
-        if(props.currentUser.userName === null) { //if no user, send to sign in
-            //return <Navigate to="/login" />;
+        if(props.currentUser.userName === "") { //if no user, send to sign in
+            return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
             return <Outlet />;
@@ -117,13 +121,13 @@ export default function App() {
                     <Route path="/graph" element={<Graph/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
-                        <Route path="/" element={<Home currentUserMood={currentUserMood} />} />
+                        <Route path="/" element={<Home mood={musicType} />} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood currentUser={currentUser}/>} />
-                        <Route path="/music" element={<MusicPage currentUserMood={currentUserMood} />} />
+                        <Route path="/mood" element={<Mood currentUser={currentUser} moodsList={moodsList}/>} />
+                        <Route path="/music" element={<MusicPage mood={musicType}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} currentUserMood={currentUserMood}  />} />
-                        <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
+                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicType}  />} />
+
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />
                     </Route>
                 </Routes>

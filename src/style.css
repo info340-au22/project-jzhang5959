@@ -346,7 +346,7 @@ header .dash-border-light-bg {
 }
 
 
-.play-music p {
+.music-header {
     font-weight: bold;
     color: rgb(0, 0, 0);
 }
@@ -1154,7 +1154,7 @@ button#Login a:hover {
     margin: auto;
     }
 
-    .play-music p {
+    .music-header p {
         font-size: 1.5rem;
     }
 
