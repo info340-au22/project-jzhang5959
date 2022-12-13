@@ -14,5 +14,5 @@ export default function MusicPage(props) {
             <RecommandMusic mood={mood}/>
             <StyleMusicList  />
         </div>
-    )
+    );
 }
