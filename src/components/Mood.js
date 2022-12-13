@@ -218,7 +218,7 @@ export default function Mood(props) {
                         </div>
                         <MoodRadio />
                         <div className="d-flex justify-content-center">
-                            <a className="btn save p-3 m-4" href="http://localhost:3000/mood-display">Cancel</a>
+                            <a className="btn save p-3 m-4" href="mood-display">Cancel</a>
                             <input className="btn save p-3 m-4" type="submit"/>
                         </div>
                     </div>
