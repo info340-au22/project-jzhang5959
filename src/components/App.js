@@ -96,7 +96,8 @@ export default function App() {
     
     function ProtectedPage(props) {
         //...determine if user is logged in
-        if(props.currentUser.userName === undefined || props.currentUser.userName === null) { //if no user, send to sign in
+        if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
+            console.log(props.currentUser.userName);
             return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
