@@ -2,7 +2,6 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-
 export default function MoodDisplay (props) {
     const currentUser = props.currentUser;
     const moodsList = props.moodsList
@@ -10,6 +9,9 @@ export default function MoodDisplay (props) {
        return moodObj.userEmail === props.currentUser.userEmail;
     })
     .sort((a,b) => b.date - a.date);
+
+    //console.log(moodsList);
+
     const MoodCard = (props) => {
         const {date, key, mood, note, sleepValue} = props.moodData;
 
