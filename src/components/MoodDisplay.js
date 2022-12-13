@@ -6,9 +6,11 @@ export default function MoodDisplay (props) {
     const currentUser = props.currentUser;
     const moodsList = props.moodsList
     .filter((moodObj) => {
-        return moodObj.userEmail === currentUser.userEmail;
+       return moodObj.userEmail === currentUser.email;
     })
     .sort((a,b) => b.date - a.date);
+
+    //console.log(props.moodsList)
 
     const MoodCard = (props) => {
         const {date, key, mood, note, sleepValue} = props.moodData;
@@ -56,7 +58,36 @@ export default function MoodDisplay (props) {
     
 
     if(moodsList.length === 0){
-        return <p>No Mood Logs Available</p>
+
+        return (
+        <div>
+    
+            <header>
+                <div className="container dash-border-light-bg">
+                    <h1 className="primary-dark-color">MOOD LOG</h1>
+                </div>
+            </header>
+
+            <main>
+                <div className="d-flex" style={{flexDirection: "row", justifyContent: "center"}}>
+                    <h2 className="primary-dark-color pt-3">No Mood Logs Available</h2>
+                    <a className="btn save p-3 m-4" href="http://localhost:3000/mood">Create New Mood Log</a>
+                </div>
+                <div className='pb-5'> 
+                <div className="illustration-container">
+                    <img className="think-img" src="img/Mystery.svg" alt="a man looking into the mistery box" />
+                </div>
+                
+                <div className="text-end me-4 illustration-cite">
+                    <a href="https://storyset.com/people">-- People illustrations by Storyset</a>
+                </div>
+            </div>
+                
+            </main>
+        </div>
+        );
+        
+        
     }
 
 

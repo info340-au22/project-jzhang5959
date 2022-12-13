@@ -58,6 +58,7 @@ export default function Mood(props) {
             const userObj = currentUser;
             let moodObj = {
                 "userEmail": userObj.userEmail,
+                "userEmail": userObj.displayEmail,
                 "userName": userObj.name,
                 "date" : date,
                 "sleepValue":sleepValue,
@@ -173,7 +174,6 @@ export default function Mood(props) {
                             <RadioHelper moods={moods} row={key} />
                         </div>);
         }
-        console.log(moodsList);
 
         return result;
     }

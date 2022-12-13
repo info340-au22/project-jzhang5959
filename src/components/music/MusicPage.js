@@ -5,6 +5,15 @@ export default function MusicPage(props) {
     let mood = props.mood;
     const currentUser = props.currentUser;
     const moodsList = props.moodsList
+    .filter((moodObj) => {
+       return moodObj.userEmail === currentUser.userEmail;
+    })
+    .sort((a,b) => b.date - a.date);
+    
+    //let mood = moodsList[0].mood;
+
+    console.log(moodsList)
+
     return (
         <div>
             <header>

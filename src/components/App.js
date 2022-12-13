@@ -13,7 +13,7 @@ import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'reac
 import MusicPage from './music/MusicPage';
 import { ref, getDatabase, onValue} from "firebase/database";
 import MusicPlayPage from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut, setPersistence, browserLocalPersistence, browserSessionPersistence} from 'firebase/auth';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 
 
@@ -81,8 +81,6 @@ export default function App() {
         if (Math.random() > 0.3) {
             setMoodsList(objArray);
         }
-        
-    console.log(objArray);
     })
 
     // music
@@ -102,6 +100,8 @@ export default function App() {
         }
     }
 
+    //console.log(moodsList);
+
 
     return (
         <div>
@@ -114,7 +114,7 @@ export default function App() {
                     <Route path="/login" element={<Login currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<Home mood={musicMood}/>} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/mood" element={<Mood />} />
                         <Route path="/music" element={<MusicPage mood={musicMood} currentUser={currentUser} moodsList={moodsList}/>} />
