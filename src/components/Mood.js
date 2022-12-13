@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import {Link, Navigate } from 'react-router-dom';
+
 import {ref,push,child,update,getDatabase,onValue} from "firebase/database";
 import MoodDisplay from './MoodDisplay';
 
@@ -72,6 +74,7 @@ export default function Mood(props) {
 
             
             push(allMessageRef, moodObj);
+            return <Navigate to="/register" />;
         }
     }
     const db = getDatabase();
@@ -218,7 +221,7 @@ export default function Mood(props) {
                         </div>
                         <MoodRadio />
                         <div className="d-flex justify-content-center">
-                            <a className="btn save p-3 m-4" href="http://localhost:3000/mood-display">Cancel</a>
+                            <a className="btn save p-3 m-4" href="mood-display">Go Back</a>
                             <input className="btn save p-3 m-4" type="submit"/>
                         </div>
                     </div>

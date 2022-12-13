@@ -101,7 +101,7 @@ export default function MoodDisplay (props) {
             <main>
                 <div className="d-flex" style={{flexDirection: "row", justifyContent: "center"}}>
                     <h2 className="primary-dark-color pt-3">No Mood Logs Available</h2>
-                    <a className="btn save p-3 m-4" href="http://localhost:3000/mood">Create New Mood Log</a>
+                    <a className="btn save p-3 m-4" href="/mood">Create New Mood Log</a>
                 </div>
                 <div className='pb-5'> 
                 <div className="illustration-container">
