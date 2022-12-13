@@ -15,7 +15,6 @@ export default function MusicPlayPage() {
         for(const music of MUSIC_SAMPLE) {
             let audioLink = "../audio/" + music.audioLink;
             if(music.musicName === name) {
-                console.log(audioLink);
                 musicList.push(
                     <div className="row my-4" key={music.musicName}>
                         <div className="col"> 

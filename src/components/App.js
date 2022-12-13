@@ -81,17 +81,19 @@ export default function App() {
         if (Math.random() > 0.3) {
             setMoodsList(objArray);
         }
-        
-    //   console.log(objArray);
     })
+
+    const sortedMoodsList = moodsList
+    .filter((moodObj) => {
+       return moodObj.userEmail === currentUser.email;
+    })
+    .sort((a,b) => b.date - a.date);
 
     // music
     const [musicMood,setMusicMood] = useState("joyful");
     
-    function changeMood(newMood) {
-        setMusicMood(newMood);
-    }
 
+    
     function ProtectedPage(props) {
         //...determine if user is logged in
         if(props.currentUser.userName === '') { //if no user, send to sign in
@@ -101,6 +103,8 @@ export default function App() {
           return <Outlet />
         }
     }
+
+    //console.log(moodsList);
 
 
     return (
@@ -114,10 +118,10 @@ export default function App() {
                     <Route path="/login" element={<Login currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<Home mood={musicMood}/>} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood} currentUser={currentUser}/>}  />
-                        <Route path="/music" element={<MusicPage mood={musicMood}/>} />
+                        <Route path="/mood" element={<Mood />} />
+                        <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         

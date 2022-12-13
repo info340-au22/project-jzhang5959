@@ -173,7 +173,6 @@ export default function Mood(props) {
                             <RadioHelper moods={moods} row={key} />
                         </div>);
         }
-        console.log(moodsList);
 
         return result;
     }

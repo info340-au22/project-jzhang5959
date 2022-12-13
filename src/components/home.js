@@ -1,5 +1,5 @@
 import React from 'react';
-import RecommandMusic from './music/RecommandMusic';
+import RecommandMusic from "./music/RecommandMusic";
 
 function HomeContent(props) {
     const mood = props.mood;
