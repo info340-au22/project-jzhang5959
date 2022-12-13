@@ -92,8 +92,13 @@ export default function App() {
 
     // music
     const [musicMood,setMusicMood] = useState("joyful");
-    
 
+    const currentUserMood = sortedMoodsList[0];
+    const currentMood = currentUserMood.mood;
+    //console.log(moodsList);
+    //console.log(sortedMoodsList);
+    //console.log(currentUserMood);
+    //console.log(currentUserMood.mood);
     
     function ProtectedPage(props) {
         //...determine if user is logged in
@@ -102,13 +107,9 @@ export default function App() {
         }
         else { //otherwise, show the child route content
             console.log(props.currentUser.userName);
-
             return <Outlet />;
         }
     }
-
-
-
 
     return (
         <div>
@@ -121,10 +122,10 @@ export default function App() {
                     <Route path="/login" element={<Login currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
-                        <Route path="/" element={<Home mood={musicMood}/>} />
+                        <Route path="/" element={<Home mood={currentMood }/>} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood />} />
-                        <Route path="/music" element={<MusicPage mood={musicMood} moodsList={sortedMoodsList}/>} />
+                        <Route path="/mood" element={<Mood currentUser={currentUser}/>} />
+                        <Route path="/music" element={<MusicPage mood={currentMood } />} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser}/>} />
                         
