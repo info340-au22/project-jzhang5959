@@ -55,6 +55,7 @@ export default function Mood(props) {
         } else {
             alert(`Your mood today has been placed! `);
             console.log(date, sleepValue, note, mood);
+            //console.log(currentUser)
             const userObj = currentUser;
             let moodObj = {
                 "userEmail": props.currentUser.userEmail,

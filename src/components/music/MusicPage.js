@@ -2,11 +2,9 @@ import StyleMusicList from "./StyleMusic"
 import RecommandMusic from "./RecommandMusic"
 
 export default function MusicPage(props) {
-    let mood = props.mood;
-
-    const moodsList = props.moodsList;
-    const newMood = moodsList.mood; // change to mood later
-    //let mood = moodsList[0].mood;
+    const currentUserMood = props.currentUserMood;
+    const mood = currentUserMood.mood;
+    console.log(mood);
 
     return (
         <div>
