@@ -2,6 +2,7 @@ import React from 'react';
 import MUSIC_SAMPLE from '../../data/music-sample.json'
 import { useParams } from 'react-router-dom';
 import { typeMusicObject } from './StyleMusic'
+import ReactAudioPlayer from 'react-audio-player';
 
 export default function MusicPlayPage() {
     const params = useParams();
@@ -9,24 +10,23 @@ export default function MusicPlayPage() {
     const typeMusicList = typeMusicObject(MUSIC_SAMPLE);
     const nameList = typeMusicList[type];
 
-    function playAudio(url) {
-        var audio = new Audio(url);
-        audio.play();
-    }
-
     const musicList = [];
     for(const name of nameList) {
         for(const music of MUSIC_SAMPLE) {
+            let audioLink = "../audio/" + music.audioLink;
             if(music.musicName === name) {
+                console.log(audioLink);
                 musicList.push(
                     <div className="row my-4" key={music.musicName}>
-                        <div className="col-11"> 
+                        <div className="col"> 
                             <p>{music.musicName}</p>
                         </div>
-        
-                        <audio controls onClick={playAudio("{music.audioLink}")}>
-                            <source src={music.audioLink} type="audio/mpeg"></source>
-                        </audio>
+                        < div className="col-1">
+                            <em className="fa fa-heart" aria-label="like"></em>  
+                        </div>
+                        <div className='row'>
+                            <ReactAudioPlayer src={audioLink} autoplay controls />        
+                        </div>
                     </div>
                 )
             }
@@ -41,9 +41,7 @@ export default function MusicPlayPage() {
                     <h1>Enjoy Your Mood Music</h1>
                 </div>
             </header>
-
             <main>
-
                 <div className="container play-music">
                     <div className="music-name square-md">
                         <h2>{typeName}</h2>

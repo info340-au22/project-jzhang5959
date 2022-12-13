@@ -1,0 +1,81 @@
+[
+    {
+        "musicName":"Walk Tall", 
+        "artist": "Mr.Smith",
+        "mood":["disgusted", "excluded"], 
+        "audioLink":"./../public/audio/Mr-Smith-Walk-Tall.mp3", 
+        "musicType":["rock","quick"]
+    },
+
+    {
+        "musicName":"It's Dark, It's Cold, It's Winter", 
+        "artist":"Sleepmakeswaves",
+        "mood":["calm", "tranquil", "serene"],
+        "audioLink":"../../public/audio/Sleepmakeswaves-It's-Dark,It's-Cold,It's-Winter.mp3", 
+        "musicType":["rock","slow"]
+    },
+
+    {
+        "musicName":"Wind in Her Hair",
+        "artist":"Motorama",
+        "mood":["joyful", "hopeful", "blissful"],
+        "audioLink":"../../public/audio/Motorama-Wind-in-Her-Hair.mp3", 
+        "musicType":["rock","alternative"]
+    },
+
+    {
+        "musicName":"Sunrise", 
+        "artist":"Yeasayer",
+        "mood":["energized", "optimistic", "excited", "joyful"],
+        "audioLink":"../../public/audio/Yeasayer-Sunrise.mp3", 
+        "musicType":["indie rock","quick"]
+    },
+
+    {
+        "musicName":"Soft Ripples", 
+        "artist":"Simon Armitage",
+        "mood":["despair", "bored", "drained", "miserable", "lonely", "tired", "shamed"],
+        "audioLink":"../../public/audio/Simon_Armitage_Soft_Ripples.mp3", 
+        "musicType":["piano","slow"]
+    },
+
+    {
+        "musicName":"Libeccio", 
+        "artist":"christo4us",
+        "mood":["satisfied", "secured", "balanced"],
+        "audioLink":"../../public/audio/christo4us-libeccio.mp3", 
+        "musicType":["piano","slow"]
+    },
+
+    {
+        "musicName":"Volemos Juntos Piano solo Instrumental", 
+        "artist":"DalCuore",
+        "mood":["surprised", "motivated", "ecstatic"],
+        "audioLink":"../../public/audio/Volemos_Juntos_Piano_solo_Instrumental_-_DalCuore.mp3", 
+        "musicType":["piano","slow"]
+    },
+
+    {
+        "musicName":"Leaves Falling in Fall", 
+        "artist":"Hefxthoth",
+        "mood":["at-ease", "content", "fullfilled"],
+        "audioLink":"../../public/audio/hefxthoth_-_leaves_falling_in_fall.mp3", 
+        "musicType":["piano","slow"]
+    },
+
+    {
+        "musicName":"Into The Night", 
+        "artist":"The Spin Wires",
+        "mood":["fuming", "angry", "restless"],
+        "audioLink":"../../public/audio/The_Spin_Wires_-_Into_The_Night.mp3", 
+        "musicType":["rock","quick"]
+    },
+
+    {
+        "musicName":"Fire fighter", 
+        "artist":"Stefan Kartenberg",
+        "mood":["repulse", "worried", "peeved","enraged", "stressed", "shocked"],
+        "audioLink":"../../public/audio/Fire_fighter_-_Stefan_Kartenberg.mp3", 
+        "musicType":["rock","quick"]
+    }
+]

@@ -1,6 +1,7 @@
 import React from 'react';
 import MUSIC_SAMPLE from '../../data/music-sample.json';
 import MOOD from '../../data/MOODS.json';
+import ReactAudioPlayer from 'react-audio-player';
 
 const moodMusicObj = {};
 for(const musicObj of MUSIC_SAMPLE) {
@@ -23,8 +24,8 @@ export default function RecommandMusic(props) {
     const random = Math.floor(Math.random() * moodList.length);
     const randomMusicName = moodList[random];
     let music = MUSIC_SAMPLE.find(item => item.musicName === randomMusicName);
-
     let color = MOOD.find(item => item.mood === mood).color;
+    let audioLink = "audio/" + music.audioLink;
 
     return(
         <div className="recommand-music container">
@@ -40,18 +41,20 @@ export default function RecommandMusic(props) {
                         <div className="row d-flex justify-content-between">
                             <div className="col" key={mood}>
                                 <div className="square-recommand-music" style={{backgroundColor: color}}>
-                                    <div >
+                                    <div>
+                                        < div className='row mt-3'>
+                                            <em className="fa fa-heart" aria-label="like"></em>  
+                                        </div>
                                         <div className='row'>
                                             <p className="style-bt" key={mood} >{moodName}</p>
-                                        </div>
-                                        <div className='row px-2'>
-                                            <audio controls>
-                                                <source src="Motorama-Wind-in-Her-Hair.mp3" type="audio/mpeg"></source>                   
-                                            </audio>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className='row'>
+                            <ReactAudioPlayer src={audioLink} autoplay controls />        
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ import { BrowserRouter, Routes, Route, Outlet, Navigate, useNavigate} from 'reac
 import MusicPage from './music/MusicPage';
 import { ref, getDatabase, onValue} from "firebase/database";
 import MusicPlayPage from './music/MusicPlayList';
-import {getAuth, onAuthStateChanged, signOut, setPersistence, browserLocalPersistence, browserSessionPersistence} from 'firebase/auth';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
 
 
 
@@ -115,9 +115,7 @@ export default function App() {
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
                         <Route path="/" element={<Home />} />
-
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-
                         <Route path="/mood" element={<Mood changeMoodCallBack = {changeMood}/>} />
                         <Route path="/music" element={<MusicPage mood={musicMood}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
