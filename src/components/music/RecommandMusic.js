@@ -18,8 +18,7 @@ for(const musicObj of MUSIC_SAMPLE) {
 }
 
 export default function RecommandMusic(props) {
-    const currentUserMood = props.currentUserMood;
-    const mood = currentUserMood.mood;
+    const mood = props.mood;
     const moodName = mood[0].toUpperCase() + mood.substring(1);
     const moodList = moodMusicObj[mood];
     const random = Math.floor(Math.random() * moodList.length);

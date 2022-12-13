@@ -90,7 +90,9 @@ export default function App() {
     .sort((a,b) => b.date - a.date);
 
     const currentUserMood = sortedMoodsList[0];
-    console.log(currentUser);
+    //const music = currentUserMood.mood;
+    const musicType = "excited";
+    console.log(moodsList);
 
     
     function ProtectedPage(props) {
@@ -116,10 +118,10 @@ export default function App() {
                     <Route path="/login" element={<Login currentUser={currentUser}/>} />
                     <Route path="/register" element={<Registration newR={newRegister} currentUser={currentUser}/>} />
                     <Route element={<ProtectedPage currentUser={currentUser}/>}>
-                        <Route path="/" element={<Home currentUserMood={currentUserMood} />} />
+                        <Route path="/" element={<Home mood={musicType} />} />
                         <Route path="/mood-display" element={<MoodDisplay currentUser={currentUser} moodsList={moodsList}/>} />
-                        <Route path="/mood" element={<Mood currentUser={currentUser}/>} />
-                        <Route path="/music" element={<MusicPage currentUserMood={currentUserMood} />} />
+                        <Route path="/mood" element={<Mood currentUser={currentUser} moodsList={moodsList}/>} />
+                        <Route path="/music" element={<MusicPage mood={musicType}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
                         <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} currentUserMood={currentUserMood}  />} />
 

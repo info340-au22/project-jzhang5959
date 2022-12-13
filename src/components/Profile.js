@@ -14,8 +14,7 @@ export default function Profile(props) {
     const storeBio = props.bio;
     const storeImg = props.Img;
     const storeAge = props.age;
-    const currentUserMood = props.currentUserMood;
-    const mood = currentUserMood.mood;
+    const mood = props.mood;
 
 
     useEffect(function() {
