@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link } from 'react-router-dom';
 import {getAuth} from 'firebase/auth';
+import RecommandMusic from "./music/RecommandMusic";
+
+const url = 'https://source.unsplash.com/random/600x600';
 
 export default function Profile(props) {
     const currentUser = props.currentUser;
@@ -11,7 +14,20 @@ export default function Profile(props) {
     const storeBio = props.bio;
     const storeImg = props.Img;
     const storeAge = props.age;
+    const currentUserMood = props.currentUserMood;
+    const mood = currentUserMood.mood;
 
+
+    useEffect(function() {
+        fetch(url)
+          .then(response => response.json())
+          .then(result => {//when done encoding
+            console.log(result);
+            Image.src = result.message})
+          .catch(err => 
+            console.log(err.message)
+          )
+        }, [])    
 
     return (
     <div className="container-profile">
@@ -61,15 +77,19 @@ export default function Profile(props) {
                 </div></div>
             </div>
 
-            <div className="recent-music">
-                <h2 className='primary-dark-color'>Liked Songs</h2>
+            <div className="liked-music">
                 <div className="container" id="front">
-                    <img src="img/recent-music.png" alt="album's photo"/>
-                    <p>BLACKPINK-STAY</p>
-                    <div className="container d-flex justify-content-center">
-                        <button className="primary-bt" type="music" value="play-music"><Link to="/music">Play Now ~</Link></button>
-                    </div>
+                    <RecommandMusic mood={mood}/>
                     
+                </div>
+            </div>
+
+            <div className="random-picture">
+                <h2 className='primary-dark-color'>Today's Picture For You</h2>
+                <div className="container" id="front">
+                    <div className="container d-flex justify-content-center">
+                    <img src={url} alt="today's random photo for you"/>
+                    </div>
                 </div>
             </div>
 
