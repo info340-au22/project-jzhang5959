@@ -102,8 +102,8 @@ export default function App() {
         //...determine if user is logged in
         // if(props.currentUser.userId === undefined || props.currentUser.userId === null) { //if no user, send to sign in
         //     console.log(props.currentUser.userName);
-        if(props.currentUser.userName === null) { //if no user, send to sign in
-            //return <Navigate to="/login" />;
+        if(props.currentUser.userName === "") { //if no user, send to sign in
+            return <Navigate to="/login" />;
         }
         else { //otherwise, show the child route content
             return <Outlet />;
@@ -126,8 +126,8 @@ export default function App() {
                         <Route path="/mood" element={<Mood currentUser={currentUser} moodsList={moodsList}/>} />
                         <Route path="/music" element={<MusicPage mood={musicType}/>} />
                         <Route path="/music/:musicType" element={<MusicPlayPage />} />
-                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} mood={musicType} currentUser={currentUser} />} />
-                        <Route path="/info-edition" element={<InfoEdition edit={editProfile}/>} />
+                        <Route path="/profile" element={<Profile Name={name} Img={image} Gender={gender} bio={sentence} age={age} currentUser={currentUser} mood={musicType}  />} />
+
                         <Route path="/info-edition" element={<InfoEdition edit={editProfile} currentUser={currentUser}/>} />
                     </Route>
                 </Routes>
